@@ -2,15 +2,50 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/", "missing": [{ "type": "query", "key": "preview" }], "destination": "/?preview=v10-webp&floor=ground&mode=explore&room=main-circulation", "permanent": false },
-    { "source": "/reconstruction/trc-web-v10-webp.glb", "destination": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v10-webp/trc-web-v10-webp.glb", "permanent": false }
+    {
+      "source": "/",
+      "missing": [
+        {
+          "type": "query",
+          "key": "preview"
+        }
+      ],
+      "destination": "/?preview=v10-webp&floor=ground&mode=explore&room=main-circulation",
+      "permanent": false
+    }
   ],
   "rewrites": [
-    { "source": "/api/model", "destination": "/data/model.json" },
-    { "source": "/api/scenario", "destination": "/data/scenario.json" }
+    {
+      "source": "/api/model",
+      "destination": "/data/model.json"
+    },
+    {
+      "source": "/api/scenario",
+      "destination": "/data/scenario.json"
+    }
   ],
   "headers": [
-    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "no-referrer" } ] },
-    { "source": "/vendor/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
+      "source": "/vendor/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }
