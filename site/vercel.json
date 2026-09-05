@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/", "missing": [{ "type": "query", "key": "preview" }], "destination": "/?preview=v10-webp&floor=ground&mode=explore&room=main-circulation", "permanent": false },
-    { "source": "/reconstruction/trc-web-v10-webp.glb", "destination": "GLB_URL_PLACEHOLDER", "permanent": false }
+    { "source": "/reconstruction/trc-web-v10-webp.glb", "destination": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v10-webp/trc-web-v10-webp.glb", "permanent": false }
   ],
   "rewrites": [
     { "source": "/api/model", "destination": "/data/model.json" },
