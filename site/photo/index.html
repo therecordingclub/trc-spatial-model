@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100e">
+  <title>The Recording Club · photographic lobby</title>
+  <link rel="stylesheet" href="/photo/style.css">
+</head>
+<body>
+  <a class="skip" href="#splat-stage">Skip to lobby reconstruction</a>
+  <main>
+    <header class="masthead">
+      <a class="back" href="/" aria-label="Return to planning model">← Planning model</a>
+      <div class="brand" translate="no">THE RECORDING CLUB <span>/ LOBBY</span></div>
+      <div class="state" id="state" aria-live="polite">Loading reconstruction…</div>
+    </header>
+
+    <section class="stage-shell" aria-labelledby="title">
+      <div id="splat-stage" tabindex="0" aria-label="Photographic lobby reconstruction. Drag to look around from the selected photo position."></div>
+      <div class="veil" id="veil" role="status">
+        <span class="mark">TRC</span>
+        <strong id="load-title">Loading photographic lobby</strong>
+        <span id="load-detail">Preparing the calibrated splat scene…</span>
+        <div class="meter" aria-hidden="true"><i id="meter-fill"></i></div>
+        <button id="retry" hidden>Retry loading</button>
+      </div>
+      <div class="topline">
+        <div>
+          <span class="eyebrow">Photographic reconstruction</span>
+          <h1 id="title">Lobby</h1>
+        </div>
+        <button class="reset" id="reset" disabled>Reset view</button>
+      </div>
+      <div class="lower-third">
+        <div class="pose-nav" aria-label="Calibrated photo viewpoints">
+          <span>Source poses</span>
+          <div id="pose-buttons" class="pose-buttons"></div>
+        </div>
+        <div class="notice">Photographic lobby reconstruction · partial coverage · not to scale</div>
+      </div>
+    </section>
+
+    <aside class="readout" aria-label="Reconstruction limits">
+      <span class="eyebrow">View envelope</span>
+      <strong id="pose-name">DSC00133</strong>
+      <span id="interaction">Drag to look · bounded to this camera</span>
+      <a href="/references/lounge.jpg" target="_blank" rel="noopener">Open source comparison ↗</a>
+    </aside>
+  </main>
+  <script type="importmap">{"imports":{"three":"/photo-vendor/three/three.module.js","gaussian-splats-3d":"/photo-vendor/gaussian-splats-3d.module.js"}}</script>
+  <script type="module" src="/photo/photo.js"></script>
+</body>
+</html>
