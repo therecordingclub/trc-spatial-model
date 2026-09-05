@@ -1,0 +1,3301 @@
+{
+  "asset": "/reconstruction/trc-web-v10-webp.glb",
+  "authoringAsset": "/reconstruction/trc-editable-v10-webp.blend",
+  "modelAsset": "/reconstruction/trc-visual-v10-webp.json",
+  "modelRevision": "de83140e5cda4e46",
+  "builderSources": [
+    {
+      "path": "reconstruction/build_interior.py",
+      "sha256": "f2039e7d326789bdefd2f29114baf5024c9cb657986b587f24673306e8c53b0f"
+    },
+    {
+      "path": "reconstruction/scene_utils.py",
+      "sha256": "13c915737b9f52c50b28fe45a87a4ba982f9f3aa14fb2ec9e6b5cb903baec6e7"
+    },
+    {
+      "path": "architecture/visual_model.py",
+      "sha256": "0291441a2498f15b5a9bf0d1fd5c9d08217a4d25ef545467e07bb57064bf19be"
+    },
+    {
+      "path": "reconstruction/rooms_studios.py",
+      "sha256": "712d35beee5d551ea858c868814817b66ead2d7159a68e0401daff4bf6fb013f"
+    },
+    {
+      "path": "reconstruction/rooms_common.py",
+      "sha256": "ec84ae21d63a2fa66f6337e7df4f6ea00222d52a741d4c4f148e52ee373b9177"
+    },
+    {
+      "path": "reconstruction/rooms_exterior.py",
+      "sha256": "3a84ce17adb61722f8b4bb172ed676d24bcbdf49ccb982f6b669e0f36e16fb58"
+    }
+  ],
+  "version": "v10-webp",
+  "preview": true,
+  "status": "Private render experiment; visual approval pending",
+  "siteVerified": false,
+  "cameraCoordinates": "blender-floor-local",
+  "views": [
+    {
+      "roomId": "rehearsal-room",
+      "cameraBlender": {
+        "position": [
+          3.35,
+          7.55,
+          1.589
+        ],
+        "target": [
+          2.25,
+          11.25,
+          1.17
+        ],
+        "lens": 24,
+        "requestedPosition": [
+          3.35,
+          7.55,
+          1.589
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "rehearsal-iso",
+      "cameraBlender": {
+        "position": [
+          2.80532275,
+          4.4380855,
+          1.6
+        ],
+        "target": [
+          3.45,
+          4.9,
+          1.25
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          2.39972394,
+          4.2091458799999995,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "electrical-room",
+      "cameraBlender": {
+        "position": [
+          5.955555555555556,
+          4.1075,
+          1.6
+        ],
+        "target": [
+          5.98,
+          5.35,
+          1.25
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          5.7672,
+          3.8618,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-live",
+      "cameraBlender": {
+        "position": [
+          9.05,
+          4.49178,
+          1.6
+        ],
+        "target": [
+          9.05,
+          12.57,
+          1.55
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          9.05,
+          4.49178,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-control",
+      "cameraBlender": {
+        "position": [
+          19.121119999999998,
+          12.30146,
+          1.6
+        ],
+        "target": [
+          14.604000000000001,
+          10.62,
+          1.3
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          19.121119999999998,
+          12.30146,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-iso",
+      "cameraBlender": {
+        "position": [
+          14.19,
+          3.235,
+          1.6
+        ],
+        "target": [
+          15.25,
+          4.55,
+          1.25
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          13.8624,
+          3.17,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "recording-room",
+      "cameraBlender": {
+        "position": [
+          26.190611111111114,
+          9.038666666666668,
+          1.6
+        ],
+        "target": [
+          22.829,
+          12.706,
+          1.15
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          26.557000000000002,
+          9.018,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "recording-iso",
+      "cameraBlender": {
+        "position": [
+          28.75242,
+          12.72,
+          1.6
+        ],
+        "target": [
+          27.007059,
+          12.76616,
+          1.45
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          28.75242,
+          12.72,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "podcast-room",
+      "cameraBlender": {
+        "position": [
+          28.52,
+          8.12,
+          1.6
+        ],
+        "target": [
+          28.96,
+          9.959999999999999,
+          1.02
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          28.52,
+          8.12,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "office-machine",
+      "cameraBlender": {
+        "position": [
+          21.846120000000003,
+          4.897819999999999,
+          1.6
+        ],
+        "target": [
+          23.2,
+          6.15,
+          1.25
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          21.846120000000003,
+          4.897819999999999,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "bar-lounge",
+      "cameraBlender": {
+        "position": [
+          33.403075,
+          5.7246,
+          1.55
+        ],
+        "target": [
+          33.403075,
+          13.386,
+          1.5
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          33.403075,
+          5.7246,
+          1.55
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "kitchen",
+      "cameraBlender": {
+        "position": [
+          34.379999999999995,
+          3.6620000000000004,
+          1.6
+        ],
+        "target": [
+          34.379999999999995,
+          0.712,
+          1.22
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          34.379999999999995,
+          3.6620000000000004,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "bathrooms",
+      "cameraBlender": {
+        "position": [
+          22.5625,
+          1.9940000000000002,
+          1.6
+        ],
+        "target": [
+          22.5625,
+          0.88,
+          0.8
+        ],
+        "lens": 18,
+        "requestedPosition": [
+          22.5625,
+          1.9940000000000002,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "locker-hallway",
+      "cameraBlender": {
+        "position": [
+          2.22,
+          1.24,
+          1.6
+        ],
+        "target": [
+          14.22,
+          1.27,
+          1.6
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          2.22,
+          1.24,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "main-circulation",
+      "cameraBlender": {
+        "position": [
+          20.351388888888888,
+          2.3694444444444445,
+          1.6
+        ],
+        "target": [
+          28.2,
+          5.8,
+          1.25
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          21.076999999999998,
+          1.4779999999999998,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "mezzanine-review",
+      "cameraBlender": {
+        "position": [
+          43.1,
+          1.85,
+          1.739
+        ],
+        "target": [
+          46.2,
+          3.75,
+          1.08
+        ],
+        "lens": 24,
+        "requestedPosition": [
+          43.1,
+          1.85,
+          1.739
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "outdoor-gym-review",
+      "cameraBlender": {
+        "position": [
+          62.05,
+          11.55,
+          1.62
+        ],
+        "target": [
+          62.45,
+          22.5,
+          1.3
+        ],
+        "lens": 22,
+        "requestedPosition": [
+          62.05,
+          11.55,
+          1.62
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "patio-review",
+      "cameraBlender": {
+        "position": [
+          63.5,
+          0.35,
+          1.6
+        ],
+        "target": [
+          63.1,
+          5.1,
+          1.12
+        ],
+        "lens": 18,
+        "requestedPosition": [
+          63.5,
+          0.35,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "sauna-review",
+      "cameraBlender": {
+        "position": [
+          60.38,
+          24.88,
+          1.62
+        ],
+        "target": [
+          63,
+          27.75,
+          1.12
+        ],
+        "lens": 25,
+        "requestedPosition": [
+          60.38,
+          24.88,
+          1.62
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    }
+  ],
+  "lights": [
+    {
+      "name": "Soft reflected room illumination.014",
+      "roomId": "main-circulation",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.200000762939453,
+        5.800000190734863,
+        2.819999933242798
+      ],
+      "target": [
+        28.200000762939453,
+        5.800000190734863,
+        1.8199999332427979
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.549999952316284,
+        10.449999809265137,
+        2.559999942779541
+      ],
+      "target": [
+        2.549999952316284,
+        10.449999809265137,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Rehearsal_luminous_coffer_0_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.781399965286255,
+        9.547289848327637,
+        2.555000066757202
+      ],
+      "target": [
+        2.781399965286255,
+        9.547289848327637,
+        1.5550000667572021
+      ],
+      "energy": 360,
+      "size": 1.5498000383377075,
+      "color": [
+        1,
+        0.8199999928474426,
+        0.5600000023841858
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Rehearsal_luminous_coffer_1_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.781399965286255,
+        11.250040054321289,
+        2.555000066757202
+      ],
+      "target": [
+        2.781399965286255,
+        11.250040054321289,
+        1.5550000667572021
+      ],
+      "energy": 360,
+      "size": 1.5498000383377075,
+      "color": [
+        1,
+        0.8199999928474426,
+        0.5600000023841858
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Rehearsal_wash_0",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.4462499618530273,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        1.4462499618530273,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 105,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Rehearsal_wash_1",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.682499885559082,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        2.682499885559082,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 105,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Rehearsal_wash_2",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.918750047683716,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        3.918750047683716,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 105,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.001",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.450000047683716,
+        4.900000095367432,
+        2.559999942779541
+      ],
+      "target": [
+        3.450000047683716,
+        4.900000095367432,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.7227673530578613,
+        4.601613998413086,
+        2.694999933242798
+      ],
+      "target": [
+        2.7227673530578613,
+        4.601613998413086,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.001",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.7227673530578613,
+        5.909840106964111,
+        2.694999933242798
+      ],
+      "target": [
+        2.7227673530578613,
+        5.909840106964111,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.002",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.144157886505127,
+        4.601613998413086,
+        2.694999933242798
+      ],
+      "target": [
+        4.144157886505127,
+        4.601613998413086,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.003",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.144157886505127,
+        5.909840106964111,
+        2.694999933242798
+      ],
+      "target": [
+        4.144157886505127,
+        5.909840106964111,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Rehearsal_iso_booth_light",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.433462381362915,
+        5.2557268142700195,
+        2.619999885559082
+      ],
+      "target": [
+        3.433462381362915,
+        5.2557268142700195,
+        1.619999885559082
+      ],
+      "energy": 95,
+      "size": 0.47999998927116394,
+      "color": [
+        1,
+        0.8999999761581421,
+        0.7599999904632568
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.002",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.980000019073486,
+        5.349999904632568,
+        2.559999942779541
+      ],
+      "target": [
+        5.980000019073486,
+        5.349999904632568,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.004",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.871200084686279,
+        4.2829999923706055,
+        2.694999933242798
+      ],
+      "target": [
+        5.871200084686279,
+        4.2829999923706055,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.005",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.871200084686279,
+        5.686999797821045,
+        2.694999933242798
+      ],
+      "target": [
+        5.871200084686279,
+        5.686999797821045,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.006",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.328800201416016,
+        4.2829999923706055,
+        2.694999933242798
+      ],
+      "target": [
+        6.328800201416016,
+        4.2829999923706055,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.007",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.328800201416016,
+        5.686999797821045,
+        2.694999933242798
+      ],
+      "target": [
+        6.328800201416016,
+        5.686999797821045,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.003",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        9.050000190734863,
+        10.550000190734863,
+        3.4700000286102295
+      ],
+      "target": [
+        9.050000190734863,
+        10.550000190734863,
+        2.4700000286102295
+      ],
+      "energy": 180,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.008",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.996600151062012,
+        5.820300102233887,
+        3.6050000190734863
+      ],
+      "target": [
+        7.996600151062012,
+        5.820300102233887,
+        2.6050000190734863
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.009",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.996600151062012,
+        10.248700141906738,
+        3.6050000190734863
+      ],
+      "target": [
+        7.996600151062012,
+        10.248700141906738,
+        2.6050000190734863
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.010",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.822400093078613,
+        5.820300102233887,
+        3.6050000190734863
+      ],
+      "target": [
+        11.822400093078613,
+        5.820300102233887,
+        2.6050000190734863
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.011",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.822400093078613,
+        10.248700141906738,
+        3.6050000190734863
+      ],
+      "target": [
+        11.822400093078613,
+        10.248700141906738,
+        2.6050000190734863
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Live_stage_wash_0",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.127099990844727,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        7.127099990844727,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Live_stage_wash_1",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        8.51830005645752,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        8.51830005645752,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Live_stage_wash_2",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        9.909500122070312,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        9.909500122070312,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Live_stage_wash_3",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.300700187683105,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        11.300700187683105,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Live_stage_wash_4",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        12.691900253295898,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        12.691900253295898,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.004",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.5,
+        10.619999885559082,
+        2.759999990463257
+      ],
+      "target": [
+        17.5,
+        10.619999885559082,
+        1.7599999904632568
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.012",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.969120025634766,
+        8.346599578857422,
+        2.8949999809265137
+      ],
+      "target": [
+        15.969120025634766,
+        8.346599578857422,
+        1.8949999809265137
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.013",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.969120025634766,
+        11.331399917602539,
+        2.8949999809265137
+      ],
+      "target": [
+        15.969120025634766,
+        11.331399917602539,
+        1.8949999809265137
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.014",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        18.74287986755371,
+        8.346599578857422,
+        2.8949999809265137
+      ],
+      "target": [
+        18.74287986755371,
+        8.346599578857422,
+        1.8949999809265137
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.015",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        18.74287986755371,
+        11.331399917602539,
+        2.8949999809265137
+      ],
+      "target": [
+        18.74287986755371,
+        11.331399917602539,
+        1.8949999809265137
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Mix_ceiling_light_0",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        8.197360038757324,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        8.197360038757324,
+        1.831176996231079
+      ],
+      "energy": 115,
+      "size": 0.550000011920929,
+      "color": [
+        1,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Mix_ceiling_light_1",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        9.988240242004395,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        9.988240242004395,
+        1.831176996231079
+      ],
+      "energy": 115,
+      "size": 0.550000011920929,
+      "color": [
+        1,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Mix_ceiling_light_2",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        11.779120445251465,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        11.779120445251465,
+        1.831176996231079
+      ],
+      "energy": 115,
+      "size": 0.550000011920929,
+      "color": [
+        1,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.005",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.25,
+        4.550000190734863,
+        2.1600000858306885
+      ],
+      "target": [
+        15.25,
+        4.550000190734863,
+        1.1600000858306885
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.016",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        14.330400466918945,
+        3.7100000381469727,
+        2.2950000762939453
+      ],
+      "target": [
+        14.330400466918945,
+        3.7100000381469727,
+        1.2950000762939453
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.017",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        14.330400466918945,
+        5.510000228881836,
+        2.2950000762939453
+      ],
+      "target": [
+        14.330400466918945,
+        5.510000228881836,
+        1.2950000762939453
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.018",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        16.38960075378418,
+        3.7100000381469727,
+        2.2950000762939453
+      ],
+      "target": [
+        16.38960075378418,
+        3.7100000381469727,
+        1.2950000762939453
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.019",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        16.38960075378418,
+        5.510000228881836,
+        2.2950000762939453
+      ],
+      "target": [
+        16.38960075378418,
+        5.510000228881836,
+        1.2950000762939453
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.006",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24,
+        10.649999618530273,
+        2.559999942779541
+      ],
+      "target": [
+        24,
+        10.649999618530273,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.020",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.774839401245117,
+        10.184399604797363,
+        2.694999933242798
+      ],
+      "target": [
+        22.774839401245117,
+        10.184399604797363,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.021",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.774839401245117,
+        12.299599647521973,
+        2.694999933242798
+      ],
+      "target": [
+        22.774839401245117,
+        12.299599647521973,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.022",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.361160278320312,
+        10.184399604797363,
+        2.694999933242798
+      ],
+      "target": [
+        25.361160278320312,
+        10.184399604797363,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.023",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.361160278320312,
+        12.299599647521973,
+        2.694999933242798
+      ],
+      "target": [
+        25.361160278320312,
+        12.299599647521973,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Recording_warm_light_0",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.598499298095703,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        22.598499298095703,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95,
+      "size": 0.41999998688697815,
+      "color": [
+        1,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Recording_warm_light_1",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24.06800079345703,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        24.06800079345703,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95,
+      "size": 0.41999998688697815,
+      "color": [
+        1,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Recording_warm_light_2",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.537500381469727,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        25.537500381469727,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95,
+      "size": 0.41999998688697815,
+      "color": [
+        1,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.007",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.149999618530273,
+        12.720000267028809,
+        2.559999942779541
+      ],
+      "target": [
+        28.149999618530273,
+        12.720000267028809,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.024",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.62175941467285,
+        12.48243522644043,
+        2.694999933242798
+      ],
+      "target": [
+        27.62175941467285,
+        12.48243522644043,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.025",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.62175941467285,
+        13.049884796142578,
+        2.694999933242798
+      ],
+      "target": [
+        27.62175941467285,
+        13.049884796142578,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.026",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.587718963623047,
+        12.48243522644043,
+        2.694999933242798
+      ],
+      "target": [
+        28.587718963623047,
+        12.48243522644043,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.027",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.587718963623047,
+        13.049884796142578,
+        2.694999933242798
+      ],
+      "target": [
+        28.587718963623047,
+        13.049884796142578,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.008",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.84000015258789,
+        9.949999809265137,
+        2.559999942779541
+      ],
+      "target": [
+        28.84000015258789,
+        9.949999809265137,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.028",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.110719680786133,
+        8.850500106811523,
+        2.694999933242798
+      ],
+      "target": [
+        28.110719680786133,
+        8.850500106811523,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.029",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.110719680786133,
+        10.464500427246094,
+        2.694999933242798
+      ],
+      "target": [
+        28.110719680786133,
+        10.464500427246094,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.030",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        29.661279678344727,
+        8.850500106811523,
+        2.694999933242798
+      ],
+      "target": [
+        29.661279678344727,
+        8.850500106811523,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.031",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        29.661279678344727,
+        10.464500427246094,
+        2.694999933242798
+      ],
+      "target": [
+        29.661279678344727,
+        10.464500427246094,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Podcast softbox",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.733999252319336,
+        8.4399995803833,
+        2.0999999046325684
+      ],
+      "target": [
+        28.32423210144043,
+        9.06379222869873,
+        1.5876450538635254
+      ],
+      "energy": 36,
+      "size": 0.550000011920929,
+      "color": [
+        1,
+        0.949999988079071,
+        0.8999999761581421
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Podcast softbox.001",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.733999252319336,
+        10.824999809265137,
+        2.0999999046325684
+      ],
+      "target": [
+        28.333694458007812,
+        10.217236518859863,
+        1.5794322490692139
+      ],
+      "energy": 36,
+      "size": 0.550000011920929,
+      "color": [
+        1,
+        0.949999988079071,
+        0.8999999761581421
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.009",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.200000762939453,
+        6.150000095367432,
+        2.559999942779541
+      ],
+      "target": [
+        23.200000762939453,
+        6.150000095367432,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.032",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.24452018737793,
+        5.383699893951416,
+        2.694999933242798
+      ],
+      "target": [
+        22.24452018737793,
+        5.383699893951416,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.033",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.24452018737793,
+        7.003300189971924,
+        2.694999933242798
+      ],
+      "target": [
+        22.24452018737793,
+        7.003300189971924,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.034",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.997480392456055,
+        5.383699893951416,
+        2.694999933242798
+      ],
+      "target": [
+        23.997480392456055,
+        5.383699893951416,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.035",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.997480392456055,
+        7.003300189971924,
+        2.694999933242798
+      ],
+      "target": [
+        23.997480392456055,
+        7.003300189971924,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Lounge window daylight",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        36.124000549316406,
+        6.674600124359131,
+        2.049999952316284
+      ],
+      "target": [
+        35.15802764892578,
+        6.674600124359131,
+        1.7913525104522705
+      ],
+      "energy": 650,
+      "size": 1.649999976158142,
+      "color": [
+        0.7900000214576721,
+        0.8799999952316284,
+        1
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Lounge window daylight.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        36.124000549316406,
+        12.53600025177002,
+        2.049999952316284
+      ],
+      "target": [
+        35.15802764892578,
+        12.53600025177002,
+        1.7913525104522705
+      ],
+      "energy": 650,
+      "size": 1.649999976158142,
+      "color": [
+        0.7900000214576721,
+        0.8799999952316284,
+        1
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination.010",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.403076171875,
+        9.555299758911133,
+        3.5199999809265137
+      ],
+      "target": [
+        33.403076171875,
+        9.555299758911133,
+        2.5199999809265137
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.036",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        32.381866455078125,
+        7.823019981384277,
+        3.6549999713897705
+      ],
+      "target": [
+        32.381866455078125,
+        7.823019981384277,
+        2.6549999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.037",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        32.381866455078125,
+        11.287579536437988,
+        3.6549999713897705
+      ],
+      "target": [
+        32.381866455078125,
+        11.287579536437988,
+        2.6549999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.038",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        34.42428207397461,
+        7.823019981384277,
+        3.6549999713897705
+      ],
+      "target": [
+        34.42428207397461,
+        7.823019981384277,
+        2.6549999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.039",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        34.42428207397461,
+        11.287579536437988,
+        3.6549999713897705
+      ],
+      "target": [
+        34.42428207397461,
+        11.287579536437988,
+        2.6549999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Paper lantern glow",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.58307647705078,
+        12.435999870300293,
+        2.9100000858306885
+      ],
+      "target": [
+        33.58307647705078,
+        12.435999870300293,
+        1.9100000858306885
+      ],
+      "energy": 48,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.7799999713897705,
+        0.4699999988079071
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Paper lantern glow.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.30307388305664,
+        11.166000366210938,
+        2.5
+      ],
+      "target": [
+        33.30307388305664,
+        11.166000366210938,
+        1.5
+      ],
+      "energy": 48,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.7799999713897705,
+        0.4699999988079071
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Bulkhead wall wash",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        5.974599838256836,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        5.974599361419678,
+        1.321058750152588
+      ],
+      "energy": 16,
+      "size": 0.11999999731779099,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Bulkhead wall wash.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        7.274600028991699,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        7.274599552154541,
+        1.321058750152588
+      ],
+      "energy": 16,
+      "size": 0.11999999731779099,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Bulkhead wall wash.002",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        8.574600219726562,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        8.574599266052246,
+        1.321058750152588
+      ],
+      "energy": 16,
+      "size": 0.11999999731779099,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Bulkhead wall wash.003",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        9.874600410461426,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        9.87459945678711,
+        1.321058750152588
+      ],
+      "energy": 16,
+      "size": 0.11999999731779099,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Bulkhead wall wash.004",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        10.974599838256836,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        10.97459888458252,
+        1.321058750152588
+      ],
+      "energy": 16,
+      "size": 0.11999999731779099,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Lobby blue floor accent",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.242149353027344,
+        5.924600124359131,
+        0.18000000715255737
+      ],
+      "target": [
+        31.242149353027344,
+        5.924600124359131,
+        1.1800000667572021
+      ],
+      "energy": 12,
+      "size": 0.11999999731779099,
+      "color": [
+        0.1599999964237213,
+        0.11999999731779099,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Lobby blue floor accent.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        35.56399917602539,
+        5.924600124359131,
+        0.18000000715255737
+      ],
+      "target": [
+        35.56399917602539,
+        5.924600124359131,
+        1.1800000667572021
+      ],
+      "energy": 12,
+      "size": 0.11999999731779099,
+      "color": [
+        0.1599999964237213,
+        0.11999999731779099,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.011",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        32.03499984741211,
+        2.123349905014038,
+        2.559999942779541
+      ],
+      "target": [
+        32.03499984741211,
+        2.123349905014038,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.040",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        30.457599639892578,
+        1.3588099479675293,
+        2.694999933242798
+      ],
+      "target": [
+        30.457599639892578,
+        1.3588099479675293,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.041",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        30.457599639892578,
+        2.887890100479126,
+        2.694999933242798
+      ],
+      "target": [
+        30.457599639892578,
+        2.887890100479126,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.042",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.61240005493164,
+        1.3588099479675293,
+        2.694999933242798
+      ],
+      "target": [
+        33.61240005493164,
+        1.3588099479675293,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.043",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.61240005493164,
+        2.887890100479126,
+        2.694999933242798
+      ],
+      "target": [
+        33.61240005493164,
+        2.887890100479126,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.012",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24.100000381469727,
+        1.350000023841858,
+        2.559999942779541
+      ],
+      "target": [
+        24.100000381469727,
+        1.350000023841858,
+        1.559999942779541
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.044",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.716999053955078,
+        0.866599977016449,
+        2.694999933242798
+      ],
+      "target": [
+        22.716999053955078,
+        0.866599977016449,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.045",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.716999053955078,
+        1.739400029182434,
+        2.694999933242798
+      ],
+      "target": [
+        22.716999053955078,
+        1.739400029182434,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.046",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.170000076293945,
+        0.866599977016449,
+        2.694999933242798
+      ],
+      "target": [
+        25.170000076293945,
+        0.866599977016449,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.047",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.170000076293945,
+        1.739400029182434,
+        2.694999933242798
+      ],
+      "target": [
+        25.170000076293945,
+        1.739400029182434,
+        1.6949999332427979
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.013",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        8,
+        0.75,
+        3.069999933242798
+      ],
+      "target": [
+        8,
+        0.75,
+        2.069999933242798
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Locker hall warm practical",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.7200000286102295,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        1.7200000286102295,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall blue wash",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.7200000286102295,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        1.7200000286102295,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall warm practical.001",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.21999979019165,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        6.21999979019165,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall blue wash.001",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.21999979019165,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        6.21999979019165,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall warm practical.002",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        10.720000267028809,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        10.720000267028809,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall blue wash.002",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        10.720000267028809,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        10.720000267028809,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall warm practical.003",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.220000267028809,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        15.220000267028809,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall blue wash.003",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.220000267028809,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        15.220000267028809,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall warm practical.004",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        19.219999313354492,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        19.219999313354492,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38,
+      "size": 0.6000000238418579,
+      "color": [
+        1,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Locker hall blue wash.004",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        19.219999313354492,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        19.219999313354492,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Soft reflected room illumination.015",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        45.20000076293945,
+        4.5,
+        2.2699999809265137
+      ],
+      "target": [
+        45.20000076293945,
+        4.5,
+        1.2699999809265137
+      ],
+      "energy": 95,
+      "size": 2.200000047683716,
+      "color": [
+        1,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Practical downlight.048",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        42.28535842895508,
+        2.1278998851776123,
+        2.4049999713897705
+      ],
+      "target": [
+        42.28535842895508,
+        2.1278998851776123,
+        1.4049999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.049",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        42.28535842895508,
+        4.965099811553955,
+        2.4049999713897705
+      ],
+      "target": [
+        42.28535842895508,
+        4.965099811553955,
+        1.4049999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.050",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        46.3166389465332,
+        2.1278998851776123,
+        2.4049999713897705
+      ],
+      "target": [
+        46.3166389465332,
+        2.1278998851776123,
+        1.4049999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Practical downlight.051",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        46.3166389465332,
+        4.965099811553955,
+        2.4049999713897705
+      ],
+      "target": [
+        46.3166389465332,
+        4.965099811553955,
+        1.4049999713897705
+      ],
+      "energy": 32,
+      "size": 0.14000000059604645,
+      "color": [
+        1,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Red lounge sconce",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        2,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        2,
+        1.3952999114990234
+      ],
+      "energy": 26,
+      "size": 0.20000000298023224,
+      "color": [
+        1,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Red lounge sconce.001",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        3.549999952316284,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        3.549999952316284,
+        1.3952999114990234
+      ],
+      "energy": 26,
+      "size": 0.20000000298023224,
+      "color": [
+        1,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Red lounge sconce.002",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        5.099999904632568,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        5.099999904632568,
+        1.3952999114990234
+      ],
+      "energy": 26,
+      "size": 0.20000000298023224,
+      "color": [
+        1,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical"
+    },
+    {
+      "name": "Exterior broad sky fill outdoor-gym-review",
+      "roomId": "outdoor-gym-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.29999923706055,
+        17.5,
+        5.800000190734863
+      ],
+      "target": [
+        62.29999923706055,
+        17.5,
+        4.800000190734863
+      ],
+      "energy": 160,
+      "size": 5,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Exterior wall bounce fill outdoor-gym-review",
+      "roomId": "outdoor-gym-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        17.5,
+        2.9000000953674316
+      ],
+      "target": [
+        61.315826416015625,
+        17.5,
+        2.4555954933166504
+      ],
+      "energy": 480,
+      "size": 3.4000000953674316,
+      "color": [
+        1,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Exterior broad sky fill patio-review",
+      "roomId": "patio-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.25,
+        5.25,
+        5.800000190734863
+      ],
+      "target": [
+        62.25,
+        5.25,
+        4.800000190734863
+      ],
+      "energy": 160,
+      "size": 5,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Exterior wall bounce fill patio-review",
+      "roomId": "patio-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        5.25,
+        2.9000000953674316
+      ],
+      "target": [
+        61.311058044433594,
+        5.25,
+        2.446110486984253
+      ],
+      "energy": 480,
+      "size": 3.4000000953674316,
+      "color": [
+        1,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Exterior broad sky fill sauna-review",
+      "roomId": "sauna-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.75,
+        27.5,
+        5.800000190734863
+      ],
+      "target": [
+        62.75,
+        27.5,
+        4.800000190734863
+      ],
+      "energy": 160,
+      "size": 5.5,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1
+      ],
+      "role": "indirect-fill"
+    },
+    {
+      "name": "Exterior wall bounce fill sauna-review",
+      "roomId": "sauna-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        27.5,
+        2.9000000953674316
+      ],
+      "target": [
+        61.347930908203125,
+        27.5,
+        2.527257204055786
+      ],
+      "energy": 480,
+      "size": 3.4000000953674316,
+      "color": [
+        1,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill"
+    }
+  ],
+  "lightMaps": {},
+  "lightMapProof": {},
+  "coverageGaps": [
+    {
+      "id": "unlocated-second-upstairs-area",
+      "floorId": "mezzanine-review",
+      "reportedAreaSquareFeet": 124.51,
+      "shape": null,
+      "status": "Unlocated second upstairs area; no geometry invented",
+      "source": "master-2025 floor total minus labeled main Mezzanine area"
+    },
+    {
+      "id": "stair-registration",
+      "status": "Ground-to-mezzanine stair route and elevation unverified"
+    },
+    {
+      "id": "outdoor-registration",
+      "status": "Indoor connection to the photo-confirmed exterior corridor unverified"
+    }
+  ],
+  "bytes": 171538224,
+  "sourceProof": {
+    "sourceBlendSha256": "ff97989fffe85f5024b525f4b1f17d110bc309e8360ce8c167ff8dd0d7baa10c",
+    "assetSha256": "69305811a3feb05c8f12cec56af5497214f5c04c9875b3fca381bc8614f04ed6",
+    "exportReportSha256": "153bea6233959cb1264f468bcb03f6b51786ebd2dcfa976fe43c7293d46e1285",
+    "lightMaps": [],
+    "mode": "direct-source-export-lossless-webp",
+    "optimizedAssetSha256": "490493c807bb4143fcd1a78dd2d5fe98ae45744e5054276a5b9c9e39031ec4e6",
+    "compressionReportSha256": "4eee10e70603bc894e75b22005a125778e10f970d608f8c1bd78fc43d2b916d1",
+    "compressionSourceReportSha256": "153bea6233959cb1264f468bcb03f6b51786ebd2dcfa976fe43c7293d46e1285",
+    "compressionSavingsBytes": 43230108,
+    "compressionConvertedImageCount": 80
+  },
+  "assetSha256": "69305811a3feb05c8f12cec56af5497214f5c04c9875b3fca381bc8614f04ed6"
+}

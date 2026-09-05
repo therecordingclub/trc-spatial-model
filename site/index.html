@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f3f4">
+  <title>The Recording Club · 3D planning model</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">{"imports":{"three":"/vendor/build/three.module.js","three/addons/":"/vendor/examples/jsm/","three-mesh-bvh":"/navigation-vendor/index.module.js"}}</script>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#controls">Skip to model controls</a>
+<header>
+  <div class="wordmark" translate="no">The Recording Club<span>Spatial studio</span></div>
+  <nav aria-label="Model mode">
+    <button data-mode="explore" aria-pressed="true">Explore</button>
+    <button data-mode="plan" aria-pressed="false">Plan</button>
+    <button data-mode="measure" aria-pressed="false">Measure</button>
+  </nav>
+  <button id="panel-toggle" aria-controls="controls" aria-expanded="true">Controls</button>
+</header>
+<main>
+  <aside id="controls">
+    <div class="panel-heading"><span class="eyebrow">🎯 Working model</span><h1>The club,<br>room by room.</h1></div>
+    <div class="status warning" id="accuracy">⚠ Plan-derived · site checks pending</div>
+    <label class="field">Floor<select id="floor-select" aria-label="Floor"></select></label>
+    <label class="field">Room<select id="room-select" aria-label="Room"><option value="">Whole floor</option></select></label>
+    <div id="room-facts" class="facts">Loading the architectural model…</div>
+    <div class="button-row"><button id="walk" class="primary">Walk inside</button><button id="frame-room">Frame room</button></div>
+    <button id="photo-toggle" class="wide" disabled>Open room photo</button>
+    <a class="photo-scan-link" href="/photo/">Photographic lobby reconstruction ↗</a>
+    <div class="divider"></div>
+    <section aria-labelledby="view-heading"><h2 id="view-heading">🔍 Choose what you see</h2>
+      <label class="check"><input id="cutaway" type="checkbox" checked>Cutaway walls</label>
+      <label class="check"><input id="details-enabled" type="checkbox" checked>Photo-referenced interiors</label>
+      <span class="micro" id="detail-status">Loading detailed interior export…</span>
+      <label class="check"><input id="furniture" type="checkbox" checked>Furniture & studio equipment</label>
+      <label class="check"><input id="labels" type="checkbox" checked>Room names</label>
+      <label class="field">Units<select id="units"><option value="imperial">Feet & inches</option><option value="metric">Meters</option></select></label>
+    </section>
+    <section id="measure-panel" hidden aria-labelledby="measure-heading"><h2 id="measure-heading">📏 Pick two model points</h2>
+      <output id="distance">First point…</output><span class="micro">Model distance, not a site measurement.</span>
+      <button id="clear-measure" class="wide">Clear measurement</button>
+    </section>
+    <section id="layout-panel" hidden aria-labelledby="layout-heading"><h2 id="layout-heading">📏 Plan equipment placement</h2>
+      <label class="field">Add a footprint<select id="preset"><option value="desk">Desk</option><option value="console">Mixing console</option><option value="grand">Grand piano</option><option value="drums">Drum kit</option><option value="sofa">Sofa</option><option value="chair">Chair</option><option value="table">Table</option><option value="rack">Equipment rack</option><option value="custom">Custom box</option></select></label>
+      <button id="add-item" class="wide">Add to selected room</button>
+      <label class="field">Your equipment<select id="item-select"><option value="">Select equipment</option></select></label>
+      <form id="item-form" hidden>
+        <label class="field">Name<input name="name" maxlength="120" required></label>
+        <div class="dimensions"><label>Width (m)<input name="width" type="number" step="0.01" min="0.03" max="50" required></label><label>Depth (m)<input name="depth" type="number" step="0.01" min="0.03" max="50" required></label><label>Height (m)<input name="height" type="number" step="0.01" min="0.03" max="50" required></label></div>
+        <div class="dimensions"><label>X (m)<input name="x" type="number" step="0.05" required></label><label>Z (m)<input name="z" type="number" step="0.05" required></label><label>Angle (°)<input name="rotation" type="number" step="5" required></label></div>
+        <label class="check"><input name="measured" type="checkbox">I checked these equipment dimensions</label>
+        <button type="submit" class="wide">Apply dimensions</button>
+        <button id="delete-item" type="button" class="wide">Remove equipment</button>
+      </form>
+      <div class="button-row"><button id="save-layout" class="primary" disabled title="Public read-only copy">Save layout</button><button id="undo" disabled>Undo</button></div>
+      <div class="micro" id="save-state">Public read-only copy · export the layout to keep changes.</div>
+      <div id="layout-warning" class="micro warning" hidden></div>
+    </section>
+    <details><summary>🔍 Sources & accuracy</summary><div class="detail-content">
+      <ul id="limits"></ul>
+      <a href="/sources/labeled-2024.pdf" target="_blank" rel="noopener">2024 architectural room plan ↗</a>
+      <a href="/sources/master-2025.pdf" target="_blank" rel="noopener">2025 Magicplan cross-check ↗</a>
+      <a href="/sources/a210-2012.pdf" target="_blank" rel="noopener">Architectural sections ↗</a>
+      <a href="/api/model" download="trc-current-visual-model.json">Current geometry + provenance ↓</a>
+      <a href="/architecture/visual-overrides.json" download>Reversible current-layout changes ↓</a>
+      <a href="/architecture/architecture.json" download>Preserved 2024 geometry baseline ↓</a>
+    </div></details>
+    <details><summary>🔍 Export your model</summary><div class="detail-content">
+      <a id="blend-link" href="/architecture/building.blend" download>Blender architecture (.blend) ↓</a>
+      <a id="glb-link" href="/architecture/building.glb" download>Architectural model (.glb) ↓</a>
+      <button id="export-glb">Export visible 3D scene</button>
+      <button id="export-layout">Export equipment layout</button>
+      <span class="micro">Equipment is illustrative unless you enter and confirm its dimensions.</span>
+    </div></details>
+  </aside>
+  <section id="viewport" aria-label="Interactive 3D model">
+    <div id="loading" role="status"><strong>Preparing your club.</strong><span>Loading source-traced geometry…</span><button id="retry" hidden>Retry loading</button></div>
+    <div id="scene-labels" aria-hidden="true"></div>
+    <div class="scene-top"><span id="scene-floor">Architectural model</span><button id="reset-view">Reset view</button><button id="exit-walk" hidden>Exit walk</button></div>
+    <div class="scene-bottom"><span id="hint">Drag to orbit · scroll to zoom · choose a room</span><span id="basis">Plan-based geometry</span></div>
+    <div id="touch-controls" hidden><button data-step="forward" aria-label="Walk forward">↑</button><button data-step="left" aria-label="Walk left">←</button><button data-step="back" aria-label="Walk backward">↓</button><button data-step="right" aria-label="Walk right">→</button></div>
+  </section>
+  <section id="photo-panel" hidden aria-label="Room photo reference"><div><h2 id="photo-title">Room reference</h2><button id="photo-close" aria-label="Close room photo">Close</button></div><img id="reference-photo" alt=""><span id="photo-caption" class="micro"></span></section>
+</main>
+<div id="message" role="status" aria-live="polite"></div>
+</body>
+</html>
