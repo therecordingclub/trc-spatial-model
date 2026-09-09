@@ -46,6 +46,23 @@ export function insideRoom(point,room) {
   return roomSurfaces(room).some(surface=>insidePolygon(point,surface.exterior)&&!(surface.holes||[]).some(hole=>insidePolygon(point,hole)));
 }
 
+export function footprintInsideRoom(points,room) {
+  if(points.length<3)return false;
+  const edges=ring=>ring.map((point,index)=>[point,ring[(index+1)%ring.length]]);
+  const footprintEdges=edges(points);
+  const cross=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+  const crosses=(a,b,c,d)=>{
+    const abC=cross(a,b,c),abD=cross(a,b,d),cdA=cross(c,d,a),cdB=cross(c,d,b);
+    return ((abC>1e-8&&abD< -1e-8)||(abC< -1e-8&&abD>1e-8))&&((cdA>1e-8&&cdB< -1e-8)||(cdA< -1e-8&&cdB>1e-8));
+  };
+  const strictlyInsideFootprint=point=>insidePolygon(point,points)&&footprintEdges.every(([a,b])=>distanceToSegment(point,a,b)>1e-8);
+  return roomSurfaces(room).some(surface=>{
+    if(!points.every(point=>insidePolygon(point,surface.exterior)&&!(surface.holes||[]).some(hole=>insidePolygon(point,hole))))return false;
+    return [surface.exterior,...(surface.holes||[])].every(ring=>
+      !ring.some(strictlyInsideFootprint)&&!edges(ring).some(([a,b])=>footprintEdges.some(([c,d])=>crosses(a,b,c,d))));
+  });
+}
+
 export function distanceToSegment(point, start, end) {
   const dx = end[0] - start[0], dz = end[1] - start[1];
   const square = dx * dx + dz * dz;

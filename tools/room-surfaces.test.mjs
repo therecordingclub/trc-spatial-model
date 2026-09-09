@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFile} from 'node:fs/promises';
-import {sourceToViewer,roomSurfaces,roomArea,insideRoom,insidePolygon} from '../site/geometry.mjs';
+import {sourceToViewer,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom} from '../site/geometry.mjs';
 
 const ring=(x,y,w,h)=>[[x,y],[x+w,y],[x+w,y+h],[x,y+h]];
 
@@ -35,6 +35,22 @@ test('historical rooms retain their original polygon behavior',()=>{
   for(let x=-.25;x<4.5;x+=.5)for(let y=-.25;y<4.5;y+=.5)assert.equal(insideRoom([x,y],room),insidePolygon([x,y],room.polygon));
 });
 
+test('a furniture footprint cannot enclose a hole despite four valid corners',()=>{
+  const room={polygon:ring(0,0,6,6),physicalSurfacePolygons:[{exterior:ring(0,0,6,6),holes:[ring(2,2,2,2)]}]};
+  const enclosing=ring(1,1,4,4);
+  assert(enclosing.every(point=>insideRoom(point,room)));
+  assert(!footprintInsideRoom(enclosing,room));
+  assert(footprintInsideRoom(ring(.25,.25,1,1),room));
+});
+
+test('a footprint cannot bridge a concave notch or disconnected floor pieces',()=>{
+  const room={polygon:[[0,0],[6,0],[6,6],[4,6],[4,2],[2,2],[2,6],[0,6]]};
+  const bridge=ring(1,1,4,4);assert(bridge.every(point=>insideRoom(point,room)));
+  assert(!footprintInsideRoom(bridge,room));
+  assert(footprintInsideRoom([[.2,.5],[.5,.2],[1.7,1.4],[1.4,1.7]],room));
+  assert(!footprintInsideRoom(ring(.25,.25,4.5,1),{polygon:ring(0,0,5,2),physicalSurfacePolygons:[{exterior:ring(0,0,1,2)},{exterior:ring(4,0,1,2)}]}));
+});
+
 test('published physical room areas agree with the reviewed floor records',async()=>{
   const source=JSON.parse(await readFile(process.env.TRC_ROOM_MODEL||new URL('../site/data/model.json',import.meta.url),'utf8'));
   const model=sourceToViewer(source),qualified=model.rooms.filter(room=>room.physicalSurfacePolygons?.length);
@@ -47,5 +63,8 @@ test('published physical room areas agree with the reviewed floor records',async
     }
     const bathroom=find('bathrooms');assert(!insideRoom(bathroom.label,find('main-circulation')));
     assert(!insideRoom(find('kitchen').label,find('main-circulation')));
+    const spanningBathroom=[[21.1,-.205],[26.95,-.205],[26.95,-2.42],[21.1,-2.42]];
+    assert(spanningBathroom.every(point=>insideRoom(point,find('main-circulation'))));
+    assert(!footprintInsideRoom(spanningBathroom,find('main-circulation')));
   }
 });

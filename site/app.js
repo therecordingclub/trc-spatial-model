@@ -10,7 +10,7 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
-import {finite,roomSurfaces,roomArea,insideRoom,wallBlocks,formatLength,validateScenario,sourceToViewer} from '/geometry.mjs';
+import {finite,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom,wallBlocks,formatLength,validateScenario,sourceToViewer} from '/geometry.mjs';
 
 const $ = id => document.getElementById(id);
 const photoMap = {
@@ -141,7 +141,7 @@ function seedDressing(){
   let index=0;
   const add=(room,type,dx,dz,rotation=0)=>{
     const p=room.label||room.polygon[0],x=p[0]+dx,z=p[1]+dz,[name,width,depth,height]=presets[type];
-    if(![[x-width/2,z-depth/2],[x+width/2,z-depth/2],[x+width/2,z+depth/2],[x-width/2,z+depth/2]].every(p=>insideRoom(p,room)))return;
+    if(!footprintInsideRoom([[x-width/2,z-depth/2],[x+width/2,z-depth/2],[x+width/2,z+depth/2],[x-width/2,z+depth/2]],room))return;
     dressingGroup.add(makeEquipment({id:`reference-${index++}`,name:`Illustrative ${name}`,type,x,z,width,depth,height,rotation,floorId:room.floorId,roomId:room.id},true));
   };
   for(const room of model.rooms){
@@ -266,7 +266,7 @@ function selectItem(id){selectedItem=id;redrawLayout();const item=scenario.items
 function placeAllowed(item){
   const c=Math.cos(item.rotation*Math.PI/180),s=Math.sin(item.rotation*Math.PI/180);
   const corners=[[-1,-1],[1,-1],[1,1],[-1,1]].map(([x,z])=>[item.x+x*item.width/2*c+z*item.depth/2*s,item.z-x*item.width/2*s+z*item.depth/2*c]);
-  return model.rooms.filter(r=>r.floorId===item.floorId).some(room=>corners.every(c=>insideRoom(c,room)));
+  return model.rooms.filter(r=>r.floorId===item.floorId).some(room=>footprintInsideRoom(corners,room));
 }
 function warnFootprint(item){const outside=!placeAllowed(item);$('layout-warning').hidden=!outside;$('layout-warning').textContent=outside?'⚠ This footprint crosses a room boundary. Check walls and door clearance.':'';}
 function addItem(){
