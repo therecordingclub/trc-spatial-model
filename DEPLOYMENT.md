@@ -8,9 +8,9 @@ The live target is the existing `trc-beta-apps` Fly machine. The model uses
 host-specific static middleware in `/Users/gregspero/trc-beta-apps-deploy`.
 It adds no child process, port, machine, volume, or separate application.
 Model buffers and textures use this repository's existing
-[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/trc-web-v10-webp.gltf).
+[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/v11-webp/trc-web-v11-webp.gltf).
 Large downloadable files use the existing
-[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v10-webp).
+[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v11-webp).
 
 `site/reconstruction/web-manifest.json` selects the current model.
 Versioned manifests and original assets remain available for rollback.
@@ -60,6 +60,22 @@ unproxied CNAME `cname.vercel-dns.com` (automatic TTL); preserve the Vercel proj
 Restored historical architecture files remain unchanged. Their historical
 source paths can refer to temporary extraction files; `site/sources/source-index.json`
 maps seven retained plans by filename, size, and SHA-256 without changing that baseline.
+
+## Verified September 9 release
+
+V11 and smooth held-key controls are live in shared-host release 173, source
+`245664b`, with the static site from `899ed89`. Eight public files match their
+committed hashes, including the stable V11 manifest. The complete candidate
+passed 19 room walkthrough checks in existing Chrome; three representative
+room captures passed again on the public release. Held-arrow tests passed for
+the main viewer and photographic lobby. Short Mezzanine and Patio movement
+samples showed no observed regression against V10. Independent Astra review
+approved V11 as a finish update, with the spatial limitations retained.
+
+The same single machine remains at two shared CPUs and 2 GB RAM. Every required
+shared-host post-deploy probe passed. V10 versioned manifests, buffers and both
+downloadable source artifacts remain available for rollback. V12 is isolated
+work in progress and is not the default release.
 
 ## Accuracy boundaries
 
