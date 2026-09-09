@@ -1,1 +1,4031 @@
-{"schemaVersion":"1.0.0","modelId":"trc-1660-9th-plan-derived-v1","coordinateSystem":{"units":"meters","planAxes":"x,z","verticalAxis":"y","handedness":"right-handed","origin":"inside southwest corner of the ground-floor architectural shell","xDirection":"east","zDirection":"north"},"metadata":{"site":"The Recording Club, 1660 9th Street, Santa Monica, CA 90404","modelPurpose":["immersive walkthrough","layout planning"],"measurementStatus":"plan-derived; not verified on site","sourceCoordinateFrame":{"source":"labeled-2024","pdfUnits":"points","originPdf":[226,779.41],"transform":"x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05","chosenScalePdfPointsPerMeter":45.05},"exportTransforms":{"jsonToBlender":"[x_blender,y_blender,z_blender]=[x_json,z_json,y_json]","blenderToGltfYUp":"[x_gltf,y_gltf,z_gltf]=[x_blender,z_blender,-y_blender]","jsonToGltfYUp":"[x_gltf,y_gltf,z_gltf]=[x_json,y_json,-z_json]","viewerConvention":"JSON plan north remains +z; exported GLB and Three.js normalized JSON use negative Z for plan north"},"heightEvidencePolicy":{"modeledWallHeightMeaning":"editable visualization height only unless the matching room heightStatus says plan-derived from a mapped vertical drawing","historicalVerticalSources":"A210/A240 are dated 2012 and document local ceiling clouds/framing, not a current whole-building clearance survey","currentPhotoConflict":"Current mixing-room imagery shows a tall black truss/LED-wall condition above the historical local cloud values; its maximum height is visually evident but not measurable from the supplied photo","planningRestriction":"Do not use modeled height, door head, sill, or glazing-height estimates for equipment clearance, rigging, life-safety, or construction without site measurement"},"sources":[{"id":"labeled-2024","path":"/tmp/trc-floor-audit.RVJxIT/labeled-2024.pdf","title":"1660 9th St (Santa Monica, CA) - Leasing Package, Ground Floor","date":"2024 label in supplied filename; drawing issue date not visible","use":"primary coherent ground-floor shell, room boundaries, door openings, circulation, and room labels","limitations":"plan dimensions are treated as drawing evidence only; no field survey supplied"},{"id":"floorplan-2024","path":"/tmp/trc-floor-audit.RVJxIT/floorplan-2024.pdf","title":"Boto Design Architects First Floor Plan","date":"legacy sheet; supplied as floorplan-2024","use":"raster cross-check for the rectangular shell, circulation, stair, angled studio construction, and door locations","limitations":"scanned/marked-up legacy plan; not used as the sole dimensional source"},{"id":"a111-2012","path":"/tmp/trc-floor-audit.RVJxIT/a111-2012.pdf","title":"A111 New Construction / Reflected Ceiling Plan","date":"2012","use":"studio-suite angled acoustic walls, sound locks, openings, and 2012 design cross-check","limitations":"covers the studio suite, not the entire tenant shell"},{"id":"a210-2012","path":"/tmp/trc-floor-audit.RVJxIT/a210-2012.pdf","title":"A210 Sections - New","date":"2012","use":"studio ceiling-height evidence","limitations":"section heights only apply where the matching section/room can be identified"},{"id":"a240-2012","path":"/tmp/trc-floor-audit.RVJxIT/a240-2012.pdf","title":"A240 Interior Elevations","date":"2012","use":"tracking/control/iso room local vertical-dimension cross-check","limitations":"not a whole-building ceiling survey"},{"id":"master-2025","path":"/tmp/trc-floor-audit.RVJxIT/master-2025.pdf","title":"TRC Floor Plan (Magicplan)","date":"2025 supplied filename","use":"current room-program names and mezzanine existence/rough extents only","limitations":"the sheet shows disconnected/distorted room geometry and explicitly disclaims dimensional accuracy; it is not the ground-floor geometry baseline"},{"id":"mixing-photo","path":"/Users/gregspero/image-blaster/trc-model/viewer/public/references/mixing.jpg","title":"Current mixing/control-room reference photo","date":"current project reference; capture date not supplied","use":"confirms the dominant live/control glazing and visually tall truss/LED-wall condition","limitations":"single perspective image; supports existence and character only, not metric dimensions or current clearance"},{"id":"lounge-photo","path":"/Users/gregspero/image-blaster/trc-model/viewer/public/references/lounge.jpg","title":"Current lounge reference photo","date":"current project reference; capture date not supplied","use":"confirms prominent black-framed external lounge glazing","limitations":"single perspective image; supports existence and character only, not metric width, sill, height, or current clearance"},{"id":"native-exterior-2026","path":"/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/AUDIT.md","title":"Native Photos workout-area photograph and continuous patio/gym video","date":"2025-02-09 and 2026-08-01; supplemented by March 2026 facility photographs","use":"outdoor corridor finishes, equipment and connected turf-to-sauna-deck sequence","limitations":"dimensions and layout placement inferred; relation to indoor plan unverified"}],"scaleControls":[{"id":"control-24ft4","source":"labeled-2024","printedDimension":"24'-4\"","expectedMeters":7.4168,"pdfEndpoints":[[510.12,459.14],[843.99,459.14]],"pdfDistancePoints":333.87,"impliedPointsPerMeter":45.015,"modeledMetersAtChosenScale":7.4111,"relativeErrorPercent":-0.08,"role":"primary horizontal scale control"},{"id":"control-23ft8","source":"labeled-2024","printedDimension":"23'-8\"","expectedMeters":7.2136,"pdfEndpoints":[[1107.07,174],[1107.07,498.32]],"pdfDistancePoints":324.32,"impliedPointsPerMeter":44.957,"modeledMetersAtChosenScale":7.1991,"relativeErrorPercent":-0.2,"role":"independent vertical scale control"},{"id":"check-35ft","source":"labeled-2024","printedDimension":"35'-0\"","expectedMeters":10.668,"pdfEndpoints":[[808.85,174],[808.85,659.61]],"pdfDistancePoints":485.61,"impliedPointsPerMeter":45.511,"modeledMetersAtChosenScale":10.7794,"relativeErrorPercent":1.04,"role":"long vertical check"},{"id":"conflict-66ft7","source":"labeled-2024","printedDimension":"66'-7\"","expectedMeters":20.2946,"pdfEndpoints":[[231.5,728.3],[1165.99,728.3]],"pdfDistancePoints":934.49,"impliedPointsPerMeter":46.045,"modeledMetersAtChosenScale":20.7434,"relativeErrorPercent":2.21,"role":"flagged conflict; retained for audit, not used to set scale"}],"mezzanineReviewTrace":{"source":"master-2025","traceSurface":"inner face of the visible Magicplan mezzanine perimeter","sourcePolygonPdfPoints":[[243.18,520.78],[256.47,520.78],[313.23,520.78],[368.81,531.69],[368.81,614.68],[294.18,614.67],[294.18,610.18],[277.75,610.18],[262.42,618.04],[267.93,597.92],[295.03,571.18],[268.92,571.18],[268.92,572.9],[248.93,572.9],[248.93,571.18],[243.18,571.18]],"transform":"x_m=39.72+(pdf_x-243.18)/13.712; z_m=(618.04-pdf_y)/13.712","chosenScalePdfPointsPerMeter":13.712,"scaleControls":[{"id":"mezz-width","printedDimension":"30'-0 3/4\"","expectedMeters":9.1631,"pdfEnvelopePoints":125.63,"modeledMeters":9.162,"relativeErrorPercent":-0.01,"role":"horizontal envelope control"},{"id":"mezz-depth","printedDimension":"23'-3 1/4\"","expectedMeters":7.094,"pdfEnvelopePoints":97.26,"modeledMeters":7.0931,"relativeErrorPercent":-0.01,"role":"vertical envelope control"},{"id":"mezz-right-edge","printedDimension":"19'-10 1/4\"","expectedMeters":6.0516,"pdfEnvelopePoints":82.99,"modeledMeters":6.0524,"relativeErrorPercent":0.01,"role":"independent right-edge check"},{"id":"mezz-area","printedDimension":"572.84 sq ft","expectedSquareMeters":53.218,"modeledSquareMeters":53.414,"relativeErrorPercent":0.37,"role":"independent polygon area check"}],"assumptions":["The heavy black Magicplan perimeter was traced at its interior face to represent usable floor, not wall thickness.","The small outlined projection below the southwest notch is excluded because the gray floor fill does not continue into it and its function is not identified.","The source outline and dimensions are internally consistent at this trace scale, but Magicplan explicitly disclaims dimensional accuracy.","The outline remains displaced for review; there is no evidence registering it above the ground floor."]},"sourceVertexControls":{"source":"labeled-2024","transform":"x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05","toleranceMeters":0.002,"controls":[{"id":"rehearsal-nw","roomId":"rehearsal-room","vertexIndex":0,"pdf":[235.47,162.15],"model":[0.21,13.702]},{"id":"rehearsal-notch-top","roomId":"rehearsal-room","vertexIndex":4,"pdf":[407.25,221.36],"model":[4.023,12.387]},{"id":"rehearsal-notch-bottom","roomId":"rehearsal-room","vertexIndex":7,"pdf":[408.4,406.22],"model":[4.049,8.284]},{"id":"live-northwest","roomId":"studio-a-live","vertexIndex":0,"pdf":[522.12,168.07],"model":[6.573,13.57]},{"id":"live-northeast","roomId":"studio-a-live","vertexIndex":1,"pdf":[836.18,168.07],"model":[13.544,13.57]},{"id":"live-east-upper","roomId":"studio-a-live","vertexIndex":2,"pdf":[868.28,229.89],"model":[14.257,12.198]},{"id":"live-east-lower","roomId":"studio-a-live","vertexIndex":5,"pdf":[847.53,491.45],"model":[13.796,6.392]},{"id":"live-southeast","roomId":"studio-a-live","vertexIndex":7,"pdf":[833.79,665.04],"model":[13.492,2.539]},{"id":"live-south-02","roomId":"studio-a-live","vertexIndex":8,"pdf":[762.73,666.84],"model":[11.914,2.499]},{"id":"live-south-03","roomId":"studio-a-live","vertexIndex":9,"pdf":[590.95,630.98],"model":[8.101,3.295]},{"id":"live-southwest","roomId":"studio-a-live","vertexIndex":10,"pdf":[476.58,612.91],"model":[5.562,3.696]},{"id":"control-northwest","roomId":"studio-a-control","vertexIndex":0,"pdf":[917,168.07],"model":[15.339,13.57]},{"id":"control-northeast","roomId":"studio-a-control","vertexIndex":1,"pdf":[1149.87,168.07],"model":[20.508,13.57]},{"id":"control-east-upper","roomId":"studio-a-control","vertexIndex":2,"pdf":[1145.53,220.2],"model":[20.411,12.413]},{"id":"control-east-lower","roomId":"studio-a-control","vertexIndex":3,"pdf":[1136.49,442.94],"model":[20.211,7.469]},{"id":"control-southwest","roomId":"studio-a-control","vertexIndex":8,"pdf":[893.94,457.91],"model":[14.827,7.137]},{"id":"recording-northwest","roomId":"recording-room","vertexIndex":0,"pdf":[1218.84,153.83],"model":[22.039,13.886]},{"id":"recording-southeast","roomId":"recording-room","vertexIndex":8,"pdf":[1337.19,392.05],"model":[24.666,8.599]},{"id":"recording-southwest","roomId":"recording-room","vertexIndex":9,"pdf":[1177.85,392.05],"model":[21.129,8.599]},{"id":"podcast-northwest","roomId":"podcast-room","vertexIndex":0,"pdf":[1447.95,253.46],"model":[27.124,11.675]},{"id":"podcast-northeast","roomId":"podcast-room","vertexIndex":1,"pdf":[1606.71,253.46],"model":[30.648,11.675]},{"id":"podcast-southeast-notch","roomId":"podcast-room","vertexIndex":2,"pdf":[1606.71,402.17],"model":[30.648,8.374]},{"id":"office-northwest","roomId":"office-machine","vertexIndex":0,"pdf":[1177.85,409.18],"model":[21.129,8.218]},{"id":"office-northeast","roomId":"office-machine","vertexIndex":1,"pdf":[1349.62,409.18],"model":[24.942,8.218]},{"id":"office-southeast","roomId":"office-machine","vertexIndex":3,"pdf":[1357.36,591.58],"model":[25.113,4.169]},{"id":"bathrooms-northwest","roomId":"bathrooms","vertexIndex":3,"pdf":[1179.08,671.54],"model":[21.156,2.394]},{"id":"bathrooms-northeast","roomId":"bathrooms","vertexIndex":2,"pdf":[1430.23,671.54],"model":[26.731,2.394]}]},"limitations":["No site measurements, laser scan, survey control, or as-built verification were supplied. Interior geometry follows drawings; outdoor geometry and furnishings are visually estimated from photographs.","The primary labeled plan contains a small spread among printed dimension controls; 45.05 PDF points per meter is a median-like compromise and the residuals are recorded above. The three Lounge dimensions form a consistent local 46.53 points/m cluster, about 3.3% from the building transform, so the exact PDF vectors are retained without local rescaling.","Room polygons follow the readable interior faces at planning resolution. Acoustic wall build-ups, curves, columns, jambs, and tiny offsets are simplified where the sheet does not support a unique centerline.","Door and window widths marked traced are derived graphically from the plan scale, not from printed opening schedules.","Ground-floor non-studio modeled wall heights are estimated at 2.74 m because the supplied vertical sheets do not map those rooms; this is a visualization convention, not measured clearance.","A210/A240 are historical 2012 vertical evidence. Their mapped studio values describe local ceiling clouds/framing and may not match the current tall black truss/LED-wall condition visible in mixing.jpg.","The Magicplan mezzanine cannot be registered to the architectural ground floor from the supplied documents. It is displaced east as a separate review object and must not be interpreted as stacked or field-verified.","Magicplan reports 4,185.57 sq ft ground living area and 697.35 sq ft second-floor area, but its disclaimer and disconnected geometry make those figures cross-checks, not calibration targets.","Native video confirms the connected outdoor patio, turf gym and sauna deck. Their dimensions are estimated; the outdoor corridor is shown separately because its indoor-plan registration is unverified."],"areaComparisons":{"architecturalShellGrossPlanDerivedSquareMeters":496.17,"architecturalShellGrossPlanDerivedSquareFeet":5340.73,"magicplanGroundLivingSquareFeet":4185.57,"magicplanGroundLivingSquareMeters":388.85,"differenceExplanation":"gross rectangular shell versus Magicplan living-area accounting; bases are not equivalent","roomPolygonSumGeneratedByValidation":true},"historicalControls":[{"overlayId":"trc-current-visual-layout-2026-09-05","reason":"These controls describe replaced 2024 room geometry. They remain provenance but are not active validation controls for the current visual-layout overlay.","scaleControls":[{"id":"check-27ft11","source":"labeled-2024","printedDimension":"27'-11\"","expectedMeters":8.509,"pdfEndpoints":[[1444.4,751.29],[1829.45,751.29]],"pdfDistancePoints":385.05,"impliedPointsPerMeter":45.252,"modeledMetersAtChosenScale":8.5472,"relativeErrorPercent":0.45,"role":"independent horizontal check"},{"id":"check-lounge-19ft6","source":"labeled-2024","printedDimension":"19'-6\"","expectedMeters":5.9436,"pdfEndpoints":[[1558.775,153.832],[1835.379,153.832]],"pdfDistancePoints":276.604,"impliedPointsPerMeter":46.538,"modeledMetersAtChosenScale":6.1399,"relativeErrorPercent":3.3,"role":"regional printed-dimension conflict; confirms the wider Lounge north-wall endpoints but does not reset the building scale"}],"sourceVertexControls":{"source":"labeled-2024","transform":"x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05","toleranceMeters":0.002,"controls":[{"id":"lounge-northwest","roomId":"bar-lounge","vertexIndex":0,"pdf":[1558.775,153.832],"model":[29.584,13.886]},{"id":"lounge-northeast","roomId":"bar-lounge","vertexIndex":1,"pdf":[1835.379,153.832],"model":[35.724,13.886]},{"id":"lounge-southeast","roomId":"bar-lounge","vertexIndex":2,"pdf":[1835.379,403.253],"model":[35.724,8.35]},{"id":"lounge-southwest","roomId":"bar-lounge","vertexIndex":3,"pdf":[1612.057,403.253],"model":[30.767,8.35]},{"id":"lounge-recess-inner","roomId":"bar-lounge","vertexIndex":4,"pdf":[1612.057,248.106],"model":[30.767,11.794]},{"id":"lounge-recess-west","roomId":"bar-lounge","vertexIndex":5,"pdf":[1558.775,248.106],"model":[29.584,11.794]}],"requestedRoomIdsWithoutControls":["kitchen","main-circulation"]}}],"baselineDocument":{"path":"architecture.json","modelId":"trc-1660-9th-plan-derived-v1","schemaVersion":"1.0.0","geometryState":"2024 plan-derived architectural baseline","preservationPolicy":"The baseline document remains immutable; this overlay is a qualified current visual-layout hypothesis."},"appliedOverlay":{"id":"trc-current-visual-layout-2026-09-05","name":"Qualified current Lounge, Kitchen, circulation and Rehearsal access layout","status":"plan-derived and photo-qualified; not verified on site","purpose":"current-state walkthrough visualization, not construction, clearance or life-safety planning","sources":[{"id":"master-2025","use":"printed current Lounge and Kitchen dimensions and current room topology","limitations":"Magicplan explicitly disclaims dimensional accuracy"},{"id":"labeled-2024","use":"registered north, east and south ground-shell faces, retained west circulation path, and vector-traced Rehearsal door jambs","limitations":"historical room partitions are not assumed current"},{"id":"lobby-spatial-audit-2026-09-05","path":"../../captures/trc-2026-09-05/lobby-spatial-audit/README.md","use":"current two-window, door, curtain, stair, Kitchen/circulation and ceiling-topology qualification","limitations":"photographs and videos establish topology and visual character, not measurements"},{"id":"rehearsal-route-review-2026-09-05","path":"rehearsal-route-review/source-proof.json","use":"direct PDF-vector extraction of the Rehearsal southwest primary door, horizontal iso-booth portal, and booth inner-face footprint; identification of open door-leaf vertices incorrectly used as room bounds","limitations":"door and booth geometry are graphically traced from the 2024 drawing; opening heights, sliding-leaf position and current site condition are not measured"},{"id":"navigation-v7-recording-iso-source-proof","path":"../evidence/navigation-v7/source-proof.json","use":"direct PDF-vector distinction between the Recording ISO vertical west doorway and the open diagonal door leaf previously modeled as a wall","limitations":"room and jamb geometry are graphically traced from the 2024 drawing; opening height and current site condition are unverified"}],"limitations":["No site measurement, scan registration or as-built survey was supplied.","All numeric plan coordinates are plan-derived; current visual evidence is not used as perspective scale.","Lounge height 3.7 m is an existing visual-model inference, not a clearance measurement.","The current curtain opening, western wall stop, stair curve and wall thickness are not measured.","Kitchen east-west limits retain the qualified 2024 planning extents because no stronger current width source is available.","Magicplan reports two upstairs areas; only the 572.84 sq ft main Mezzanine has an identified footprint. The remaining 124.51 sq ft has no identified shape, room use or photo coverage. It is not the small southwest projection.","No continuous ground-floor stair ascent or measured upper-floor elevation is established by the retained photos and videos.","Office/Machine Room and two legacy iso-room interiors lack confirmed current photo coverage; their furnishings must not be treated as a current inventory.","The Rehearsal southwest door width and position are graphically traced from drawing vectors; no printed width or opening height was found. Its 2.13 m visualization height is inherited from the baseline door convention, not measured.","The Rehearsal iso-booth footprint, horizontal north wall and rough opening are graphically traced from the labeled-2024 inner-face vectors. The source shows paired sliding leaves, but does not establish their current position; the walkthrough visualizes the passage open.","The Recording ISO west doorway and room envelope are graphically traced from labeled-2024 vectors. The former diagonal wall was the source drawing's open door leaf; current room use and door state remain unverified."],"coverageGaps":[{"id":"unlocated-second-upstairs-area","floorId":"mezzanine-review","reportedAreaSquareFeet":124.51,"shape":null,"status":"Unlocated second upstairs area; no geometry invented","source":"master-2025 floor total minus labeled main Mezzanine area"},{"id":"stair-registration","status":"Ground-to-mezzanine stair route and elevation unverified"},{"id":"outdoor-registration","status":"Indoor connection to the photo-confirmed exterior corridor unverified"}]}},"floors":[{"id":"ground","name":"Ground Floor","elevation":0,"height":2.74,"heightStatus":"2.74 m visualization default only; mapped A210/A240 room values are historical local conditions, not verified current clearances","placementStatus":"registered to primary ground-floor plan","footprint":[[0,0],[35.72,0],[35.72,13.89],[0,13.89]],"source":"labeled-2024"},{"id":"mezzanine-review","name":"Mezzanine (separate unregistered review)","elevation":null,"modelElevation":0.15,"height":null,"heightStatus":"unknown; no mapped section supplied","placementStatus":"alignment unverified; displaced 4 m east of ground shell for separate review","reviewOffset":[39.72,0],"footprint":[[39.72,7.093],[40.689,7.093],[44.829,7.093],[48.882,6.297],[48.882,0.245],[43.439,0.246],[43.439,0.573],[42.241,0.573],[41.123,0],[41.525,1.467],[43.501,3.417],[41.597,3.417],[41.597,3.292],[40.139,3.292],[40.139,3.417],[39.72,3.417]],"footprintStatus":"source-shaped inner-face trace from Magicplan; angled north edge and southwest notches retained; not registered or site-verified","source":"master-2025"},{"id":"exterior-corridor-review","name":"Connected Exterior Corridor (review)","elevation":null,"modelElevation":0,"footprint":[[60,0],[65.5,0],[65.5,30.5],[60,30.5]],"placementStatus":"connected local photo-review frame; relation to the building plan unknown","footprintStatus":"5.5 by 30.5 m aggregate corridor envelope assembled from source-confirmed adjacency; dimensions not site measured"}],"rooms":[{"id":"rehearsal-room","name":"Rehearsal Room","floorId":"ground","polygon":[[0.21,13.702],[4.023,13.702],[4.023,13.097],[3.577,12.651],[4.023,12.387],[5.155,11.203],[5.155,9.39],[4.049,8.284],[4.049,7.969],[5.155,6.891],[4.259,6.891],[0.236,6.891],[0.21,6.891]],"label":[2.55,10.45],"height":2.74,"heightStatus":"estimated; A210/A240 Tracking Room maps to Studio A Live Room, not this current Rehearsal Room","dimensionStatus":"plan-vector correction: open door-leaf swing vertices removed from the room envelope; retained inner-face coordinates remain registered to labeled-2024 and are not site-verified","source":"labeled-2024 PDF vector inspection, rehearsal-route-review"},{"id":"rehearsal-iso","name":"Rehearsal Room Iso Booth","floorId":"ground","polygon":[[2.208213,6.89101],[4.048901,6.89101],[4.048901,6.128746],[5.048679,6.128746],[5.048679,3.620444],[3.000888,3.902997],[2.752548,3.957286],[2.534244,4.072733],[2.35499,4.239914],[2.224625,4.449651],[2.152986,4.692764],[1.818246,6.128746],[2.208213,6.128746]],"label":[3.45,4.9],"height":2.74,"heightStatus":"estimated; A240 F-1 Iso Room maps to Studio A Iso Room, not this booth","dimensionStatus":"labeled-2024 PDF inner-face vectors graphically traced; southwest cubic sampled into the visual polygon; source envelope is not site-measured or confirmed current","source":"labeled-2024 PDF vectors, rehearsal-route-review"},{"id":"electrical-room","name":"Electrical Room","floorId":"ground","polygon":[[5.58,6.74],[6.22,6.74],[6.62,5.85],[6.58,4.72],[6.11,3.61],[5.58,3.23]],"label":[5.98,5.35],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived, curved wall approximated by segmented polygon","source":"labeled-2024","appearanceStatus":"Current use and contents unverified; legacy room footprint retained"},{"id":"studio-a-live","name":"Studio A Live Room","floorId":"ground","polygon":[[6.573,13.57],[13.544,13.57],[14.257,12.198],[14.088,8.57],[13.962,6.97],[13.796,6.392],[13.812,2.592],[13.492,2.539],[11.914,2.499],[8.101,3.295],[5.562,3.696],[5.562,6.838],[6.175,6.838],[6.499,7.809],[5.962,8.136],[6.488,9.72],[5.933,10.041],[6.496,11.612],[5.955,11.928]],"label":[9.05,10.55],"height":2.77,"heightStatus":"historical plan-derived local ceiling cloud; A240 (2012) Tracking Room 9'-1\"; current clearance unknown","maxHeight":3,"maxHeightStatus":"historical plan-derived A240 (2012) 9'-10\" local high condition; current photo shows a taller truss condition that cannot be measured","dimensionStatus":"plan-derived exact principal inner-face vectors; not site-verified","source":"labeled-2024 + a111-2012 + a240-2012 + mixing-photo"},{"id":"studio-a-control","name":"Mixing Room","floorId":"ground","polygon":[[15.339,13.57],[20.508,13.57],[20.411,12.413],[20.211,7.469],[20.052,7.469],[19.938,6.108],[19.521,6.19],[18.598,6.408],[14.827,7.137],[14.684,7.043],[14.204,8.194],[14.254,8.674],[14.528,12.135],[14.666,12.551]],"label":[17.5,10.62],"height":2.94,"heightStatus":"historical plan-derived A210 (2012) C-8 local ceiling cloud 9'-7 3/4\"; current clearance unknown","maxHeight":3.31,"maxHeightStatus":"historical plan-derived A210 (2012) C-8 framing 10'-10 3/8\"; not a current whole-room survey","dimensionStatus":"plan-derived exact principal inner-face vectors; not site-verified","source":"labeled-2024 + a111-2012 + a210-2012 + mixing-photo"},{"id":"studio-a-iso","name":"Mic Closet (provisional mapping)","floorId":"ground","polygon":[[13.02,2.36],[17.7,2.36],[17.7,5.05],[16.92,5.12],[17.19,5.72],[14.17,6.36],[13.02,6.86]],"label":[15.25,4.55],"height":2.34,"heightStatus":"plan-derived A240 F-1 Iso Room 7'-8\"","dimensionStatus":"plan-derived, not site-verified","source":"labeled-2024 + a111-2012 + a240-2012","appearanceStatus":"Current contents unverified; plan-based room identity is provisional"},{"id":"recording-room","name":"Recording Room","floorId":"ground","polygon":[[22.039,13.886],[26.075,13.886],[26.195,13.254],[27.007,13.254],[26.338,12.533],[26.569,11.638],[26.901,9.884],[26.901,8.598],[24.666,8.599],[21.129,8.599],[21.182,9.794]],"label":[24,10.65],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived principal inner-face vectors; not site-verified","source":"labeled-2024"},{"id":"recording-iso","name":"Recording Room Iso Booth","floorId":"ground","polygon":[[27.336027,13.265239],[29.20242,13.475472],[29.20242,12.056848],[27.336027,12.056848],[27.336027,12.161154],[27.151498,12.161154],[27.151498,12.255849],[27.007059,12.255849],[27.007059,13.202664],[27.151476,13.202642],[27.151476,13.265239]],"label":[28.15,12.72],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"labeled-2024 PDF inner-face vectors graphically traced; open door leaf removed from the room envelope; not site-measured or confirmed current","source":"labeled-2024 PDF vectors, navigation-v7 source proof","appearanceStatus":"Current use and contents unverified; corrected 2024 source-vector envelope retained"},{"id":"podcast-room","name":"Podcast Room","floorId":"ground","polygon":[[27.124,11.675],[30.648,11.675],[30.648,8.374],[29.347,8.374],[29.347,7.64],[27.638,7.64],[27.638,8.257],[27.124,8.257]],"label":[28.84,9.95],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived exact principal inner-face vectors; not site-verified","source":"labeled-2024"},{"id":"office-machine","name":"Office / Machine Room","floorId":"ground","polygon":[[21.129,8.218],[24.942,8.218],[25.113,7.06],[25.113,4.169],[21.129,4.352]],"label":[23.2,6.15],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived exact principal inner-face vectors; not site-verified","source":"labeled-2024","appearanceStatus":"Current appearance unverified; architectural shell only"},{"id":"bar-lounge","name":"Lounge","floorId":"ground","polygon":[[31.08215,13.886],[35.724,13.886],[35.724,5.2246],[31.08215,5.2246]],"label":[33.403075,9.5553],"height":3.7,"heightStatus":"photo-inferred existing visual-model height; unverified and not a clearance measurement","dimensionStatus":"qualified current visual-layout envelope: 2025 printed 4.64185 m by 8.6614 m dimensions registered to the 2024 north/east shell; not site-verified","source":"master-2025 + labeled-2024 shell registration + lobby-spatial-audit-2026-09-05"},{"id":"kitchen","name":"Kitchen","floorId":"ground","polygon":[[28.45,0.212],[35.62,0.212],[35.62,4.0347],[28.45,4.0347]],"label":[32.035,2.12335],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"qualified current visual-layout envelope: 2025 printed 3.8227 m depth anchored to the south shell; east-west limits retain qualified 2024 planning extents; not site-verified","source":"master-2025 depth + labeled-2024 shell and east-west planning extents + lobby-spatial-audit-2026-09-05"},{"id":"bathrooms","name":"Bathrooms","floorId":"ground","polygon":[[21.156,0.212],[26.731,0.212],[26.731,2.394],[21.156,2.394]],"label":[24.1,1.35],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived exact envelope vectors; fixture-level detail simplified","source":"labeled-2024"},{"id":"locker-hallway","name":"Locker Hallway","floorId":"ground","polygon":[[0.22,0.22],[21.18,0.22],[21.18,2.18],[17.65,2.18],[17.65,2.35],[13,2.35],[12.35,2.58],[10.2,2.58],[5.3,1.72],[0.22,1.72]],"label":[8,0.75],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"plan-derived circulation zone, not site-verified","source":"labeled-2024"},{"id":"main-circulation","name":"Main Circulation / Stair","floorId":"ground","polygon":[[17.9,2.46],[21.05,2.46],[21.05,4.1],[26.9,4.1],[26.9,7.3],[30.75,7.3],[30.75,5.2246],[35.55,5.2246],[35.55,4.0347],[28.3,4.0347],[28.3,2.45],[27.1,2.45],[27.1,0.2],[21.05,0.2],[21.05,2.2],[17.9,2.2]],"label":[28.2,5.8],"height":2.74,"heightStatus":"estimated; no mapped section","dimensionStatus":"qualified current visual-layout circulation: 2024 west route retained and east route limited to the 1.1899 m plan-derived band between current Lounge and Kitchen envelopes; not site-verified","source":"labeled-2024 west circulation path + master-2025 Lounge/Kitchen depths + lobby-spatial-audit-2026-09-05"},{"id":"mezzanine-review","name":"Mezzanine Review Footprint","floorId":"mezzanine-review","polygon":[[39.72,7.093],[40.689,7.093],[44.829,7.093],[48.882,6.297],[48.882,0.245],[43.439,0.246],[43.439,0.573],[42.241,0.573],[41.123,0],[41.525,1.467],[43.501,3.417],[41.597,3.417],[41.597,3.292],[40.139,3.292],[40.139,3.417],[39.72,3.417]],"label":[45.2,4.5],"height":null,"heightStatus":"unknown; no walls or unsupported wall height generated","dimensionStatus":"Magicplan source-shaped inner-face trace; alignment unverified and not site-verified","source":"master-2025"},{"id":"outdoor-gym-review","name":"Outdoor Gym Review","floorId":"exterior-corridor-review","polygon":[[60,10.5],[64.6,10.5],[64.6,24.5],[60,24.5]],"label":[62.3,17.5],"height":null,"visualWallHeight":3.55,"perimeterFinishes":{"west":"brick-red","east":"black-block","south":"partial-cedar-screen-with-passage","north":"open-turf-deck-transition"},"source":"native-exterior-2026","adjacentRoomIds":["patio-review","sauna-review"],"camera":{"position":[62.05,11.55,1.62],"target":[62.45,22.5,1.3],"lens":22},"dimensionStatus":"photo-estimated from standard rack, sauna, door, and seating scale; not measured","sourceEvidence":["visual-references/outdoor-gym-DSC00100.JPG","visual-references/outdoor-gym-detail-DSC00120.JPG","/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00098.JPG through DSC00120.JPG","/Users/gregspero/trc-beta/public/events/rooms/gym.jpg","/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/Workout Area.HEIC","/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"],"heightStatus":"open sky; visual wall heights inferred","registrationStatus":"patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"},{"id":"patio-review","name":"Patio Review","floorId":"exterior-corridor-review","polygon":[[60,0],[64.5,0],[64.5,10.5],[60,10.5]],"label":[62.25,5.25],"height":null,"visualWallHeight":3.35,"perimeterFinishes":{"west":"brick-red","east":"black-block","south":"open-review-edge","north":"open-patio-gym-transition"},"source":"native-exterior-2026","adjacentRoomIds":["outdoor-gym-review"],"camera":{"position":[63.5,0.35,1.6],"target":[63.1,5.1,1.12],"lens":18},"dimensionStatus":"photo-estimated from standard rack, sauna, door, and seating scale; not measured","sourceEvidence":["/Users/gregspero/trc-beta/public/events/rooms/patio.jpg","facility exterior photo sequence for shared brick, black-block, shade, and festoon-light vocabulary","/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"],"heightStatus":"open sky; visual wall heights inferred","registrationStatus":"patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"},{"id":"sauna-review","name":"Sauna and Cold Plunge Review","floorId":"exterior-corridor-review","polygon":[[60,24.5],[65.5,24.5],[65.5,30.5],[60,30.5]],"label":[62.75,27.5],"height":null,"visualWallHeight":3.3,"perimeterFinishes":{"west":"brick-red","east":"black-block","south":"open-turf-deck-transition","north":"unverified"},"source":"native-exterior-2026","adjacentRoomIds":["outdoor-gym-review"],"camera":{"position":[60.38,24.88,1.62],"target":[63,27.75,1.12],"lens":25},"dimensionStatus":"photo-estimated from standard rack, sauna, door, and seating scale; not measured","sourceEvidence":["/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00085.JPG through DSC00097.JPG","/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00124.JPG through DSC00129.JPG","/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/Workout Area.HEIC","/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"],"heightStatus":"open sky; visual wall heights inferred","registrationStatus":"patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"}],"walls":[{"id":"outer-south","floorId":"ground","start":[0,0],"end":[35.72,0],"thickness":0.21,"height":2.74,"dimensionStatus":"plan-derived shell","source":"labeled-2024","openings":[{"offset":29.66,"width":0.84,"height":1.35,"sill":0.9,"type":"window","dimensionStatus":"graphically traced","source":"labeled-2024"},{"offset":32.1,"width":0.95,"height":2.13,"sill":0,"type":"door","dimensionStatus":"graphically traced","source":"labeled-2024"}]},{"id":"outer-north","floorId":"ground","start":[35.72,13.89],"end":[0,13.89],"thickness":0.21,"height":2.74,"dimensionStatus":"plan-derived shell","source":"labeled-2024","openings":[]},{"id":"outer-west","floorId":"ground","start":[0,0],"end":[0,13.89],"thickness":0.21,"height":2.74,"dimensionStatus":"plan-derived shell","source":"labeled-2024","openings":[{"offset":4.34,"width":1.27,"height":2.13,"sill":0,"type":"door","dimensionStatus":"graphically traced","source":"labeled-2024"}]},{"id":"outer-east","floorId":"ground","start":[35.724,13.886],"end":[35.724,0.212],"thickness":0.21,"height":2.74,"dimensionStatus":"plan-derived shell; height estimated","source":"labeled-2024 + published-lounge-photo","openings":[{"offset":0.75,"width":1.62,"height":1.45,"sill":0.78,"type":"window","dimensionStatus":"two-window count photo-confirmed; width, sill and offset visually inferred within legacy plan footprint","source":"trc-beta/public/events/rooms/lounge.jpg + DSC00140.JPG"},{"offset":3.35,"width":1.7,"height":1.45,"sill":0.78,"type":"window","dimensionStatus":"two-window count photo-confirmed; width, sill and offset visually inferred within legacy plan footprint","source":"trc-beta/public/events/rooms/lounge.jpg + DSC00140.JPG"},{"offset":8.5,"width":1.06,"height":2.13,"sill":0,"type":"door","dimensionStatus":"graphically traced","source":"labeled-2024"}]},{"id":"rehearsal-east-01","floorId":"ground","start":[4.023,13.702],"end":[4.023,13.097],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-02","floorId":"ground","start":[4.023,13.097],"end":[3.577,12.651],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-03","floorId":"ground","start":[3.577,12.651],"end":[4.023,12.387],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-04","floorId":"ground","start":[4.023,12.387],"end":[5.155,11.203],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-05","floorId":"ground","start":[5.155,11.203],"end":[5.155,9.39],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-06","floorId":"ground","start":[5.155,9.39],"end":[4.049,8.284],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-07","floorId":"ground","start":[4.049,8.284],"end":[4.049,7.969],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-east-08","floorId":"ground","start":[4.049,7.969],"end":[5.155,6.891],"thickness":0.18,"height":2.77,"dimensionStatus":"exact plan-vector endpoints; height estimated","source":"labeled-2024","openings":[]},{"id":"rehearsal-south","floorId":"ground","start":[0.210255,6.89101],"end":[5.154606,6.89101],"thickness":0.16,"height":2.74,"dimensionStatus":"PDF-vector inner face with corrected southwest primary opening and aligned iso-booth portal; the printed 2'-10\" east closet door is on a separate vertical return and is not projected onto this wall","source":"labeled-2024 PDF vector inspection, rehearsal-route-review","openings":[{"offset":0.025661,"width":0.946837,"height":2.13,"sill":0,"type":"door","connects":["rehearsal-room","locker-hallway"],"dimensionStatus":"southwest primary door jambs vector-traced at PDF x=236.628 and 279.283; width and position are graphical, while height is the unmeasured baseline visualization convention","source":"labeled-2024 PDF vectors","adjacencyStatus":"topological route via the source-drawn, unlabeled west-side circulation toward Locker Hallway; Locker Hallway is not directly adjacent at this jamb"},{"offset":1.997958,"width":1.840688,"height":2.13,"sill":0,"type":"open","connects":["rehearsal-room","rehearsal-iso"],"dimensionStatus":"clear throat graphically traced between PDF inner faces x=325.480 and 408.403; height is the unmeasured baseline visualization convention","source":"labeled-2024 PDF vectors","adjacencyStatus":"paired horizontal sliding-leaf vectors identify the booth route; shown open for walkthrough because current leaf position is unknown"}]},{"id":"rehearsal-iso-west","floorId":"ground","start":[1.818246,6.128746],"end":[2.152986,4.692764],"thickness":0.117137,"height":2.74,"dimensionStatus":"PDF-vector inner face: straight northwest booth segment; replaces the segment that incorrectly began beside the southwest Rehearsal door","source":"labeled-2024 PDF drawing 708, rehearsal-route-review","openings":[]},{"id":"rehearsal-iso-south","floorId":"ground","start":[2.152986,4.692764],"end":[2.224625,4.449651],"thickness":0.117137,"height":2.74,"dimensionStatus":"first sampled segment of the labeled-2024 booth southwest cubic; graphical, not site-measured","source":"labeled-2024 PDF drawing 712, rehearsal-route-review","openings":[]},{"id":"rehearsal-iso-east","floorId":"ground","start":[3.000888,3.902997],"end":[5.048679,3.620444],"thickness":0.117137,"height":2.74,"dimensionStatus":"PDF-vector inner face: southeast booth segment; graphical, not site-measured","source":"labeled-2024 PDF drawing 704, rehearsal-route-review","openings":[]},{"id":"rehearsal-iso-north","floorId":"ground","start":[1.818246,6.128746],"end":[5.048679,6.128746],"thickness":0.117137,"height":2.74,"dimensionStatus":"horizontal booth north inner face graphically traced at PDF y=503.310; replaces the unsupported diagonal approximation","source":"labeled-2024 PDF vectors, rehearsal-route-review","openings":[{"offset":0.389967,"width":1.840688,"height":2.13,"sill":0,"type":"open","connects":["rehearsal-iso","rehearsal-room"],"dimensionStatus":"rough opening graphically traced between PDF inner faces x=325.480 and 408.403; height is unmeasured","source":"labeled-2024 PDF vectors","adjacencyStatus":"horizontal booth portal; paired sliding-leaf vectors are source-visible, but the current leaf position is unknown"}]},{"id":"electrical-west","floorId":"ground","start":[5.56,6.74],"end":[5.56,3.24],"thickness":0.16,"height":2.74,"dimensionStatus":"plan-derived","source":"labeled-2024","openings":[]},{"id":"electrical-east","floorId":"ground","start":[6.17,6.74],"end":[6.58,3.62],"thickness":0.16,"height":2.74,"dimensionStatus":"plan-derived segmented curve","source":"labeled-2024","openings":[{"offset":2,"width":0.92,"height":2.13,"sill":0,"type":"door","connects":["electrical-room","studio-a-live"],"dimensionStatus":"graphically traced","source":"labeled-2024"}]},{"id":"live-control-west-01","floorId":"ground","start":[14.666,12.551],"end":[14.528,12.135],"thickness":0.24,"height":3,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"live-control-west-02","floorId":"ground","start":[14.528,12.135],"end":[14.254,8.674],"thickness":0.24,"height":3,"dimensionStatus":"exact plan-vector line; historical modeled height; glazing supported by A111 and current mixing photo","source":"labeled-2024 + a111-2012 + mixing-photo","openings":[{"offset":0.3,"width":2.85,"height":1.45,"sill":0.72,"type":"window","dimensionStatus":"wall placement plan-derived; width, sill and height estimated from prominent control-room glazing in photo","source":"a111-2012 + mixing-photo"}]},{"id":"live-control-west-03","floorId":"ground","start":[14.204,8.194],"end":[18.598,6.408],"thickness":0.24,"height":3,"dimensionStatus":"exact principal plan-vector endpoints; sound-lock simplification","source":"labeled-2024 + a111-2012","openings":[{"offset":0.55,"width":0.91,"height":2.13,"sill":0,"type":"door","connects":["studio-a-control","main-circulation"],"dimensionStatus":"graphically traced sound-lock access","source":"labeled-2024 + a111-2012"}]},{"id":"control-north","floorId":"ground","start":[15.339,13.57],"end":[20.508,13.57],"thickness":0.24,"height":3.31,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"control-east","floorId":"ground","start":[20.508,13.57],"end":[20.211,7.469],"thickness":0.24,"height":3.31,"dimensionStatus":"principal plan-vector endpoints; minor jogs simplified","source":"labeled-2024 + a111-2012","openings":[{"offset":4.6,"width":0.75,"height":0.7,"sill":1.1,"type":"window","dimensionStatus":"graphically traced studio glazing","source":"labeled-2024 + a111-2012"}]},{"id":"control-south","floorId":"ground","start":[20.052,7.469],"end":[18.598,6.408],"thickness":0.24,"height":3.31,"dimensionStatus":"exact principal plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"live-south","floorId":"ground","start":[5.562,3.696],"end":[8.101,3.295],"thickness":0.22,"height":2.77,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[{"offset":1.22,"width":1.17,"height":2.13,"sill":0,"type":"door","connects":["studio-a-live","locker-hallway"],"dimensionStatus":"opening width printed 3'-10\"; position graphically traced clear of electrical wall","source":"labeled-2024"}]},{"id":"live-south-02","floorId":"ground","start":[8.101,3.295],"end":[11.914,2.499],"thickness":0.22,"height":2.77,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"live-south-03","floorId":"ground","start":[11.914,2.499],"end":[13.492,2.539],"thickness":0.22,"height":2.77,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"live-southeast","floorId":"ground","start":[13.492,2.539],"end":[13.796,6.392],"thickness":0.22,"height":2.77,"dimensionStatus":"exact principal plan-vector endpoints","source":"labeled-2024 + a111-2012","openings":[]},{"id":"studio-iso-northwest","floorId":"ground","start":[13.02,6.86],"end":[17.18,5.72],"thickness":0.22,"height":2.34,"dimensionStatus":"plan-derived angled acoustic wall","source":"labeled-2024 + a111-2012","openings":[{"offset":2.72,"width":0.91,"height":2.13,"sill":0,"type":"door","connects":["studio-a-iso","studio-a-live"],"dimensionStatus":"graphically traced","source":"labeled-2024 + a111-2012"}]},{"id":"studio-iso-east","floorId":"ground","start":[17.7,5.05],"end":[17.7,2.36],"thickness":0.22,"height":2.34,"dimensionStatus":"plan-derived","source":"labeled-2024 + a111-2012","openings":[{"offset":0.32,"width":0.91,"height":2.13,"sill":0,"type":"door","connects":["studio-a-iso","locker-hallway"],"dimensionStatus":"graphically traced sound-lock access","source":"labeled-2024 + a111-2012"}]},{"id":"studio-iso-south","floorId":"ground","start":[17.7,2.36],"end":[13.02,2.36],"thickness":0.22,"height":2.34,"dimensionStatus":"plan-derived","source":"labeled-2024 + a111-2012","openings":[]},{"id":"recording-west","floorId":"ground","start":[22.039,13.886],"end":[21.182,9.794],"thickness":0.18,"height":2.74,"dimensionStatus":"exact principal plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"recording-west-02","floorId":"ground","start":[21.182,9.794],"end":[21.129,8.599],"thickness":0.18,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"recording-south","floorId":"ground","start":[21.129,8.599],"end":[24.666,8.599],"thickness":0.18,"height":2.74,"dimensionStatus":"exact plan-vector segment; distinct from office north wall","source":"labeled-2024","openings":[]},{"id":"recording-entry","floorId":"ground","start":[24.666,8.599],"end":[26.901,8.598],"thickness":0.18,"height":2.74,"dimensionStatus":"exact plan-vector endpoints; access opening graphically traced","source":"labeled-2024","openings":[{"offset":0.55,"width":0.92,"height":2.13,"sill":0,"type":"door","connects":["recording-room","main-circulation"],"dimensionStatus":"graphically traced; no printed width","source":"labeled-2024"}]},{"id":"recording-east","floorId":"ground","start":[26.901,9.884],"end":[26.901,8.598],"thickness":0.18,"height":2.74,"dimensionStatus":"exact plan-vector endpoints; stops below iso-room access","source":"labeled-2024","openings":[]},{"id":"recording-iso-south","floorId":"ground","start":[27.217,11.938],"end":[29.321,11.938],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"recording-iso-east","floorId":"ground","start":[29.321,13.583],"end":[29.321,11.938],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"recording-iso-west","floorId":"ground","start":[27.007059,13.254007],"end":[27.007059,12.255849],"thickness":0.117137,"height":2.74,"dimensionStatus":"vertical west inner face graphically traced from labeled-2024; replaces the diagonal open door leaf incorrectly treated as a wall","source":"labeled-2024 PDF drawings 799, 801 and 805; navigation-v7 source proof","openings":[{"offset":0.051343,"width":0.946815,"height":2.13,"sill":0,"type":"door","connects":["recording-room","recording-iso"],"dimensionStatus":"jambs graphically traced at PDF x=1442.668, y=184.630 and 227.284; height is the unmeasured baseline visualization convention","source":"labeled-2024 PDF vectors, navigation-v7 source proof"}]},{"id":"podcast-north","floorId":"ground","start":[27.124,11.675],"end":[30.648,11.675],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"podcast-east","floorId":"ground","start":[30.648,11.675],"end":[30.648,8.374],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[{"offset":2.25,"width":0.85,"height":2.13,"sill":0,"type":"door","connects":["podcast-room","main-circulation"],"dimensionStatus":"graphically traced; no printed width","source":"labeled-2024"}]},{"id":"podcast-west","floorId":"ground","start":[27.124,11.675],"end":[27.124,8.374],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"podcast-south","floorId":"ground","start":[27.124,8.374],"end":[28.362,8.374],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector western segment","source":"labeled-2024","openings":[]},{"id":"podcast-south-east","floorId":"ground","start":[29.347,8.374],"end":[30.648,8.374],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector eastern segment; center gap retained","source":"labeled-2024","openings":[]},{"id":"office-north","floorId":"ground","start":[21.129,8.218],"end":[24.942,8.218],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector segment; no opening invented on north wall","source":"labeled-2024","openings":[]},{"id":"office-east","floorId":"ground","start":[24.942,8.218],"end":[25.113,7.06],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector angled segment","source":"labeled-2024","openings":[]},{"id":"office-east-02","floorId":"ground","start":[25.113,7.06],"end":[25.113,4.169],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector segment; access opening graphically traced","source":"labeled-2024","openings":[{"offset":1,"width":0.9,"height":2.13,"sill":0,"type":"door","connects":["office-machine","main-circulation"],"dimensionStatus":"graphically traced; no printed width","source":"labeled-2024"}]},{"id":"office-south","floorId":"ground","start":[25.113,4.169],"end":[21.129,4.352],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"office-west","floorId":"ground","start":[21.129,4.352],"end":[21.129,8.218],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[{"offset":0.45,"width":0.9,"height":2.13,"sill":0,"type":"door","connects":["office-machine","main-circulation"],"dimensionStatus":"graphically traced; secondary access","source":"labeled-2024"}]},{"id":"bar-west","floorId":"ground","start":[29.584,13.886],"end":[29.584,11.794],"thickness":0.16,"height":2.74,"dimensionStatus":"exact upper west plan-vector segment at the Lounge inner face","source":"labeled-2024","openings":[]},{"id":"bar-west-recess","floorId":"ground","start":[29.584,11.794],"end":[30.767,11.794],"thickness":0.16,"height":2.74,"dimensionStatus":"exact northwest recess plan-vector segment; lower shared partition remains represented by podcast-east","source":"labeled-2024","openings":[]},{"id":"bar-south","floorId":"ground","start":[31.08215,5.2246],"end":[35.724,5.2246],"thickness":0.16,"height":3.7,"dimensionStatus":"current visual-layout portal boundary at the Lounge south envelope; no physical jamb or clearance claim","source":"master-2025 registered envelope + lobby-spatial-audit-2026-09-05","openings":[{"offset":0,"width":4.64185,"height":3.7,"sill":0,"type":"open","connects":["bar-lounge","main-circulation"],"dimensionStatus":"full-width current visual portal hypothesis; equals the Lounge envelope width and is not a measured jamb opening","source":"master-2025 topology + March/June 2026 curtain imagery"}]},{"id":"bathrooms-north","floorId":"ground","start":[21.156,2.394],"end":[26.731,2.394],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints and door gaps","source":"labeled-2024","openings":[{"offset":1.63,"width":0.947,"height":2.13,"sill":0,"type":"door","connects":["bathrooms","main-circulation"],"dimensionStatus":"exact vector gap; height estimated","source":"labeled-2024"},{"offset":2.892,"width":0.947,"height":2.13,"sill":0,"type":"door","connects":["bathrooms","main-circulation"],"dimensionStatus":"exact vector gap; height estimated","source":"labeled-2024"}]},{"id":"bathrooms-west","floorId":"ground","start":[21.156,0.212],"end":[21.156,2.394],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"bathrooms-east","floorId":"ground","start":[26.731,2.394],"end":[26.731,0.212],"thickness":0.16,"height":2.74,"dimensionStatus":"exact plan-vector endpoints","source":"labeled-2024","openings":[]},{"id":"bathroom-divider-01","floorId":"ground","start":[23.969,0.212],"end":[23.969,2.394],"thickness":0.1,"height":2.74,"dimensionStatus":"exact plan-vector location","source":"labeled-2024","openings":[]},{"id":"bathroom-divider-02","floorId":"ground","start":[25.34,0.1],"end":[25.34,2.34],"thickness":0.1,"height":2.74,"dimensionStatus":"plan-derived","source":"labeled-2024","openings":[]},{"id":"kitchen-north-01","floorId":"ground","start":[28.28,4.7],"end":[31.9,4.7],"thickness":0.12,"height":1.1,"dimensionStatus":"plan-derived counter/partial partition","source":"labeled-2024","openings":[{"offset":1.55,"width":0.85,"height":1.1,"sill":0,"type":"open","connects":["kitchen","main-circulation"],"dimensionStatus":"graphically traced","source":"labeled-2024"}]},{"id":"circulation-portal","floorId":"ground","start":[17.9,2.3],"end":[21.05,2.3],"thickness":0.1,"height":2.74,"dimensionStatus":"topological open boundary between traced circulation zones; no physical wall asserted","source":"labeled-2024","openings":[{"offset":0,"width":3.15,"height":2.74,"sill":0,"type":"open","connects":["locker-hallway","main-circulation"],"dimensionStatus":"walkable open plan boundary","source":"labeled-2024"}]},{"id":"kitchen-west","floorId":"ground","start":[28.28,4.7],"end":[28.28,2.55],"thickness":0.12,"height":1.1,"dimensionStatus":"plan-derived counter/partial partition","source":"labeled-2024","openings":[]},{"id":"stair-west","floorId":"ground","start":[27.05,7.52],"end":[27.05,4.55],"thickness":0.16,"height":1.1,"dimensionStatus":"plan-derived stair guard/edge","source":"labeled-2024 + floorplan-2024","openings":[]},{"id":"stair-south","floorId":"ground","start":[27.05,4.55],"end":[30,4.55],"thickness":0.16,"height":1.1,"dimensionStatus":"plan-derived stair guard/edge","source":"labeled-2024 + floorplan-2024","openings":[]},{"id":"lounge-west-current-visual","floorId":"ground","start":[31.08215,13.886],"end":[31.08215,7.52],"thickness":0.16,"height":3.7,"openings":[],"dimensionStatus":"photo-qualified north Lounge wall with south stair approach left open; x follows the registered Lounge envelope and the 7.52 m stop reuses the historical stair-zone bound only as a visual-layout limit, not a measured current endpoint","heightStatus":"photo-inferred existing visual-model height; unverified and not a clearance measurement","source":"March/June 2026 left seating wall and curved-bulkhead imagery + registered current Lounge envelope"},{"id":"rehearsal-iso-curve-02","floorId":"ground","start":[2.224625,4.449651],"end":[2.35499,4.239914],"thickness":0.117137,"height":2.74,"openings":[],"dimensionStatus":"sampled labeled-2024 booth southwest cubic; graphical, not site-measured","source":"labeled-2024 PDF drawing 712, rehearsal-route-review"},{"id":"rehearsal-iso-curve-03","floorId":"ground","start":[2.35499,4.239914],"end":[2.534244,4.072733],"thickness":0.117137,"height":2.74,"openings":[],"dimensionStatus":"sampled labeled-2024 booth southwest cubic; graphical, not site-measured","source":"labeled-2024 PDF drawing 712, rehearsal-route-review"},{"id":"rehearsal-iso-curve-04","floorId":"ground","start":[2.534244,4.072733],"end":[2.752548,3.957286],"thickness":0.117137,"height":2.74,"openings":[],"dimensionStatus":"sampled labeled-2024 booth southwest cubic; graphical, not site-measured","source":"labeled-2024 PDF drawing 712, rehearsal-route-review"},{"id":"rehearsal-iso-curve-05","floorId":"ground","start":[2.752548,3.957286],"end":[3.000888,3.902997],"thickness":0.117137,"height":2.74,"openings":[],"dimensionStatus":"sampled labeled-2024 booth southwest cubic joined to the southeast inner face; graphical, not site-measured","source":"labeled-2024 PDF drawings 712 and 704, rehearsal-route-review"},{"id":"rehearsal-iso-east-return","floorId":"ground","start":[5.048679,3.620444],"end":[5.048679,6.128746],"thickness":0.117137,"height":2.74,"openings":[],"dimensionStatus":"PDF-vector inner face: vertical east booth return; graphical, not site-measured","source":"labeled-2024 PDF drawing 700, rehearsal-route-review"}],"revision":"de83140e5cda4e46"}
+{
+  "schemaVersion": "1.0.0",
+  "modelId": "trc-1660-9th-plan-derived-v1",
+  "coordinateSystem": {
+    "units": "meters",
+    "planAxes": "x,z",
+    "verticalAxis": "y",
+    "handedness": "right-handed",
+    "origin": "inside southwest corner of the ground-floor architectural shell",
+    "xDirection": "east",
+    "zDirection": "north"
+  },
+  "metadata": {
+    "site": "The Recording Club, 1660 9th Street, Santa Monica, CA 90404",
+    "modelPurpose": [
+      "immersive walkthrough",
+      "layout planning"
+    ],
+    "measurementStatus": "plan-derived; not verified on site",
+    "sourceCoordinateFrame": {
+      "source": "labeled-2024",
+      "pdfUnits": "points",
+      "originPdf": [
+        226,
+        779.41
+      ],
+      "transform": "x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05",
+      "chosenScalePdfPointsPerMeter": 45.05
+    },
+    "exportTransforms": {
+      "jsonToBlender": "[x_blender,y_blender,z_blender]=[x_json,z_json,y_json]",
+      "blenderToGltfYUp": "[x_gltf,y_gltf,z_gltf]=[x_blender,z_blender,-y_blender]",
+      "jsonToGltfYUp": "[x_gltf,y_gltf,z_gltf]=[x_json,y_json,-z_json]",
+      "viewerConvention": "JSON plan north remains +z; exported GLB and Three.js normalized JSON use negative Z for plan north"
+    },
+    "heightEvidencePolicy": {
+      "modeledWallHeightMeaning": "editable visualization height only unless the matching room heightStatus says plan-derived from a mapped vertical drawing",
+      "historicalVerticalSources": "A210/A240 are dated 2012 and document local ceiling clouds/framing, not a current whole-building clearance survey",
+      "currentPhotoConflict": "Current mixing-room imagery shows a tall black truss/LED-wall condition above the historical local cloud values; its maximum height is visually evident but not measurable from the supplied photo",
+      "planningRestriction": "Do not use modeled height, door head, sill, or glazing-height estimates for equipment clearance, rigging, life-safety, or construction without site measurement"
+    },
+    "sources": [
+      {
+        "id": "labeled-2024",
+        "path": "/tmp/trc-floor-audit.RVJxIT/labeled-2024.pdf",
+        "title": "1660 9th St (Santa Monica, CA) - Leasing Package, Ground Floor",
+        "date": "2024 label in supplied filename; drawing issue date not visible",
+        "use": "primary coherent ground-floor shell, room boundaries, door openings, circulation, and room labels",
+        "limitations": "plan dimensions are treated as drawing evidence only; no field survey supplied"
+      },
+      {
+        "id": "floorplan-2024",
+        "path": "/tmp/trc-floor-audit.RVJxIT/floorplan-2024.pdf",
+        "title": "Boto Design Architects First Floor Plan",
+        "date": "legacy sheet; supplied as floorplan-2024",
+        "use": "raster cross-check for the rectangular shell, circulation, stair, angled studio construction, and door locations",
+        "limitations": "scanned/marked-up legacy plan; not used as the sole dimensional source"
+      },
+      {
+        "id": "a111-2012",
+        "path": "/tmp/trc-floor-audit.RVJxIT/a111-2012.pdf",
+        "title": "A111 New Construction / Reflected Ceiling Plan",
+        "date": "2012",
+        "use": "studio-suite angled acoustic walls, sound locks, openings, and 2012 design cross-check",
+        "limitations": "covers the studio suite, not the entire tenant shell"
+      },
+      {
+        "id": "a210-2012",
+        "path": "/tmp/trc-floor-audit.RVJxIT/a210-2012.pdf",
+        "title": "A210 Sections - New",
+        "date": "2012",
+        "use": "studio ceiling-height evidence",
+        "limitations": "section heights only apply where the matching section/room can be identified"
+      },
+      {
+        "id": "a240-2012",
+        "path": "/tmp/trc-floor-audit.RVJxIT/a240-2012.pdf",
+        "title": "A240 Interior Elevations",
+        "date": "2012",
+        "use": "tracking/control/iso room local vertical-dimension cross-check",
+        "limitations": "not a whole-building ceiling survey"
+      },
+      {
+        "id": "master-2025",
+        "path": "/tmp/trc-floor-audit.RVJxIT/master-2025.pdf",
+        "title": "TRC Floor Plan (Magicplan)",
+        "date": "2025 supplied filename",
+        "use": "current room-program names and mezzanine existence/rough extents only",
+        "limitations": "the sheet shows disconnected/distorted room geometry and explicitly disclaims dimensional accuracy; it is not the ground-floor geometry baseline"
+      },
+      {
+        "id": "mixing-photo",
+        "path": "/Users/gregspero/image-blaster/trc-model/viewer/public/references/mixing.jpg",
+        "title": "Current mixing/control-room reference photo",
+        "date": "current project reference; capture date not supplied",
+        "use": "confirms the dominant live/control glazing and visually tall truss/LED-wall condition",
+        "limitations": "single perspective image; supports existence and character only, not metric dimensions or current clearance"
+      },
+      {
+        "id": "lounge-photo",
+        "path": "/Users/gregspero/image-blaster/trc-model/viewer/public/references/lounge.jpg",
+        "title": "Current lounge reference photo",
+        "date": "current project reference; capture date not supplied",
+        "use": "confirms prominent black-framed external lounge glazing",
+        "limitations": "single perspective image; supports existence and character only, not metric width, sill, height, or current clearance"
+      },
+      {
+        "id": "native-exterior-2026",
+        "path": "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/AUDIT.md",
+        "title": "Native Photos workout-area photograph and continuous patio/gym video",
+        "date": "2025-02-09 and 2026-08-01; supplemented by March 2026 facility photographs",
+        "use": "outdoor corridor finishes, equipment and connected turf-to-sauna-deck sequence",
+        "limitations": "dimensions and layout placement inferred; relation to indoor plan unverified"
+      }
+    ],
+    "scaleControls": [
+      {
+        "id": "control-24ft4",
+        "source": "labeled-2024",
+        "printedDimension": "24'-4\"",
+        "expectedMeters": 7.4168,
+        "pdfEndpoints": [
+          [
+            510.12,
+            459.14
+          ],
+          [
+            843.99,
+            459.14
+          ]
+        ],
+        "pdfDistancePoints": 333.87,
+        "impliedPointsPerMeter": 45.015,
+        "modeledMetersAtChosenScale": 7.4111,
+        "relativeErrorPercent": -0.08,
+        "role": "primary horizontal scale control"
+      },
+      {
+        "id": "control-23ft8",
+        "source": "labeled-2024",
+        "printedDimension": "23'-8\"",
+        "expectedMeters": 7.2136,
+        "pdfEndpoints": [
+          [
+            1107.07,
+            174
+          ],
+          [
+            1107.07,
+            498.32
+          ]
+        ],
+        "pdfDistancePoints": 324.32,
+        "impliedPointsPerMeter": 44.957,
+        "modeledMetersAtChosenScale": 7.1991,
+        "relativeErrorPercent": -0.2,
+        "role": "independent vertical scale control"
+      },
+      {
+        "id": "check-35ft",
+        "source": "labeled-2024",
+        "printedDimension": "35'-0\"",
+        "expectedMeters": 10.668,
+        "pdfEndpoints": [
+          [
+            808.85,
+            174
+          ],
+          [
+            808.85,
+            659.61
+          ]
+        ],
+        "pdfDistancePoints": 485.61,
+        "impliedPointsPerMeter": 45.511,
+        "modeledMetersAtChosenScale": 10.7794,
+        "relativeErrorPercent": 1.04,
+        "role": "long vertical check"
+      },
+      {
+        "id": "conflict-66ft7",
+        "source": "labeled-2024",
+        "printedDimension": "66'-7\"",
+        "expectedMeters": 20.2946,
+        "pdfEndpoints": [
+          [
+            231.5,
+            728.3
+          ],
+          [
+            1165.99,
+            728.3
+          ]
+        ],
+        "pdfDistancePoints": 934.49,
+        "impliedPointsPerMeter": 46.045,
+        "modeledMetersAtChosenScale": 20.7434,
+        "relativeErrorPercent": 2.21,
+        "role": "flagged conflict; retained for audit, not used to set scale"
+      }
+    ],
+    "mezzanineReviewTrace": {
+      "source": "master-2025",
+      "traceSurface": "inner face of the visible Magicplan mezzanine perimeter",
+      "sourcePolygonPdfPoints": [
+        [
+          243.18,
+          520.78
+        ],
+        [
+          256.47,
+          520.78
+        ],
+        [
+          313.23,
+          520.78
+        ],
+        [
+          368.81,
+          531.69
+        ],
+        [
+          368.81,
+          614.68
+        ],
+        [
+          294.18,
+          614.67
+        ],
+        [
+          294.18,
+          610.18
+        ],
+        [
+          277.75,
+          610.18
+        ],
+        [
+          262.42,
+          618.04
+        ],
+        [
+          267.93,
+          597.92
+        ],
+        [
+          295.03,
+          571.18
+        ],
+        [
+          268.92,
+          571.18
+        ],
+        [
+          268.92,
+          572.9
+        ],
+        [
+          248.93,
+          572.9
+        ],
+        [
+          248.93,
+          571.18
+        ],
+        [
+          243.18,
+          571.18
+        ]
+      ],
+      "transform": "x_m=39.72+(pdf_x-243.18)/13.712; z_m=(618.04-pdf_y)/13.712",
+      "chosenScalePdfPointsPerMeter": 13.712,
+      "scaleControls": [
+        {
+          "id": "mezz-width",
+          "printedDimension": "30'-0 3/4\"",
+          "expectedMeters": 9.1631,
+          "pdfEnvelopePoints": 125.63,
+          "modeledMeters": 9.162,
+          "relativeErrorPercent": -0.01,
+          "role": "horizontal envelope control"
+        },
+        {
+          "id": "mezz-depth",
+          "printedDimension": "23'-3 1/4\"",
+          "expectedMeters": 7.094,
+          "pdfEnvelopePoints": 97.26,
+          "modeledMeters": 7.0931,
+          "relativeErrorPercent": -0.01,
+          "role": "vertical envelope control"
+        },
+        {
+          "id": "mezz-right-edge",
+          "printedDimension": "19'-10 1/4\"",
+          "expectedMeters": 6.0516,
+          "pdfEnvelopePoints": 82.99,
+          "modeledMeters": 6.0524,
+          "relativeErrorPercent": 0.01,
+          "role": "independent right-edge check"
+        },
+        {
+          "id": "mezz-area",
+          "printedDimension": "572.84 sq ft",
+          "expectedSquareMeters": 53.218,
+          "modeledSquareMeters": 53.414,
+          "relativeErrorPercent": 0.37,
+          "role": "independent polygon area check"
+        }
+      ],
+      "assumptions": [
+        "The heavy black Magicplan perimeter was traced at its interior face to represent usable floor, not wall thickness.",
+        "The small outlined projection below the southwest notch is excluded because the gray floor fill does not continue into it and its function is not identified.",
+        "The source outline and dimensions are internally consistent at this trace scale, but Magicplan explicitly disclaims dimensional accuracy.",
+        "The outline remains displaced for review; there is no evidence registering it above the ground floor."
+      ]
+    },
+    "sourceVertexControls": {
+      "source": "labeled-2024",
+      "transform": "x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05",
+      "toleranceMeters": 0.002,
+      "controls": [
+        {
+          "id": "rehearsal-nw",
+          "roomId": "rehearsal-room",
+          "vertexIndex": 0,
+          "pdf": [
+            235.47,
+            162.15
+          ],
+          "model": [
+            0.21,
+            13.702
+          ]
+        },
+        {
+          "id": "rehearsal-notch-top",
+          "roomId": "rehearsal-room",
+          "vertexIndex": 4,
+          "pdf": [
+            407.25,
+            221.36
+          ],
+          "model": [
+            4.023,
+            12.387
+          ]
+        },
+        {
+          "id": "rehearsal-notch-bottom",
+          "roomId": "rehearsal-room",
+          "vertexIndex": 7,
+          "pdf": [
+            408.4,
+            406.22
+          ],
+          "model": [
+            4.049,
+            8.284
+          ]
+        },
+        {
+          "id": "live-northwest",
+          "roomId": "studio-a-live",
+          "vertexIndex": 0,
+          "pdf": [
+            522.12,
+            168.07
+          ],
+          "model": [
+            6.573,
+            13.57
+          ]
+        },
+        {
+          "id": "live-northeast",
+          "roomId": "studio-a-live",
+          "vertexIndex": 1,
+          "pdf": [
+            836.18,
+            168.07
+          ],
+          "model": [
+            13.544,
+            13.57
+          ]
+        },
+        {
+          "id": "live-east-upper",
+          "roomId": "studio-a-live",
+          "vertexIndex": 2,
+          "pdf": [
+            868.28,
+            229.89
+          ],
+          "model": [
+            14.257,
+            12.198
+          ]
+        },
+        {
+          "id": "live-east-lower",
+          "roomId": "studio-a-live",
+          "vertexIndex": 5,
+          "pdf": [
+            847.53,
+            491.45
+          ],
+          "model": [
+            13.796,
+            6.392
+          ]
+        },
+        {
+          "id": "live-southeast",
+          "roomId": "studio-a-live",
+          "vertexIndex": 7,
+          "pdf": [
+            833.79,
+            665.04
+          ],
+          "model": [
+            13.492,
+            2.539
+          ]
+        },
+        {
+          "id": "live-south-02",
+          "roomId": "studio-a-live",
+          "vertexIndex": 8,
+          "pdf": [
+            762.73,
+            666.84
+          ],
+          "model": [
+            11.914,
+            2.499
+          ]
+        },
+        {
+          "id": "live-south-03",
+          "roomId": "studio-a-live",
+          "vertexIndex": 9,
+          "pdf": [
+            590.95,
+            630.98
+          ],
+          "model": [
+            8.101,
+            3.295
+          ]
+        },
+        {
+          "id": "live-southwest",
+          "roomId": "studio-a-live",
+          "vertexIndex": 10,
+          "pdf": [
+            476.58,
+            612.91
+          ],
+          "model": [
+            5.562,
+            3.696
+          ]
+        },
+        {
+          "id": "control-northwest",
+          "roomId": "studio-a-control",
+          "vertexIndex": 0,
+          "pdf": [
+            917,
+            168.07
+          ],
+          "model": [
+            15.339,
+            13.57
+          ]
+        },
+        {
+          "id": "control-northeast",
+          "roomId": "studio-a-control",
+          "vertexIndex": 1,
+          "pdf": [
+            1149.87,
+            168.07
+          ],
+          "model": [
+            20.508,
+            13.57
+          ]
+        },
+        {
+          "id": "control-east-upper",
+          "roomId": "studio-a-control",
+          "vertexIndex": 2,
+          "pdf": [
+            1145.53,
+            220.2
+          ],
+          "model": [
+            20.411,
+            12.413
+          ]
+        },
+        {
+          "id": "control-east-lower",
+          "roomId": "studio-a-control",
+          "vertexIndex": 3,
+          "pdf": [
+            1136.49,
+            442.94
+          ],
+          "model": [
+            20.211,
+            7.469
+          ]
+        },
+        {
+          "id": "control-southwest",
+          "roomId": "studio-a-control",
+          "vertexIndex": 8,
+          "pdf": [
+            893.94,
+            457.91
+          ],
+          "model": [
+            14.827,
+            7.137
+          ]
+        },
+        {
+          "id": "recording-northwest",
+          "roomId": "recording-room",
+          "vertexIndex": 0,
+          "pdf": [
+            1218.84,
+            153.83
+          ],
+          "model": [
+            22.039,
+            13.886
+          ]
+        },
+        {
+          "id": "recording-southeast",
+          "roomId": "recording-room",
+          "vertexIndex": 8,
+          "pdf": [
+            1337.19,
+            392.05
+          ],
+          "model": [
+            24.666,
+            8.599
+          ]
+        },
+        {
+          "id": "recording-southwest",
+          "roomId": "recording-room",
+          "vertexIndex": 9,
+          "pdf": [
+            1177.85,
+            392.05
+          ],
+          "model": [
+            21.129,
+            8.599
+          ]
+        },
+        {
+          "id": "podcast-northwest",
+          "roomId": "podcast-room",
+          "vertexIndex": 0,
+          "pdf": [
+            1447.95,
+            253.46
+          ],
+          "model": [
+            27.124,
+            11.675
+          ]
+        },
+        {
+          "id": "podcast-northeast",
+          "roomId": "podcast-room",
+          "vertexIndex": 1,
+          "pdf": [
+            1606.71,
+            253.46
+          ],
+          "model": [
+            30.648,
+            11.675
+          ]
+        },
+        {
+          "id": "podcast-southeast-notch",
+          "roomId": "podcast-room",
+          "vertexIndex": 2,
+          "pdf": [
+            1606.71,
+            402.17
+          ],
+          "model": [
+            30.648,
+            8.374
+          ]
+        },
+        {
+          "id": "office-northwest",
+          "roomId": "office-machine",
+          "vertexIndex": 0,
+          "pdf": [
+            1177.85,
+            409.18
+          ],
+          "model": [
+            21.129,
+            8.218
+          ]
+        },
+        {
+          "id": "office-northeast",
+          "roomId": "office-machine",
+          "vertexIndex": 1,
+          "pdf": [
+            1349.62,
+            409.18
+          ],
+          "model": [
+            24.942,
+            8.218
+          ]
+        },
+        {
+          "id": "office-southeast",
+          "roomId": "office-machine",
+          "vertexIndex": 3,
+          "pdf": [
+            1357.36,
+            591.58
+          ],
+          "model": [
+            25.113,
+            4.169
+          ]
+        },
+        {
+          "id": "bathrooms-northwest",
+          "roomId": "bathrooms",
+          "vertexIndex": 3,
+          "pdf": [
+            1179.08,
+            671.54
+          ],
+          "model": [
+            21.156,
+            2.394
+          ]
+        },
+        {
+          "id": "bathrooms-northeast",
+          "roomId": "bathrooms",
+          "vertexIndex": 2,
+          "pdf": [
+            1430.23,
+            671.54
+          ],
+          "model": [
+            26.731,
+            2.394
+          ]
+        }
+      ]
+    },
+    "limitations": [
+      "No site measurements, laser scan, survey control, or as-built verification were supplied. Interior geometry follows drawings; outdoor geometry and furnishings are visually estimated from photographs.",
+      "The primary labeled plan contains a small spread among printed dimension controls; 45.05 PDF points per meter is a median-like compromise and the residuals are recorded above. The three Lounge dimensions form a consistent local 46.53 points/m cluster, about 3.3% from the building transform, so the exact PDF vectors are retained without local rescaling.",
+      "Room polygons follow the readable interior faces at planning resolution. Acoustic wall build-ups, curves, columns, jambs, and tiny offsets are simplified where the sheet does not support a unique centerline.",
+      "Door and window widths marked traced are derived graphically from the plan scale, not from printed opening schedules.",
+      "Ground-floor non-studio modeled wall heights are estimated at 2.74 m because the supplied vertical sheets do not map those rooms; this is a visualization convention, not measured clearance.",
+      "A210/A240 are historical 2012 vertical evidence. Their mapped studio values describe local ceiling clouds/framing and may not match the current tall black truss/LED-wall condition visible in mixing.jpg.",
+      "The Magicplan mezzanine cannot be registered to the architectural ground floor from the supplied documents. It is displaced east as a separate review object and must not be interpreted as stacked or field-verified.",
+      "Magicplan reports 4,185.57 sq ft ground living area and 697.35 sq ft second-floor area, but its disclaimer and disconnected geometry make those figures cross-checks, not calibration targets.",
+      "Native video confirms the connected outdoor patio, turf gym and sauna deck. Their dimensions are estimated; the outdoor corridor is shown separately because its indoor-plan registration is unverified."
+    ],
+    "areaComparisons": {
+      "architecturalShellGrossPlanDerivedSquareMeters": 496.17,
+      "architecturalShellGrossPlanDerivedSquareFeet": 5340.73,
+      "magicplanGroundLivingSquareFeet": 4185.57,
+      "magicplanGroundLivingSquareMeters": 388.85,
+      "differenceExplanation": "gross rectangular shell versus Magicplan living-area accounting; bases are not equivalent",
+      "roomPolygonSumGeneratedByValidation": true
+    },
+    "historicalControls": [
+      {
+        "overlayId": "trc-current-visual-layout-2026-09-05",
+        "reason": "These controls describe replaced 2024 room geometry. They remain provenance but are not active validation controls for the current visual-layout overlay.",
+        "scaleControls": [
+          {
+            "id": "check-27ft11",
+            "source": "labeled-2024",
+            "printedDimension": "27'-11\"",
+            "expectedMeters": 8.509,
+            "pdfEndpoints": [
+              [
+                1444.4,
+                751.29
+              ],
+              [
+                1829.45,
+                751.29
+              ]
+            ],
+            "pdfDistancePoints": 385.05,
+            "impliedPointsPerMeter": 45.252,
+            "modeledMetersAtChosenScale": 8.5472,
+            "relativeErrorPercent": 0.45,
+            "role": "independent horizontal check"
+          },
+          {
+            "id": "check-lounge-19ft6",
+            "source": "labeled-2024",
+            "printedDimension": "19'-6\"",
+            "expectedMeters": 5.9436,
+            "pdfEndpoints": [
+              [
+                1558.775,
+                153.832
+              ],
+              [
+                1835.379,
+                153.832
+              ]
+            ],
+            "pdfDistancePoints": 276.604,
+            "impliedPointsPerMeter": 46.538,
+            "modeledMetersAtChosenScale": 6.1399,
+            "relativeErrorPercent": 3.3,
+            "role": "regional printed-dimension conflict; confirms the wider Lounge north-wall endpoints but does not reset the building scale"
+          }
+        ],
+        "sourceVertexControls": {
+          "source": "labeled-2024",
+          "transform": "x_m=(pdf_x-226.0)/45.05; z_m=(779.41-pdf_y)/45.05",
+          "toleranceMeters": 0.002,
+          "controls": [
+            {
+              "id": "lounge-northwest",
+              "roomId": "bar-lounge",
+              "vertexIndex": 0,
+              "pdf": [
+                1558.775,
+                153.832
+              ],
+              "model": [
+                29.584,
+                13.886
+              ]
+            },
+            {
+              "id": "lounge-northeast",
+              "roomId": "bar-lounge",
+              "vertexIndex": 1,
+              "pdf": [
+                1835.379,
+                153.832
+              ],
+              "model": [
+                35.724,
+                13.886
+              ]
+            },
+            {
+              "id": "lounge-southeast",
+              "roomId": "bar-lounge",
+              "vertexIndex": 2,
+              "pdf": [
+                1835.379,
+                403.253
+              ],
+              "model": [
+                35.724,
+                8.35
+              ]
+            },
+            {
+              "id": "lounge-southwest",
+              "roomId": "bar-lounge",
+              "vertexIndex": 3,
+              "pdf": [
+                1612.057,
+                403.253
+              ],
+              "model": [
+                30.767,
+                8.35
+              ]
+            },
+            {
+              "id": "lounge-recess-inner",
+              "roomId": "bar-lounge",
+              "vertexIndex": 4,
+              "pdf": [
+                1612.057,
+                248.106
+              ],
+              "model": [
+                30.767,
+                11.794
+              ]
+            },
+            {
+              "id": "lounge-recess-west",
+              "roomId": "bar-lounge",
+              "vertexIndex": 5,
+              "pdf": [
+                1558.775,
+                248.106
+              ],
+              "model": [
+                29.584,
+                11.794
+              ]
+            }
+          ],
+          "requestedRoomIdsWithoutControls": [
+            "kitchen",
+            "main-circulation"
+          ]
+        }
+      }
+    ],
+    "baselineDocument": {
+      "path": "architecture.json",
+      "modelId": "trc-1660-9th-plan-derived-v1",
+      "schemaVersion": "1.0.0",
+      "geometryState": "2024 plan-derived architectural baseline",
+      "preservationPolicy": "The baseline document remains immutable; this overlay is a qualified current visual-layout hypothesis."
+    },
+    "appliedOverlay": {
+      "id": "trc-current-visual-layout-2026-09-05",
+      "name": "Qualified current Lounge, Kitchen, circulation and Rehearsal access layout",
+      "status": "plan-derived and photo-qualified; not verified on site",
+      "purpose": "current-state walkthrough visualization, not construction, clearance or life-safety planning",
+      "sources": [
+        {
+          "id": "master-2025",
+          "use": "printed current Lounge and Kitchen dimensions and current room topology",
+          "limitations": "Magicplan explicitly disclaims dimensional accuracy"
+        },
+        {
+          "id": "labeled-2024",
+          "use": "registered north, east and south ground-shell faces, retained west circulation path, and vector-traced Rehearsal door jambs",
+          "limitations": "historical room partitions are not assumed current"
+        },
+        {
+          "id": "lobby-spatial-audit-2026-09-05",
+          "path": "../../captures/trc-2026-09-05/lobby-spatial-audit/README.md",
+          "use": "current two-window, door, curtain, stair, Kitchen/circulation and ceiling-topology qualification",
+          "limitations": "photographs and videos establish topology and visual character, not measurements"
+        },
+        {
+          "id": "rehearsal-route-review-2026-09-05",
+          "path": "rehearsal-route-review/source-proof.json",
+          "use": "direct PDF-vector extraction of the Rehearsal southwest primary door, horizontal iso-booth portal, and booth inner-face footprint; identification of open door-leaf vertices incorrectly used as room bounds",
+          "limitations": "door and booth geometry are graphically traced from the 2024 drawing; opening heights, sliding-leaf position and current site condition are not measured"
+        },
+        {
+          "id": "navigation-v7-recording-iso-source-proof",
+          "path": "../evidence/navigation-v7/source-proof.json",
+          "use": "direct PDF-vector distinction between the Recording ISO vertical west doorway and the open diagonal door leaf previously modeled as a wall",
+          "limitations": "room and jamb geometry are graphically traced from the 2024 drawing; opening height and current site condition are unverified"
+        }
+      ],
+      "limitations": [
+        "No site measurement, scan registration or as-built survey was supplied.",
+        "All numeric plan coordinates are plan-derived; current visual evidence is not used as perspective scale.",
+        "Lounge height 3.7 m is an existing visual-model inference, not a clearance measurement.",
+        "The current curtain opening, western wall stop, stair curve and wall thickness are not measured.",
+        "Kitchen east-west limits retain the qualified 2024 planning extents because no stronger current width source is available.",
+        "Magicplan reports two upstairs areas; only the 572.84 sq ft main Mezzanine has an identified footprint. The remaining 124.51 sq ft has no identified shape, room use or photo coverage. It is not the small southwest projection.",
+        "No continuous ground-floor stair ascent or measured upper-floor elevation is established by the retained photos and videos.",
+        "Office/Machine Room and two legacy iso-room interiors lack confirmed current photo coverage; their furnishings must not be treated as a current inventory.",
+        "The Rehearsal southwest door width and position are graphically traced from drawing vectors; no printed width or opening height was found. Its 2.13 m visualization height is inherited from the baseline door convention, not measured.",
+        "The Rehearsal iso-booth footprint, horizontal north wall and rough opening are graphically traced from the labeled-2024 inner-face vectors. The source shows paired sliding leaves, but does not establish their current position; the walkthrough visualizes the passage open.",
+        "The Recording ISO west doorway and room envelope are graphically traced from labeled-2024 vectors. The former diagonal wall was the source drawing's open door leaf; current room use and door state remain unverified."
+      ],
+      "coverageGaps": [
+        {
+          "id": "unlocated-second-upstairs-area",
+          "floorId": "mezzanine-review",
+          "reportedAreaSquareFeet": 124.51,
+          "shape": null,
+          "status": "Unlocated second upstairs area; no geometry invented",
+          "source": "master-2025 floor total minus labeled main Mezzanine area"
+        },
+        {
+          "id": "stair-registration",
+          "status": "Ground-to-mezzanine stair route and elevation unverified"
+        },
+        {
+          "id": "outdoor-registration",
+          "status": "Indoor connection to the photo-confirmed exterior corridor unverified"
+        }
+      ]
+    },
+    "buildingCorrection": {
+      "version": "v15-building",
+      "baselineRevision": "de83140e5cda4e46",
+      "basis": "Source-grounded kitchen dimensions, permanent features and door topology; unrelated room envelopes retained",
+      "sourceEvidence": [
+        {
+          "file": "proposed-structural-corrections-v1.0.json",
+          "sha256": "9f7723866d657d3d858fb129aaca3574506c8aebf4794193c300d6ca06693244"
+        },
+        {
+          "file": "height-door-addendum-v1.0.json",
+          "sha256": "d33d99350f4d0e2ed8708005a116737925b2f68f39f8388e77bebbe8f7c3be96"
+        },
+        {
+          "file": "net-floor-polygons-v1.1.json",
+          "sha256": "5af05cb64d974ff5eb6f4d57433099795fc851be9a6db20cb9e2b1e8566b38fe"
+        }
+      ],
+      "accuracy": "Plan and photo estimates; current roof heights, entry-pocket limits and door swing remain unmeasured"
+    }
+  },
+  "floors": [
+    {
+      "id": "ground",
+      "name": "Ground Floor",
+      "elevation": 0,
+      "height": 2.74,
+      "heightStatus": "2.74 m visualization default only; mapped A210/A240 room values are historical local conditions, not verified current clearances",
+      "placementStatus": "registered to primary ground-floor plan",
+      "footprint": [
+        [
+          0,
+          0
+        ],
+        [
+          35.72,
+          0
+        ],
+        [
+          35.72,
+          13.89
+        ],
+        [
+          0,
+          13.89
+        ]
+      ],
+      "source": "labeled-2024"
+    },
+    {
+      "id": "mezzanine-review",
+      "name": "Mezzanine (separate unregistered review)",
+      "elevation": null,
+      "modelElevation": 0.15,
+      "height": null,
+      "heightStatus": "unknown; no mapped section supplied",
+      "placementStatus": "alignment unverified; displaced 4 m east of ground shell for separate review",
+      "reviewOffset": [
+        39.72,
+        0
+      ],
+      "footprint": [
+        [
+          39.72,
+          7.093
+        ],
+        [
+          40.689,
+          7.093
+        ],
+        [
+          44.829,
+          7.093
+        ],
+        [
+          48.882,
+          6.297
+        ],
+        [
+          48.882,
+          0.245
+        ],
+        [
+          43.439,
+          0.246
+        ],
+        [
+          43.439,
+          0.573
+        ],
+        [
+          42.241,
+          0.573
+        ],
+        [
+          41.123,
+          0
+        ],
+        [
+          41.525,
+          1.467
+        ],
+        [
+          43.501,
+          3.417
+        ],
+        [
+          41.597,
+          3.417
+        ],
+        [
+          41.597,
+          3.292
+        ],
+        [
+          40.139,
+          3.292
+        ],
+        [
+          40.139,
+          3.417
+        ],
+        [
+          39.72,
+          3.417
+        ]
+      ],
+      "footprintStatus": "source-shaped inner-face trace from Magicplan; angled north edge and southwest notches retained; not registered or site-verified",
+      "source": "master-2025"
+    },
+    {
+      "id": "exterior-corridor-review",
+      "name": "Connected Exterior Corridor (review)",
+      "elevation": null,
+      "modelElevation": 0,
+      "footprint": [
+        [
+          60,
+          0
+        ],
+        [
+          65.5,
+          0
+        ],
+        [
+          65.5,
+          30.5
+        ],
+        [
+          60,
+          30.5
+        ]
+      ],
+      "placementStatus": "connected local photo-review frame; relation to the building plan unknown",
+      "footprintStatus": "5.5 by 30.5 m aggregate corridor envelope assembled from source-confirmed adjacency; dimensions not site measured"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "rehearsal-room",
+      "name": "Rehearsal Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          0.21,
+          13.702
+        ],
+        [
+          4.023,
+          13.702
+        ],
+        [
+          4.023,
+          13.097
+        ],
+        [
+          3.577,
+          12.651
+        ],
+        [
+          4.023,
+          12.387
+        ],
+        [
+          5.155,
+          11.203
+        ],
+        [
+          5.155,
+          9.39
+        ],
+        [
+          4.049,
+          8.284
+        ],
+        [
+          4.049,
+          7.969
+        ],
+        [
+          5.155,
+          6.891
+        ],
+        [
+          4.259,
+          6.891
+        ],
+        [
+          0.236,
+          6.891
+        ],
+        [
+          0.21,
+          6.891
+        ]
+      ],
+      "label": [
+        2.55,
+        10.45
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; A210/A240 Tracking Room maps to Studio A Live Room, not this current Rehearsal Room",
+      "dimensionStatus": "plan-vector correction: open door-leaf swing vertices removed from the room envelope; retained inner-face coordinates remain registered to labeled-2024 and are not site-verified",
+      "source": "labeled-2024 PDF vector inspection, rehearsal-route-review"
+    },
+    {
+      "id": "rehearsal-iso",
+      "name": "Rehearsal Room Iso Booth",
+      "floorId": "ground",
+      "polygon": [
+        [
+          2.208213,
+          6.89101
+        ],
+        [
+          4.048901,
+          6.89101
+        ],
+        [
+          4.048901,
+          6.128746
+        ],
+        [
+          5.048679,
+          6.128746
+        ],
+        [
+          5.048679,
+          3.620444
+        ],
+        [
+          3.000888,
+          3.902997
+        ],
+        [
+          2.752548,
+          3.957286
+        ],
+        [
+          2.534244,
+          4.072733
+        ],
+        [
+          2.35499,
+          4.239914
+        ],
+        [
+          2.224625,
+          4.449651
+        ],
+        [
+          2.152986,
+          4.692764
+        ],
+        [
+          1.818246,
+          6.128746
+        ],
+        [
+          2.208213,
+          6.128746
+        ]
+      ],
+      "label": [
+        3.45,
+        4.9
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; A240 F-1 Iso Room maps to Studio A Iso Room, not this booth",
+      "dimensionStatus": "labeled-2024 PDF inner-face vectors graphically traced; southwest cubic sampled into the visual polygon; source envelope is not site-measured or confirmed current",
+      "source": "labeled-2024 PDF vectors, rehearsal-route-review"
+    },
+    {
+      "id": "electrical-room",
+      "name": "Electrical Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          5.58,
+          6.74
+        ],
+        [
+          6.22,
+          6.74
+        ],
+        [
+          6.62,
+          5.85
+        ],
+        [
+          6.58,
+          4.72
+        ],
+        [
+          6.11,
+          3.61
+        ],
+        [
+          5.58,
+          3.23
+        ]
+      ],
+      "label": [
+        5.98,
+        5.35
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived, curved wall approximated by segmented polygon",
+      "source": "labeled-2024",
+      "appearanceStatus": "Current use and contents unverified; legacy room footprint retained"
+    },
+    {
+      "id": "studio-a-live",
+      "name": "Studio A Live Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          6.573,
+          13.57
+        ],
+        [
+          13.544,
+          13.57
+        ],
+        [
+          14.257,
+          12.198
+        ],
+        [
+          14.088,
+          8.57
+        ],
+        [
+          13.962,
+          6.97
+        ],
+        [
+          13.796,
+          6.392
+        ],
+        [
+          13.812,
+          2.592
+        ],
+        [
+          13.492,
+          2.539
+        ],
+        [
+          11.914,
+          2.499
+        ],
+        [
+          8.101,
+          3.295
+        ],
+        [
+          5.562,
+          3.696
+        ],
+        [
+          5.562,
+          6.838
+        ],
+        [
+          6.175,
+          6.838
+        ],
+        [
+          6.499,
+          7.809
+        ],
+        [
+          5.962,
+          8.136
+        ],
+        [
+          6.488,
+          9.72
+        ],
+        [
+          5.933,
+          10.041
+        ],
+        [
+          6.496,
+          11.612
+        ],
+        [
+          5.955,
+          11.928
+        ]
+      ],
+      "label": [
+        9.05,
+        10.55
+      ],
+      "height": 2.77,
+      "heightStatus": "historical plan-derived local ceiling cloud; A240 (2012) Tracking Room 9'-1\"; current clearance unknown",
+      "maxHeight": 3,
+      "maxHeightStatus": "historical plan-derived A240 (2012) 9'-10\" local high condition; current photo shows a taller truss condition that cannot be measured",
+      "dimensionStatus": "plan-derived exact principal inner-face vectors; not site-verified",
+      "source": "labeled-2024 + a111-2012 + a240-2012 + mixing-photo",
+      "physicalSurfacePolygons": [
+        {
+          "exterior": [
+            [
+              13.544,
+              13.57
+            ],
+            [
+              14.257,
+              12.198
+            ],
+            [
+              14.088,
+              8.57
+            ],
+            [
+              13.962,
+              6.97
+            ],
+            [
+              13.796,
+              6.392
+            ],
+            [
+              13.829346529,
+              6.508110205
+            ],
+            [
+              13.02,
+              6.86
+            ],
+            [
+              13.02,
+              2.527035488
+            ],
+            [
+              11.914,
+              2.499
+            ],
+            [
+              8.101,
+              3.295
+            ],
+            [
+              6.109372472,
+              3.609550074
+            ],
+            [
+              6.11,
+              3.61
+            ],
+            [
+              6.58,
+              4.72
+            ],
+            [
+              6.62,
+              5.85
+            ],
+            [
+              6.22,
+              6.74
+            ],
+            [
+              5.58,
+              6.74
+            ],
+            [
+              5.58,
+              3.693157148
+            ],
+            [
+              5.889307581,
+              3.644306286
+            ],
+            [
+              5.562,
+              3.696
+            ],
+            [
+              5.562,
+              6.838
+            ],
+            [
+              6.175,
+              6.838
+            ],
+            [
+              6.499,
+              7.809
+            ],
+            [
+              5.962,
+              8.136
+            ],
+            [
+              6.488,
+              9.72
+            ],
+            [
+              5.933,
+              10.041
+            ],
+            [
+              6.496,
+              11.612
+            ],
+            [
+              5.955,
+              11.928
+            ],
+            [
+              6.573,
+              13.57
+            ],
+            [
+              13.544,
+              13.57
+            ]
+          ],
+          "holes": [],
+          "area": {
+            "squareMeters": 78.41933585,
+            "squareFeet": 844.0987
+          }
+        }
+      ],
+      "physicalSurfaceAreaMeters2": 78.41933585
+    },
+    {
+      "id": "studio-a-control",
+      "name": "Mixing Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          15.339,
+          13.57
+        ],
+        [
+          20.508,
+          13.57
+        ],
+        [
+          20.411,
+          12.413
+        ],
+        [
+          20.211,
+          7.469
+        ],
+        [
+          20.052,
+          7.469
+        ],
+        [
+          19.938,
+          6.108
+        ],
+        [
+          19.521,
+          6.19
+        ],
+        [
+          18.598,
+          6.408
+        ],
+        [
+          14.827,
+          7.137
+        ],
+        [
+          14.684,
+          7.043
+        ],
+        [
+          14.204,
+          8.194
+        ],
+        [
+          14.254,
+          8.674
+        ],
+        [
+          14.528,
+          12.135
+        ],
+        [
+          14.666,
+          12.551
+        ]
+      ],
+      "label": [
+        17.5,
+        10.62
+      ],
+      "height": 2.94,
+      "heightStatus": "historical plan-derived A210 (2012) C-8 local ceiling cloud 9'-7 3/4\"; current clearance unknown",
+      "maxHeight": 3.31,
+      "maxHeightStatus": "historical plan-derived A210 (2012) C-8 framing 10'-10 3/8\"; not a current whole-room survey",
+      "dimensionStatus": "plan-derived exact principal inner-face vectors; not site-verified",
+      "source": "labeled-2024 + a111-2012 + a210-2012 + mixing-photo"
+    },
+    {
+      "id": "studio-a-iso",
+      "name": "Mic Closet (provisional mapping)",
+      "floorId": "ground",
+      "polygon": [
+        [
+          13.02,
+          2.36
+        ],
+        [
+          17.7,
+          2.36
+        ],
+        [
+          17.7,
+          5.05
+        ],
+        [
+          16.92,
+          5.12
+        ],
+        [
+          17.19,
+          5.72
+        ],
+        [
+          14.17,
+          6.36
+        ],
+        [
+          13.02,
+          6.86
+        ]
+      ],
+      "label": [
+        15.25,
+        4.55
+      ],
+      "height": 2.34,
+      "heightStatus": "plan-derived A240 F-1 Iso Room 7'-8\"",
+      "dimensionStatus": "plan-derived, not site-verified",
+      "source": "labeled-2024 + a111-2012 + a240-2012",
+      "appearanceStatus": "Current contents unverified; plan-based room identity is provisional"
+    },
+    {
+      "id": "recording-room",
+      "name": "Recording Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          22.039,
+          13.886
+        ],
+        [
+          26.075,
+          13.886
+        ],
+        [
+          26.195,
+          13.254
+        ],
+        [
+          27.007,
+          13.254
+        ],
+        [
+          26.338,
+          12.533
+        ],
+        [
+          26.569,
+          11.638
+        ],
+        [
+          26.901,
+          9.884
+        ],
+        [
+          26.901,
+          8.598
+        ],
+        [
+          24.666,
+          8.599
+        ],
+        [
+          21.129,
+          8.599
+        ],
+        [
+          21.182,
+          9.794
+        ]
+      ],
+      "label": [
+        24,
+        10.65
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived principal inner-face vectors; not site-verified",
+      "source": "labeled-2024"
+    },
+    {
+      "id": "recording-iso",
+      "name": "Recording Room Iso Booth",
+      "floorId": "ground",
+      "polygon": [
+        [
+          27.336027,
+          13.265239
+        ],
+        [
+          29.20242,
+          13.475472
+        ],
+        [
+          29.20242,
+          12.056848
+        ],
+        [
+          27.336027,
+          12.056848
+        ],
+        [
+          27.336027,
+          12.161154
+        ],
+        [
+          27.151498,
+          12.161154
+        ],
+        [
+          27.151498,
+          12.255849
+        ],
+        [
+          27.007059,
+          12.255849
+        ],
+        [
+          27.007059,
+          13.202664
+        ],
+        [
+          27.151476,
+          13.202642
+        ],
+        [
+          27.151476,
+          13.265239
+        ]
+      ],
+      "label": [
+        28.15,
+        12.72
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "labeled-2024 PDF inner-face vectors graphically traced; open door leaf removed from the room envelope; not site-measured or confirmed current",
+      "source": "labeled-2024 PDF vectors, navigation-v7 source proof",
+      "appearanceStatus": "Current use and contents unverified; corrected 2024 source-vector envelope retained"
+    },
+    {
+      "id": "podcast-room",
+      "name": "Podcast Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          27.124,
+          11.675
+        ],
+        [
+          30.648,
+          11.675
+        ],
+        [
+          30.648,
+          8.374
+        ],
+        [
+          29.347,
+          8.374
+        ],
+        [
+          29.347,
+          7.64
+        ],
+        [
+          27.638,
+          7.64
+        ],
+        [
+          27.638,
+          8.257
+        ],
+        [
+          27.124,
+          8.257
+        ]
+      ],
+      "label": [
+        28.84,
+        9.95
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived exact principal inner-face vectors; not site-verified",
+      "source": "labeled-2024"
+    },
+    {
+      "id": "office-machine",
+      "name": "Office / Machine Room",
+      "floorId": "ground",
+      "polygon": [
+        [
+          21.129,
+          8.218
+        ],
+        [
+          24.942,
+          8.218
+        ],
+        [
+          25.113,
+          7.06
+        ],
+        [
+          25.113,
+          4.169
+        ],
+        [
+          21.129,
+          4.352
+        ]
+      ],
+      "label": [
+        23.2,
+        6.15
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived exact principal inner-face vectors; not site-verified",
+      "source": "labeled-2024",
+      "appearanceStatus": "Current appearance unverified; architectural shell only"
+    },
+    {
+      "id": "bar-lounge",
+      "name": "Lounge",
+      "floorId": "ground",
+      "polygon": [
+        [
+          31.08215,
+          13.886
+        ],
+        [
+          35.724,
+          13.886
+        ],
+        [
+          35.724,
+          4.15
+        ],
+        [
+          34.1,
+          4.15
+        ],
+        [
+          34.1,
+          5.2246
+        ],
+        [
+          31.08215,
+          5.2246
+        ]
+      ],
+      "label": [
+        33.403075,
+        9.5553
+      ],
+      "height": 3.7,
+      "heightStatus": "photo-inferred existing visual-model height; unverified and not a clearance measurement",
+      "dimensionStatus": "2025 main envelope with photo-estimated southeast entry pocket preserving traced exterior doorway; pocket is not a measured area",
+      "source": "master-2025 + labeled-2024 shell registration + lobby-spatial-audit-2026-09-05",
+      "physicalSurfacePolygons": [
+        {
+          "exterior": [
+            [
+              35.724,
+              13.886
+            ],
+            [
+              35.724,
+              4.15
+            ],
+            [
+              34.1,
+              4.15
+            ],
+            [
+              34.1,
+              5.2246
+            ],
+            [
+              31.08215,
+              5.2246
+            ],
+            [
+              31.08215,
+              13.886
+            ],
+            [
+              35.724,
+              13.886
+            ]
+          ],
+          "holes": [],
+          "area": {
+            "squareMeters": 41.95006999,
+            "squareFeet": 451.5468
+          }
+        }
+      ],
+      "physicalSurfaceAreaMeters2": 41.95006999
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "floorId": "ground",
+      "polygon": [
+        [
+          27.12,
+          0.212
+        ],
+        [
+          35.62,
+          0.212
+        ],
+        [
+          35.62,
+          4.0347
+        ],
+        [
+          27.12,
+          4.0347
+        ]
+      ],
+      "label": [
+        31.37,
+        2.12335
+      ],
+      "height": 4.18,
+      "heightStatus": "photo-estimated gable ridge; eaves 3.52 m; no surveyed clearance",
+      "dimensionStatus": "qualified current Kitchen envelope: south/east anchors retained; west extent reconciles the 2024 printed 27'-11\" width and 2025 printed 27'-10 1/4\" width; north-south depth remains the 2025 printed 12'-6 1/2\"; open-program boundary, not surveyed wall faces",
+      "source": "labeled-2024 printed width + master-2025 printed width/depth + current south/east shell anchors",
+      "ceilingProfile": {
+        "type": "gable",
+        "ridgeY": 2.05,
+        "ridgeHeight": 4.18,
+        "eaveHeight": 3.52
+      },
+      "physicalSurfacePolygons": [
+        {
+          "exterior": [
+            [
+              27.12,
+              4.0347
+            ],
+            [
+              35.62,
+              4.0347
+            ],
+            [
+              35.62,
+              0.212
+            ],
+            [
+              27.12,
+              0.212
+            ],
+            [
+              27.12,
+              4.0347
+            ]
+          ],
+          "holes": [],
+          "area": {
+            "squareMeters": 32.49295,
+            "squareFeet": 349.7512
+          }
+        }
+      ],
+      "physicalSurfaceAreaMeters2": 32.49295
+    },
+    {
+      "id": "bathrooms",
+      "name": "Bathrooms",
+      "floorId": "ground",
+      "polygon": [
+        [
+          21.156,
+          0.212
+        ],
+        [
+          26.731,
+          0.212
+        ],
+        [
+          26.731,
+          2.394
+        ],
+        [
+          21.156,
+          2.394
+        ]
+      ],
+      "label": [
+        24.1,
+        1.35
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived exact envelope vectors; fixture-level detail simplified",
+      "source": "labeled-2024"
+    },
+    {
+      "id": "locker-hallway",
+      "name": "Locker Hallway",
+      "floorId": "ground",
+      "polygon": [
+        [
+          0.22,
+          0.22
+        ],
+        [
+          21.18,
+          0.22
+        ],
+        [
+          21.18,
+          2.18
+        ],
+        [
+          17.65,
+          2.18
+        ],
+        [
+          17.65,
+          2.35
+        ],
+        [
+          13,
+          2.35
+        ],
+        [
+          12.35,
+          2.58
+        ],
+        [
+          10.2,
+          2.58
+        ],
+        [
+          5.3,
+          1.72
+        ],
+        [
+          0.22,
+          1.72
+        ]
+      ],
+      "label": [
+        8,
+        0.75
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "plan-derived circulation zone, not site-verified",
+      "source": "labeled-2024"
+    },
+    {
+      "id": "main-circulation",
+      "name": "Main Circulation / Stair",
+      "floorId": "ground",
+      "polygon": [
+        [
+          17.9,
+          2.46
+        ],
+        [
+          21.05,
+          2.46
+        ],
+        [
+          21.05,
+          4.1
+        ],
+        [
+          26.9,
+          4.1
+        ],
+        [
+          26.9,
+          7.3
+        ],
+        [
+          30.75,
+          7.3
+        ],
+        [
+          30.75,
+          5.2246
+        ],
+        [
+          35.55,
+          5.2246
+        ],
+        [
+          35.55,
+          4.0347
+        ],
+        [
+          27.12,
+          4.0347
+        ],
+        [
+          27.12,
+          2.45
+        ],
+        [
+          27.1,
+          2.45
+        ],
+        [
+          27.1,
+          0.2
+        ],
+        [
+          21.05,
+          0.2
+        ],
+        [
+          21.05,
+          2.2
+        ],
+        [
+          17.9,
+          2.2
+        ]
+      ],
+      "label": [
+        28.2,
+        5.8
+      ],
+      "height": 2.74,
+      "heightStatus": "estimated; no mapped section",
+      "dimensionStatus": "qualified current navigation zone trimmed at the dual-plan Kitchen west extent; Bathroom overlap remains semantic-only and must not generate duplicate physical floor/ceiling geometry",
+      "source": "labeled-2024 west circulation path + master-2025 Lounge/Kitchen depths + lobby-spatial-audit-2026-09-05",
+      "physicalSurfacePolygons": [
+        {
+          "exterior": [
+            [
+              21.05,
+              2.46
+            ],
+            [
+              21.05,
+              4.1
+            ],
+            [
+              26.9,
+              4.1
+            ],
+            [
+              26.9,
+              7.3
+            ],
+            [
+              30.75,
+              7.3
+            ],
+            [
+              30.75,
+              5.2246
+            ],
+            [
+              34.1,
+              5.2246
+            ],
+            [
+              34.1,
+              4.15
+            ],
+            [
+              35.55,
+              4.15
+            ],
+            [
+              35.55,
+              4.0347
+            ],
+            [
+              27.12,
+              4.0347
+            ],
+            [
+              27.12,
+              2.45
+            ],
+            [
+              27.1,
+              2.45
+            ],
+            [
+              27.1,
+              0.2
+            ],
+            [
+              21.05,
+              0.2
+            ],
+            [
+              21.05,
+              2.2
+            ],
+            [
+              17.9,
+              2.2
+            ],
+            [
+              17.9,
+              2.46
+            ],
+            [
+              21.05,
+              2.46
+            ]
+          ],
+          "holes": [
+            [
+              [
+                26.731,
+                0.212
+              ],
+              [
+                26.731,
+                2.394
+              ],
+              [
+                21.156,
+                2.394
+              ],
+              [
+                21.156,
+                0.212
+              ],
+              [
+                26.731,
+                0.212
+              ]
+            ]
+          ],
+          "area": {
+            "squareMeters": 28.992739,
+            "squareFeet": 312.0752
+          }
+        }
+      ],
+      "physicalSurfaceAreaMeters2": 28.992739
+    },
+    {
+      "id": "mezzanine-review",
+      "name": "Mezzanine Review Footprint",
+      "floorId": "mezzanine-review",
+      "polygon": [
+        [
+          39.72,
+          7.093
+        ],
+        [
+          40.689,
+          7.093
+        ],
+        [
+          44.829,
+          7.093
+        ],
+        [
+          48.882,
+          6.297
+        ],
+        [
+          48.882,
+          0.245
+        ],
+        [
+          43.439,
+          0.246
+        ],
+        [
+          43.439,
+          0.573
+        ],
+        [
+          42.241,
+          0.573
+        ],
+        [
+          41.123,
+          0
+        ],
+        [
+          41.525,
+          1.467
+        ],
+        [
+          43.501,
+          3.417
+        ],
+        [
+          41.597,
+          3.417
+        ],
+        [
+          41.597,
+          3.292
+        ],
+        [
+          40.139,
+          3.292
+        ],
+        [
+          40.139,
+          3.417
+        ],
+        [
+          39.72,
+          3.417
+        ]
+      ],
+      "label": [
+        45.2,
+        4.5
+      ],
+      "height": null,
+      "heightStatus": "unknown; no walls or unsupported wall height generated",
+      "dimensionStatus": "Magicplan source-shaped inner-face trace; alignment unverified and not site-verified",
+      "source": "master-2025"
+    },
+    {
+      "id": "outdoor-gym-review",
+      "name": "Outdoor Gym Review",
+      "floorId": "exterior-corridor-review",
+      "polygon": [
+        [
+          60,
+          10.5
+        ],
+        [
+          64.6,
+          10.5
+        ],
+        [
+          64.6,
+          24.5
+        ],
+        [
+          60,
+          24.5
+        ]
+      ],
+      "label": [
+        62.3,
+        17.5
+      ],
+      "height": null,
+      "visualWallHeight": 3.55,
+      "perimeterFinishes": {
+        "west": "brick-red",
+        "east": "black-block",
+        "south": "partial-cedar-screen-with-passage",
+        "north": "open-turf-deck-transition"
+      },
+      "source": "native-exterior-2026",
+      "adjacentRoomIds": [
+        "patio-review",
+        "sauna-review"
+      ],
+      "camera": {
+        "position": [
+          62.05,
+          11.55,
+          1.62
+        ],
+        "target": [
+          62.45,
+          22.5,
+          1.3
+        ],
+        "lens": 22
+      },
+      "dimensionStatus": "photo-estimated from standard rack, sauna, door, and seating scale; not measured",
+      "sourceEvidence": [
+        "visual-references/outdoor-gym-DSC00100.JPG",
+        "visual-references/outdoor-gym-detail-DSC00120.JPG",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00098.JPG through DSC00120.JPG",
+        "/Users/gregspero/trc-beta/public/events/rooms/gym.jpg",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/Workout Area.HEIC",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"
+      ],
+      "heightStatus": "open sky; visual wall heights inferred",
+      "registrationStatus": "patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"
+    },
+    {
+      "id": "patio-review",
+      "name": "Patio Review",
+      "floorId": "exterior-corridor-review",
+      "polygon": [
+        [
+          60,
+          0
+        ],
+        [
+          64.5,
+          0
+        ],
+        [
+          64.5,
+          10.5
+        ],
+        [
+          60,
+          10.5
+        ]
+      ],
+      "label": [
+        62.25,
+        5.25
+      ],
+      "height": null,
+      "visualWallHeight": 3.35,
+      "perimeterFinishes": {
+        "west": "brick-red",
+        "east": "black-block",
+        "south": "open-review-edge",
+        "north": "open-patio-gym-transition"
+      },
+      "source": "native-exterior-2026",
+      "adjacentRoomIds": [
+        "outdoor-gym-review"
+      ],
+      "camera": {
+        "position": [
+          63.5,
+          0.35,
+          1.6
+        ],
+        "target": [
+          63.1,
+          5.1,
+          1.12
+        ],
+        "lens": 18
+      },
+      "dimensionStatus": "photo-estimated from standard rack, sauna, door, and seating scale; not measured",
+      "sourceEvidence": [
+        "/Users/gregspero/trc-beta/public/events/rooms/patio.jpg",
+        "facility exterior photo sequence for shared brick, black-block, shade, and festoon-light vocabulary",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"
+      ],
+      "heightStatus": "open sky; visual wall heights inferred",
+      "registrationStatus": "patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"
+    },
+    {
+      "id": "sauna-review",
+      "name": "Sauna and Cold Plunge Review",
+      "floorId": "exterior-corridor-review",
+      "polygon": [
+        [
+          60,
+          24.5
+        ],
+        [
+          65.5,
+          24.5
+        ],
+        [
+          65.5,
+          30.5
+        ],
+        [
+          60,
+          30.5
+        ]
+      ],
+      "label": [
+        62.75,
+        27.5
+      ],
+      "height": null,
+      "visualWallHeight": 3.3,
+      "perimeterFinishes": {
+        "west": "brick-red",
+        "east": "black-block",
+        "south": "open-turf-deck-transition",
+        "north": "unverified"
+      },
+      "source": "native-exterior-2026",
+      "adjacentRoomIds": [
+        "outdoor-gym-review"
+      ],
+      "camera": {
+        "position": [
+          60.38,
+          24.88,
+          1.62
+        ],
+        "target": [
+          63,
+          27.75,
+          1.12
+        ],
+        "lens": 25
+      },
+      "dimensionStatus": "photo-estimated from standard rack, sauna, door, and seating scale; not measured",
+      "sourceEvidence": [
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00085.JPG through DSC00097.JPG",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/facility/DSC00124.JPG through DSC00129.JPG",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/Workout Area.HEIC",
+        "/Users/gregspero/image-blaster/captures/trc-2026-09-05/native-photos-audit/retained/patio-gym/MOTIV_Video_20260731160377.MOV"
+      ],
+      "heightStatus": "open sky; visual wall heights inferred",
+      "registrationStatus": "patio, turf gym, and sauna/deck adjacency is source-confirmed; registration to the interior plan remains unknown"
+    }
+  ],
+  "walls": [
+    {
+      "id": "outer-south",
+      "floorId": "ground",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        35.72,
+        0
+      ],
+      "thickness": 0.21,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived shell",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 28.860592,
+          "width": 1.18273,
+          "height": 0.9,
+          "sill": 1.1,
+          "type": "window",
+          "dimensionStatus": "2024 vector frame span; sill and height photo-estimated from Elliott views",
+          "source": "labeled-2024 vectors + IMG_8299/IMG_8302/IMG_8311"
+        },
+        {
+          "offset": 32.1,
+          "width": 0.95,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024"
+        },
+        {
+          "offset": 33.278584,
+          "width": 1.18273,
+          "height": 0.9,
+          "sill": 1.1,
+          "type": "window",
+          "dimensionStatus": "2024 vector frame span; sill and height photo-estimated from Elliott views",
+          "source": "labeled-2024 vectors + IMG_8299/IMG_8302/IMG_8311"
+        }
+      ]
+    },
+    {
+      "id": "outer-north",
+      "floorId": "ground",
+      "start": [
+        35.72,
+        13.89
+      ],
+      "end": [
+        0,
+        13.89
+      ],
+      "thickness": 0.21,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived shell",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "outer-west",
+      "floorId": "ground",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        0,
+        13.89
+      ],
+      "thickness": 0.21,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived shell",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 4.34,
+          "width": 1.27,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "outer-east",
+      "floorId": "ground",
+      "start": [
+        35.724,
+        13.886
+      ],
+      "end": [
+        35.724,
+        0.212
+      ],
+      "thickness": 0.21,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived shell; height estimated",
+      "source": "labeled-2024 + published-lounge-photo",
+      "openings": [
+        {
+          "offset": 0.75,
+          "width": 1.62,
+          "height": 1.45,
+          "sill": 0.78,
+          "type": "window",
+          "dimensionStatus": "two-window count photo-confirmed; width, sill and offset visually inferred within legacy plan footprint",
+          "source": "trc-beta/public/events/rooms/lounge.jpg + DSC00140.JPG"
+        },
+        {
+          "offset": 3.35,
+          "width": 1.7,
+          "height": 1.45,
+          "sill": 0.78,
+          "type": "window",
+          "dimensionStatus": "two-window count photo-confirmed; width, sill and offset visually inferred within legacy plan footprint",
+          "source": "trc-beta/public/events/rooms/lounge.jpg + DSC00140.JPG"
+        },
+        {
+          "offset": 8.5,
+          "width": 1.06,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "rehearsal-east-01",
+      "floorId": "ground",
+      "start": [
+        4.023,
+        13.702
+      ],
+      "end": [
+        4.023,
+        13.097
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-02",
+      "floorId": "ground",
+      "start": [
+        4.023,
+        13.097
+      ],
+      "end": [
+        3.577,
+        12.651
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-03",
+      "floorId": "ground",
+      "start": [
+        3.577,
+        12.651
+      ],
+      "end": [
+        4.023,
+        12.387
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-04",
+      "floorId": "ground",
+      "start": [
+        4.023,
+        12.387
+      ],
+      "end": [
+        5.155,
+        11.203
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-05",
+      "floorId": "ground",
+      "start": [
+        5.155,
+        11.203
+      ],
+      "end": [
+        5.155,
+        9.39
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-06",
+      "floorId": "ground",
+      "start": [
+        5.155,
+        9.39
+      ],
+      "end": [
+        4.049,
+        8.284
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-07",
+      "floorId": "ground",
+      "start": [
+        4.049,
+        8.284
+      ],
+      "end": [
+        4.049,
+        7.969
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-east-08",
+      "floorId": "ground",
+      "start": [
+        4.049,
+        7.969
+      ],
+      "end": [
+        5.155,
+        6.891
+      ],
+      "thickness": 0.18,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints; height estimated",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-south",
+      "floorId": "ground",
+      "start": [
+        0.210255,
+        6.89101
+      ],
+      "end": [
+        5.154606,
+        6.89101
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "PDF-vector inner face with corrected southwest primary opening and aligned iso-booth portal; the printed 2'-10\" east closet door is on a separate vertical return and is not projected onto this wall",
+      "source": "labeled-2024 PDF vector inspection, rehearsal-route-review",
+      "openings": [
+        {
+          "offset": 0.025661,
+          "width": 0.946837,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "rehearsal-room",
+            "locker-hallway"
+          ],
+          "dimensionStatus": "southwest primary door jambs vector-traced at PDF x=236.628 and 279.283; width and position are graphical, while height is the unmeasured baseline visualization convention",
+          "source": "labeled-2024 PDF vectors",
+          "adjacencyStatus": "topological route via the source-drawn, unlabeled west-side circulation toward Locker Hallway; Locker Hallway is not directly adjacent at this jamb"
+        },
+        {
+          "offset": 1.997958,
+          "width": 1.840688,
+          "height": 2.13,
+          "sill": 0,
+          "type": "open",
+          "connects": [
+            "rehearsal-room",
+            "rehearsal-iso"
+          ],
+          "dimensionStatus": "clear throat graphically traced between PDF inner faces x=325.480 and 408.403; height is the unmeasured baseline visualization convention",
+          "source": "labeled-2024 PDF vectors",
+          "adjacencyStatus": "paired horizontal sliding-leaf vectors identify the booth route; shown open for walkthrough because current leaf position is unknown"
+        }
+      ]
+    },
+    {
+      "id": "rehearsal-iso-west",
+      "floorId": "ground",
+      "start": [
+        1.818246,
+        6.128746
+      ],
+      "end": [
+        2.152986,
+        4.692764
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "dimensionStatus": "PDF-vector inner face: straight northwest booth segment; replaces the segment that incorrectly began beside the southwest Rehearsal door",
+      "source": "labeled-2024 PDF drawing 708, rehearsal-route-review",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-iso-south",
+      "floorId": "ground",
+      "start": [
+        2.152986,
+        4.692764
+      ],
+      "end": [
+        2.224625,
+        4.449651
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "dimensionStatus": "first sampled segment of the labeled-2024 booth southwest cubic; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 712, rehearsal-route-review",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-iso-east",
+      "floorId": "ground",
+      "start": [
+        3.000888,
+        3.902997
+      ],
+      "end": [
+        5.048679,
+        3.620444
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "dimensionStatus": "PDF-vector inner face: southeast booth segment; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 704, rehearsal-route-review",
+      "openings": []
+    },
+    {
+      "id": "rehearsal-iso-north",
+      "floorId": "ground",
+      "start": [
+        1.818246,
+        6.128746
+      ],
+      "end": [
+        5.048679,
+        6.128746
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "dimensionStatus": "horizontal booth north inner face graphically traced at PDF y=503.310; replaces the unsupported diagonal approximation",
+      "source": "labeled-2024 PDF vectors, rehearsal-route-review",
+      "openings": [
+        {
+          "offset": 0.389967,
+          "width": 1.840688,
+          "height": 2.13,
+          "sill": 0,
+          "type": "open",
+          "connects": [
+            "rehearsal-iso",
+            "rehearsal-room"
+          ],
+          "dimensionStatus": "rough opening graphically traced between PDF inner faces x=325.480 and 408.403; height is unmeasured",
+          "source": "labeled-2024 PDF vectors",
+          "adjacencyStatus": "horizontal booth portal; paired sliding-leaf vectors are source-visible, but the current leaf position is unknown"
+        }
+      ]
+    },
+    {
+      "id": "electrical-west",
+      "floorId": "ground",
+      "start": [
+        5.56,
+        6.74
+      ],
+      "end": [
+        5.56,
+        3.24
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "electrical-east",
+      "floorId": "ground",
+      "start": [
+        6.17,
+        6.74
+      ],
+      "end": [
+        6.58,
+        3.62
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived segmented curve",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 2,
+          "width": 0.92,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "electrical-room",
+            "studio-a-live"
+          ],
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "live-control-west-01",
+      "floorId": "ground",
+      "start": [
+        14.666,
+        12.551
+      ],
+      "end": [
+        14.528,
+        12.135
+      ],
+      "thickness": 0.24,
+      "height": 3,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "live-control-west-02",
+      "floorId": "ground",
+      "start": [
+        14.528,
+        12.135
+      ],
+      "end": [
+        14.254,
+        8.674
+      ],
+      "thickness": 0.24,
+      "height": 3,
+      "dimensionStatus": "exact plan-vector line; historical modeled height; glazing supported by A111 and current mixing photo",
+      "source": "labeled-2024 + a111-2012 + mixing-photo",
+      "openings": [
+        {
+          "offset": 0.3,
+          "width": 2.85,
+          "height": 1.45,
+          "sill": 0.72,
+          "type": "window",
+          "dimensionStatus": "wall placement plan-derived; width, sill and height estimated from prominent control-room glazing in photo",
+          "source": "a111-2012 + mixing-photo"
+        }
+      ]
+    },
+    {
+      "id": "live-control-west-03",
+      "floorId": "ground",
+      "start": [
+        14.204,
+        8.194
+      ],
+      "end": [
+        18.598,
+        6.408
+      ],
+      "thickness": 0.24,
+      "height": 3,
+      "dimensionStatus": "exact principal plan-vector endpoints; sound-lock simplification",
+      "source": "labeled-2024 + a111-2012",
+      "openings": [
+        {
+          "offset": 0.55,
+          "width": 0.91,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "studio-a-control",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced sound-lock access",
+          "source": "labeled-2024 + a111-2012"
+        }
+      ]
+    },
+    {
+      "id": "control-north",
+      "floorId": "ground",
+      "start": [
+        15.339,
+        13.57
+      ],
+      "end": [
+        20.508,
+        13.57
+      ],
+      "thickness": 0.24,
+      "height": 3.31,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "control-east",
+      "floorId": "ground",
+      "start": [
+        20.508,
+        13.57
+      ],
+      "end": [
+        20.211,
+        7.469
+      ],
+      "thickness": 0.24,
+      "height": 3.31,
+      "dimensionStatus": "principal plan-vector endpoints; minor jogs simplified",
+      "source": "labeled-2024 + a111-2012",
+      "openings": [
+        {
+          "offset": 4.6,
+          "width": 0.75,
+          "height": 0.7,
+          "sill": 1.1,
+          "type": "window",
+          "dimensionStatus": "graphically traced studio glazing",
+          "source": "labeled-2024 + a111-2012"
+        }
+      ]
+    },
+    {
+      "id": "control-south",
+      "floorId": "ground",
+      "start": [
+        20.052,
+        7.469
+      ],
+      "end": [
+        18.598,
+        6.408
+      ],
+      "thickness": 0.24,
+      "height": 3.31,
+      "dimensionStatus": "exact principal plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "live-south",
+      "floorId": "ground",
+      "start": [
+        5.562,
+        3.696
+      ],
+      "end": [
+        8.101,
+        3.295
+      ],
+      "thickness": 0.22,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": [
+        {
+          "offset": 1.22,
+          "width": 1.17,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "studio-a-live",
+            "locker-hallway"
+          ],
+          "dimensionStatus": "opening width printed 3'-10\"; position graphically traced clear of electrical wall",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "live-south-02",
+      "floorId": "ground",
+      "start": [
+        8.101,
+        3.295
+      ],
+      "end": [
+        11.914,
+        2.499
+      ],
+      "thickness": 0.22,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "live-south-03",
+      "floorId": "ground",
+      "start": [
+        11.914,
+        2.499
+      ],
+      "end": [
+        13.492,
+        2.539
+      ],
+      "thickness": 0.22,
+      "height": 2.77,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "live-southeast",
+      "floorId": "ground",
+      "start": [
+        13.492,
+        2.539
+      ],
+      "end": [
+        13.796,
+        6.392
+      ],
+      "thickness": 0.22,
+      "height": 2.77,
+      "dimensionStatus": "exact principal plan-vector endpoints",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "studio-iso-northwest",
+      "floorId": "ground",
+      "start": [
+        13.02,
+        6.86
+      ],
+      "end": [
+        17.18,
+        5.72
+      ],
+      "thickness": 0.22,
+      "height": 2.34,
+      "dimensionStatus": "plan-derived angled acoustic wall",
+      "source": "labeled-2024 + a111-2012",
+      "openings": [
+        {
+          "offset": 2.72,
+          "width": 0.91,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "studio-a-iso",
+            "studio-a-live"
+          ],
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024 + a111-2012"
+        }
+      ]
+    },
+    {
+      "id": "studio-iso-east",
+      "floorId": "ground",
+      "start": [
+        17.7,
+        5.05
+      ],
+      "end": [
+        17.7,
+        2.36
+      ],
+      "thickness": 0.22,
+      "height": 2.34,
+      "dimensionStatus": "plan-derived",
+      "source": "labeled-2024 + a111-2012",
+      "openings": [
+        {
+          "offset": 0.32,
+          "width": 0.91,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "studio-a-iso",
+            "locker-hallway"
+          ],
+          "dimensionStatus": "graphically traced sound-lock access",
+          "source": "labeled-2024 + a111-2012"
+        }
+      ]
+    },
+    {
+      "id": "studio-iso-south",
+      "floorId": "ground",
+      "start": [
+        17.7,
+        2.36
+      ],
+      "end": [
+        13.02,
+        2.36
+      ],
+      "thickness": 0.22,
+      "height": 2.34,
+      "dimensionStatus": "plan-derived",
+      "source": "labeled-2024 + a111-2012",
+      "openings": []
+    },
+    {
+      "id": "recording-west",
+      "floorId": "ground",
+      "start": [
+        22.039,
+        13.886
+      ],
+      "end": [
+        21.182,
+        9.794
+      ],
+      "thickness": 0.18,
+      "height": 2.74,
+      "dimensionStatus": "exact principal plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-west-02",
+      "floorId": "ground",
+      "start": [
+        21.182,
+        9.794
+      ],
+      "end": [
+        21.129,
+        8.599
+      ],
+      "thickness": 0.18,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-south",
+      "floorId": "ground",
+      "start": [
+        21.129,
+        8.599
+      ],
+      "end": [
+        24.666,
+        8.599
+      ],
+      "thickness": 0.18,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector segment; distinct from office north wall",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-entry",
+      "floorId": "ground",
+      "start": [
+        24.666,
+        8.599
+      ],
+      "end": [
+        26.901,
+        8.598
+      ],
+      "thickness": 0.18,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints; access opening graphically traced",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 0.55,
+          "width": 0.92,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "recording-room",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced; no printed width",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "recording-east",
+      "floorId": "ground",
+      "start": [
+        26.901,
+        9.884
+      ],
+      "end": [
+        26.901,
+        8.598
+      ],
+      "thickness": 0.18,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints; stops below iso-room access",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-iso-south",
+      "floorId": "ground",
+      "start": [
+        27.217,
+        11.938
+      ],
+      "end": [
+        29.321,
+        11.938
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-iso-east",
+      "floorId": "ground",
+      "start": [
+        29.321,
+        13.583
+      ],
+      "end": [
+        29.321,
+        11.938
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "recording-iso-west",
+      "floorId": "ground",
+      "start": [
+        27.007059,
+        13.254007
+      ],
+      "end": [
+        27.007059,
+        12.255849
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "dimensionStatus": "vertical west inner face graphically traced from labeled-2024; replaces the diagonal open door leaf incorrectly treated as a wall",
+      "source": "labeled-2024 PDF drawings 799, 801 and 805; navigation-v7 source proof",
+      "openings": [
+        {
+          "offset": 0.051343,
+          "width": 0.946815,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "recording-room",
+            "recording-iso"
+          ],
+          "dimensionStatus": "jambs graphically traced at PDF x=1442.668, y=184.630 and 227.284; height is the unmeasured baseline visualization convention",
+          "source": "labeled-2024 PDF vectors, navigation-v7 source proof"
+        }
+      ]
+    },
+    {
+      "id": "podcast-north",
+      "floorId": "ground",
+      "start": [
+        27.124,
+        11.675
+      ],
+      "end": [
+        30.648,
+        11.675
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "podcast-east",
+      "floorId": "ground",
+      "start": [
+        30.648,
+        11.675
+      ],
+      "end": [
+        30.648,
+        8.374
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 2.25,
+          "width": 0.85,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "podcast-room",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced; no printed width",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "podcast-west",
+      "floorId": "ground",
+      "start": [
+        27.124,
+        11.675
+      ],
+      "end": [
+        27.124,
+        8.374
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "podcast-south",
+      "floorId": "ground",
+      "start": [
+        27.124,
+        8.374
+      ],
+      "end": [
+        28.362,
+        8.374
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector western segment",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "podcast-south-east",
+      "floorId": "ground",
+      "start": [
+        29.347,
+        8.374
+      ],
+      "end": [
+        30.648,
+        8.374
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector eastern segment; center gap retained",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "office-north",
+      "floorId": "ground",
+      "start": [
+        21.129,
+        8.218
+      ],
+      "end": [
+        24.942,
+        8.218
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector segment; no opening invented on north wall",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "office-east",
+      "floorId": "ground",
+      "start": [
+        24.942,
+        8.218
+      ],
+      "end": [
+        25.113,
+        7.06
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector angled segment",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "office-east-02",
+      "floorId": "ground",
+      "start": [
+        25.113,
+        7.06
+      ],
+      "end": [
+        25.113,
+        4.169
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector segment; access opening graphically traced",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 1,
+          "width": 0.9,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "office-machine",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced; no printed width",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "office-south",
+      "floorId": "ground",
+      "start": [
+        25.113,
+        4.169
+      ],
+      "end": [
+        21.129,
+        4.352
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "office-west",
+      "floorId": "ground",
+      "start": [
+        21.129,
+        4.352
+      ],
+      "end": [
+        21.129,
+        8.218
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 0.45,
+          "width": 0.9,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "office-machine",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced; secondary access",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "bar-south",
+      "floorId": "ground",
+      "start": [
+        31.08215,
+        5.2246
+      ],
+      "end": [
+        34.1,
+        5.2246
+      ],
+      "thickness": 0.16,
+      "height": 3.7,
+      "dimensionStatus": "photo-estimated partial curtain portal; traced east exterior doorway remains in an adjoining entry pocket",
+      "source": "master-2025 registered envelope + lobby-spatial-audit-2026-09-05",
+      "openings": [
+        {
+          "offset": 0,
+          "width": 3.01785,
+          "height": 3.7,
+          "sill": 0,
+          "type": "open",
+          "connects": [
+            "bar-lounge",
+            "main-circulation"
+          ],
+          "dimensionStatus": "photo-estimated partial curtain portal; traced east exterior doorway remains in an adjoining entry pocket",
+          "source": "master-2025 topology + March/June 2026 curtain imagery"
+        }
+      ]
+    },
+    {
+      "id": "bathrooms-north",
+      "floorId": "ground",
+      "start": [
+        21.156,
+        2.394
+      ],
+      "end": [
+        26.731,
+        2.394
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints and door gaps",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 1.63,
+          "width": 0.947,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "bathrooms",
+            "main-circulation"
+          ],
+          "dimensionStatus": "exact vector gap; height estimated",
+          "source": "labeled-2024"
+        },
+        {
+          "offset": 2.892,
+          "width": 0.947,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "connects": [
+            "bathrooms",
+            "main-circulation"
+          ],
+          "dimensionStatus": "exact vector gap; height estimated",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "bathrooms-west",
+      "floorId": "ground",
+      "start": [
+        21.156,
+        0.212
+      ],
+      "end": [
+        21.156,
+        2.394
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "bathrooms-east",
+      "floorId": "ground",
+      "start": [
+        26.731,
+        2.394
+      ],
+      "end": [
+        26.731,
+        0.212
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector endpoints",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "bathroom-divider-01",
+      "floorId": "ground",
+      "start": [
+        23.969,
+        0.212
+      ],
+      "end": [
+        23.969,
+        2.394
+      ],
+      "thickness": 0.1,
+      "height": 2.74,
+      "dimensionStatus": "exact plan-vector location",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "bathroom-divider-02",
+      "floorId": "ground",
+      "start": [
+        25.34,
+        0.1
+      ],
+      "end": [
+        25.34,
+        2.34
+      ],
+      "thickness": 0.1,
+      "height": 2.74,
+      "dimensionStatus": "plan-derived",
+      "source": "labeled-2024",
+      "openings": []
+    },
+    {
+      "id": "circulation-portal",
+      "floorId": "ground",
+      "start": [
+        17.9,
+        2.3
+      ],
+      "end": [
+        21.05,
+        2.3
+      ],
+      "thickness": 0.1,
+      "height": 2.74,
+      "dimensionStatus": "topological open boundary between traced circulation zones; no physical wall asserted",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 0,
+          "width": 3.15,
+          "height": 2.74,
+          "sill": 0,
+          "type": "open",
+          "connects": [
+            "locker-hallway",
+            "main-circulation"
+          ],
+          "dimensionStatus": "walkable open plan boundary",
+          "source": "labeled-2024"
+        }
+      ]
+    },
+    {
+      "id": "stair-west",
+      "floorId": "ground",
+      "start": [
+        27.05,
+        7.52
+      ],
+      "end": [
+        27.05,
+        4.55
+      ],
+      "thickness": 0.16,
+      "height": 1.1,
+      "dimensionStatus": "plan-derived stair guard/edge",
+      "source": "labeled-2024 + floorplan-2024",
+      "openings": []
+    },
+    {
+      "id": "stair-south",
+      "floorId": "ground",
+      "start": [
+        27.05,
+        4.55
+      ],
+      "end": [
+        30,
+        4.55
+      ],
+      "thickness": 0.16,
+      "height": 1.1,
+      "dimensionStatus": "plan-derived stair guard/edge",
+      "source": "labeled-2024 + floorplan-2024",
+      "openings": []
+    },
+    {
+      "id": "lounge-west-current-visual",
+      "floorId": "ground",
+      "start": [
+        31.08215,
+        13.886
+      ],
+      "end": [
+        31.08215,
+        7.52
+      ],
+      "thickness": 0.16,
+      "height": 3.7,
+      "openings": [
+        {
+          "offset": 0.3359999999999985,
+          "width": 0.9,
+          "height": 2.13,
+          "sill": 0,
+          "type": "door",
+          "source": "C0169_7_45.139s + DSC00140/144/153",
+          "dimensionStatus": "photo-confirmed west-wall plane; jamb offset and width estimated; swing unresolved"
+        }
+      ],
+      "dimensionStatus": "photo-qualified north Lounge wall with south stair approach left open; x follows the registered Lounge envelope and the 7.52 m stop reuses the historical stair-zone bound only as a visual-layout limit, not a measured current endpoint",
+      "heightStatus": "photo-inferred existing visual-model height; unverified and not a clearance measurement",
+      "source": "March/June 2026 left seating wall and curved-bulkhead imagery + registered current Lounge envelope"
+    },
+    {
+      "id": "rehearsal-iso-curve-02",
+      "floorId": "ground",
+      "start": [
+        2.224625,
+        4.449651
+      ],
+      "end": [
+        2.35499,
+        4.239914
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "openings": [],
+      "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+    },
+    {
+      "id": "rehearsal-iso-curve-03",
+      "floorId": "ground",
+      "start": [
+        2.35499,
+        4.239914
+      ],
+      "end": [
+        2.534244,
+        4.072733
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "openings": [],
+      "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+    },
+    {
+      "id": "rehearsal-iso-curve-04",
+      "floorId": "ground",
+      "start": [
+        2.534244,
+        4.072733
+      ],
+      "end": [
+        2.752548,
+        3.957286
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "openings": [],
+      "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+    },
+    {
+      "id": "rehearsal-iso-curve-05",
+      "floorId": "ground",
+      "start": [
+        2.752548,
+        3.957286
+      ],
+      "end": [
+        3.000888,
+        3.902997
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "openings": [],
+      "dimensionStatus": "sampled labeled-2024 booth southwest cubic joined to the southeast inner face; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawings 712 and 704, rehearsal-route-review"
+    },
+    {
+      "id": "rehearsal-iso-east-return",
+      "floorId": "ground",
+      "start": [
+        5.048679,
+        3.620444
+      ],
+      "end": [
+        5.048679,
+        6.128746
+      ],
+      "thickness": 0.117137,
+      "height": 2.74,
+      "openings": [],
+      "dimensionStatus": "PDF-vector inner face: vertical east booth return; graphical, not site-measured",
+      "source": "labeled-2024 PDF drawing 700, rehearsal-route-review"
+    }
+  ],
+  "historicalTraces": [
+    {
+      "id": "bar-west",
+      "floorId": "ground",
+      "start": [
+        29.584,
+        13.886
+      ],
+      "end": [
+        29.584,
+        11.794
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact upper west plan-vector segment at the Lounge inner face",
+      "source": "labeled-2024",
+      "openings": [],
+      "currentStatus": "retired from current visual model; retained as historical source"
+    },
+    {
+      "id": "bar-west-recess",
+      "floorId": "ground",
+      "start": [
+        29.584,
+        11.794
+      ],
+      "end": [
+        30.767,
+        11.794
+      ],
+      "thickness": 0.16,
+      "height": 2.74,
+      "dimensionStatus": "exact northwest recess plan-vector segment; lower shared partition remains represented by podcast-east",
+      "source": "labeled-2024",
+      "openings": [],
+      "currentStatus": "retired from current visual model; retained as historical source"
+    },
+    {
+      "id": "kitchen-north-01",
+      "floorId": "ground",
+      "start": [
+        28.28,
+        4.7
+      ],
+      "end": [
+        31.9,
+        4.7
+      ],
+      "thickness": 0.12,
+      "height": 1.1,
+      "dimensionStatus": "plan-derived counter/partial partition",
+      "source": "labeled-2024",
+      "openings": [
+        {
+          "offset": 1.55,
+          "width": 0.85,
+          "height": 1.1,
+          "sill": 0,
+          "type": "open",
+          "connects": [
+            "kitchen",
+            "main-circulation"
+          ],
+          "dimensionStatus": "graphically traced",
+          "source": "labeled-2024"
+        }
+      ],
+      "currentStatus": "retired from current visual model; retained as historical source"
+    },
+    {
+      "id": "kitchen-west",
+      "floorId": "ground",
+      "start": [
+        28.28,
+        4.7
+      ],
+      "end": [
+        28.28,
+        2.55
+      ],
+      "thickness": 0.12,
+      "height": 1.1,
+      "dimensionStatus": "plan-derived counter/partial partition",
+      "source": "labeled-2024",
+      "openings": [],
+      "currentStatus": "retired from current visual model; retained as historical source"
+    }
+  ],
+  "fixedFeatures": [
+    {
+      "id": "kitchen-fireplace",
+      "roomId": "kitchen",
+      "wallId": "outer-east",
+      "anchor": [
+        35.724,
+        2.05
+      ],
+      "frontNormal": [
+        -1,
+        0
+      ],
+      "width": 2.3,
+      "depth": 0.72,
+      "height": 4.18,
+      "source": "labeled-2024 fireplace trace + IMG_8302/IMG_8299/IMG_8311",
+      "dimensionStatus": "photo-estimated size at plan-aligned east end wall"
+    },
+    {
+      "id": "kitchenette",
+      "roomId": "kitchen",
+      "backPlaneX": 27.16,
+      "frontNormal": [
+        1,
+        0
+      ],
+      "source": "labeled-2024 + IMG_8299/IMG_8309/IMG_8311",
+      "dimensionStatus": "west end-wall placement photo-confirmed; metric location plan-aligned estimate"
+    }
+  ],
+  "revision": "7b088d6ddfe5975c"
+}

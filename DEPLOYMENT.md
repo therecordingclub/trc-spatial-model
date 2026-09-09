@@ -156,7 +156,49 @@ inconclusive in a background tab; the foreground policy refused window
 activation. The probe was stopped by reloading the owned tab. Existing V13
 behavior evidence and passing focused movement tests remain available; this
 release does not claim a fresh timing pass or a sustained frame-rate guarantee.
-The larger building, door and fireplace correction is still in progress.
+That release preceded the V15 building, door and fireplace correction below.
+
+## V15 building and fixed features
+
+V15 adjusts Kitchen and Lounge door openings, the Lounge entry recess, and
+four rooms' usable floor and ceiling surfaces. The planning view now uses the
+same room boundaries and exclusions. Furniture placement rejects bathroom
+cutouts and concave boundary crossings. Both detailed and fallback walking
+collision paths pass the actual browser checks.
+
+The photo-referenced Kitchen includes a tapered fireplace hood, recessed cast
+surround, rectangular inner aperture, window wall, gabled ceiling, beams,
+cabinetry, appliances and furnishings. The west Lounge door has a black leaf
+inside a light casing. Existing source materials, images, unaffected browser
+data and the V14 chair correction remain intact.
+
+The editable source passes 1,427 preservation checks and the independent source
+audit passes 27 checks. The preserving browser overlay passes 12 checks and adds
+26,634,784 bytes. All 19 room renders were inspected in existing Chrome; the
+final runtime passes 15 planning checks, 18 fixed-feature checks, 12 UI checks
+and 14 code tests. V14 also opens under the final runtime. One initial room PNG
+retrieval timed out in the Chrome bridge; the remaining rooms passed on the
+retained retry. Native full-window capture remains unavailable.
+
+Independent GPT-6 Astra approves the qualified R5/ui2 release at 3/4 SHIP with
+no must-fix defects. The gate binds both runtime files and all three model
+artifacts. Evidence is preserved under
+`workbench/v15-building-2026-09-09/evidence`.
+
+The canonical GLB SHA-256 is
+`d6684cee9938bcd07a2cfb3388ead542d4dcd80792d9c69472692fe1da90fc70`;
+the editable source SHA-256 is
+`787d26785ee1f3fcaf6df94a35228585f66a094cff452c2a882e6d71e29235ff`.
+The immutable assets use the
+[V15 release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v15-building)
+and the existing GitHub Pages buffer directory. The deployment target remains
+the existing shared static route on `trc-beta-apps`; its other applications,
+machine count, sizing and volume are preserved.
+
+Several dimensions and clearances remain estimated. Fireplace-side storage
+bays, softer paper-lantern materials and irregular record groupings remain
+documented detail work. Upstairs, stair and outdoor registration require
+additional measured or connected reference data.
 
 ## Accuracy boundaries
 

@@ -1,9 +1,9 @@
 {
-  "asset": "/reconstruction/trc-web-v14-lounge-chairs.gltf",
-  "downloadAsset": "/reconstruction/trc-web-v14-lounge-chairs.glb",
-  "authoringAsset": "/reconstruction/trc-editable-v14-lounge-chairs.blend",
-  "modelAsset": "/reconstruction/trc-visual-v14-lounge-chairs.json",
-  "modelRevision": "de83140e5cda4e46",
+  "asset": "/reconstruction/trc-web-v15-building.gltf",
+  "downloadAsset": "/reconstruction/trc-web-v15-building.glb",
+  "authoringAsset": "/reconstruction/trc-editable-v15-building.blend",
+  "modelAsset": "/reconstruction/trc-visual-v15-building.json",
+  "modelRevision": "7b088d6ddfe5975c",
   "builderSources": [
     {
       "path": "reconstruction/build_interior.py",
@@ -30,9 +30,9 @@
       "sha256": "5dca469cc39d4f2801eabf89eea56bd3296f6a600589e7d7d70966ecfe477c4b"
     }
   ],
-  "version": "v14-lounge-chairs",
+  "version": "v15-building",
   "preview": false,
-  "status": "Lounge chairs face the sofa; building geometry and fixed features remain under source review",
+  "status": "Photo and plan reconstruction with corrected fixed features; dimensions remain qualified",
   "siteVerified": false,
   "cameraCoordinates": "blender-floor-local",
   "views": [
@@ -282,19 +282,19 @@
       "roomId": "kitchen",
       "cameraBlender": {
         "position": [
-          34.379999999999995,
-          3.6620000000000004,
+          29.9,
+          3.25,
           1.6
         ],
         "target": [
-          34.379999999999995,
-          0.712,
-          1.22
+          35.3,
+          2.05,
+          1.5
         ],
-        "lens": 23.0,
+        "lens": 23,
         "requestedPosition": [
-          34.379999999999995,
-          3.6620000000000004,
+          29.9,
+          3.25,
           1.6
         ],
         "clearRadiusMeters": 0.3
@@ -681,6 +681,32 @@
       "sizeY": 5.5,
       "sourceShape": "DISK",
       "sourceUseShadow": true
+    },
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "energy": 2.0,
+      "name": "Exterior daylight sun",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": 0.0,
+      "sizeY": 0.0,
+      "sourceUseShadow": true,
+      "target": [
+        0.548551857,
+        0.233106136,
+        -0.802964807
+      ],
+      "type": "SUN",
+      "evidencePriority": 65,
+      "fixtureFamily": "paper-lantern",
+      "role": "practical"
     },
     {
       "name": "Exterior wall bounce fill outdoor-gym-review",
@@ -2616,114 +2642,6 @@
       "fixtureFamily": "downlight"
     },
     {
-      "name": "Practical downlight.040",
-      "roomId": "kitchen",
-      "floorId": "ground",
-      "type": "AREA",
-      "position": [
-        30.457599639892578,
-        1.3588099479675293,
-        2.694999933242798
-      ],
-      "target": [
-        30.457599639892578,
-        1.3588099479675293,
-        1.6949999332427979
-      ],
-      "energy": 32.0,
-      "size": 0.14000000059604645,
-      "color": [
-        1.0,
-        0.7900000214576721,
-        0.5699999928474426
-      ],
-      "role": "practical",
-      "sizeY": 0.14000000059604645,
-      "sourceShape": "DISK",
-      "sourceUseShadow": true
-    },
-    {
-      "name": "Practical downlight.041",
-      "roomId": "kitchen",
-      "floorId": "ground",
-      "type": "AREA",
-      "position": [
-        30.457599639892578,
-        2.887890100479126,
-        2.694999933242798
-      ],
-      "target": [
-        30.457599639892578,
-        2.887890100479126,
-        1.6949999332427979
-      ],
-      "energy": 32.0,
-      "size": 0.14000000059604645,
-      "color": [
-        1.0,
-        0.7900000214576721,
-        0.5699999928474426
-      ],
-      "role": "practical",
-      "sizeY": 0.14000000059604645,
-      "sourceShape": "DISK",
-      "sourceUseShadow": true
-    },
-    {
-      "name": "Practical downlight.042",
-      "roomId": "kitchen",
-      "floorId": "ground",
-      "type": "AREA",
-      "position": [
-        33.61240005493164,
-        1.3588099479675293,
-        2.694999933242798
-      ],
-      "target": [
-        33.61240005493164,
-        1.3588099479675293,
-        1.6949999332427979
-      ],
-      "energy": 32.0,
-      "size": 0.14000000059604645,
-      "color": [
-        1.0,
-        0.7900000214576721,
-        0.5699999928474426
-      ],
-      "role": "practical",
-      "sizeY": 0.14000000059604645,
-      "sourceShape": "DISK",
-      "sourceUseShadow": true
-    },
-    {
-      "name": "Practical downlight.043",
-      "roomId": "kitchen",
-      "floorId": "ground",
-      "type": "AREA",
-      "position": [
-        33.61240005493164,
-        2.887890100479126,
-        2.694999933242798
-      ],
-      "target": [
-        33.61240005493164,
-        2.887890100479126,
-        1.6949999332427979
-      ],
-      "energy": 32.0,
-      "size": 0.14000000059604645,
-      "color": [
-        1.0,
-        0.7900000214576721,
-        0.5699999928474426
-      ],
-      "role": "practical",
-      "sizeY": 0.14000000059604645,
-      "sourceShape": "DISK",
-      "sourceUseShadow": true
-    },
-    {
       "name": "Practical downlight.044",
       "roomId": "bathrooms",
       "floorId": "ground",
@@ -3822,24 +3740,24 @@
       "floorId": "ground",
       "type": "AREA",
       "position": [
-        32.03499984741211,
-        2.123349905014038,
-        2.559999942779541
+        31.399999619,
+        2.049999952,
+        3.900000095
       ],
       "target": [
-        32.03499984741211,
-        2.123349905014038,
-        1.559999942779541
+        31.399999619,
+        2.049999952,
+        2.900000095
       ],
       "energy": 95.0,
-      "size": 2.200000047683716,
+      "size": 2.200000048,
       "color": [
         1.0,
-        0.8299999833106995,
-        0.6800000071525574
+        0.829999983,
+        0.680000007
       ],
       "role": "indirect-fill",
-      "sizeY": 2.200000047683716,
+      "sizeY": 2.200000048,
       "sourceShape": "DISK",
       "sourceUseShadow": true
     },
@@ -3952,6 +3870,93 @@
       "sizeY": 2.200000047683716,
       "sourceShape": "DISK",
       "sourceUseShadow": true
+    },
+    {
+      "color": [
+        1.0,
+        0.790000021,
+        0.550000012
+      ],
+      "energy": 65.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen lantern practical",
+      "position": [
+        32.650001526,
+        2.049999952,
+        2.650000095
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 0.649999976,
+      "sizeY": 0.649999976,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        32.650001526,
+        2.049999952,
+        1.650000095
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "paper-lantern"
+    },
+    {
+      "color": [
+        0.819999993,
+        0.910000026,
+        1.0
+      ],
+      "energy": 95.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen window 0 daylight",
+      "position": [
+        29.451957703,
+        0.189999998,
+        1.549999952
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 1.182729959,
+      "sizeY": 1.182729959,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        29.451957703,
+        1.172603607,
+        1.364284515
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "window-daylight"
+    },
+    {
+      "color": [
+        0.819999993,
+        0.910000026,
+        1.0
+      ],
+      "energy": 95.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen window 2 daylight",
+      "position": [
+        33.869949341,
+        0.189999998,
+        1.549999952
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 1.182729959,
+      "sizeY": 1.182729959,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        33.869949341,
+        1.172603607,
+        1.364284515
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "window-daylight"
     }
   ],
   "lightingSelectionMode": "evidence-v13",
@@ -3975,51 +3980,61 @@
       "status": "Indoor connection to the photo-confirmed exterior corridor unverified"
     }
   ],
-  "bytes": 197125748,
-  "assetSha256": "afb901e0f895fdc089a3fde84d507f3412061c2117cbee97419d0a0cddcefac1",
+  "bytes": 223942224,
+  "assetSha256": "d6684cee9938bcd07a2cfb3388ead542d4dcd80792d9c69472692fe1da90fc70",
   "sourceProof": {
-    "mode": "source-and-browser-rigid-rotation-with-byte-preservation",
-    "sourceBlendSha256": "be314d0f7a8500640558354b8b87e8713d37abab34efd241a219ee4551aba768",
-    "sourceBlendBytes": 194249317,
-    "assetSha256": "afb901e0f895fdc089a3fde84d507f3412061c2117cbee97419d0a0cddcefac1",
-    "baseSourceBlendSha256": "afa52298f21909256b50334bb4fa4d6ebf0788d8578e3dfe891d7f3b6d861bf1",
-    "baseAssetSha256": "c9682adf85ee4bff81f8f5b80f249cd9f9234f0eace9993c4be54f2c48faefe5",
-    "baseManifestSha256": "d438713a226452e3b479115fc9209a0e2d6f53ea4eb9d458318c60aa9c26661d",
-    "preservationReportSha256": "2d82e1a50b6299f274e3b8bff8532b5cfc844022f706362b5e0e0ebf96ae3474",
-    "rotationReportSha256": "befa9ba6a4a979b48555c49c70711224c63dfc320d9fa30fe2e613404ec2dcfc",
-    "editableCorrectionScriptSha256": "b7742d234b33e246893121fa68db7ac7e55d2df23b8d80dc8b475de757c42d62",
-    "browserCorrectionScriptSha256": "1cf2090bb0c214a15940db4bd49842d2019f52266e2ec9494098a7ee860a52b3"
+    "mode": "editable-source-correction-and-preserving-static-overlay",
+    "sourceBlendSha256": "787d26785ee1f3fcaf6df94a35228585f66a094cff452c2a882e6d71e29235ff",
+    "sourceBlendBytes": 194540088,
+    "assetSha256": "d6684cee9938bcd07a2cfb3388ead542d4dcd80792d9c69472692fe1da90fc70",
+    "baseSourceBlendSha256": "be314d0f7a8500640558354b8b87e8713d37abab34efd241a219ee4551aba768",
+    "baseAssetSha256": "afb901e0f895fdc089a3fde84d507f3412061c2117cbee97419d0a0cddcefac1",
+    "baseManifestSha256": "08e2babe48262c59bf2618f832f6fd0c8d82ecd8391cff3d6ce9c7b0cfe60c8b",
+    "preservationReportSha256": "72787a71f9207116d0898fb3f03fec27894346777fa0fe72bc7bd2d67b0a904c",
+    "assemblyReportSha256": "c6e797c61bb73d4f6577de12efafff1f05ad432ca0d8d518f87e9130877cb63c",
+    "sourceCorrectionScriptSha256": "e819303267a7846a26749b02ea76a3a784a7e26f413167d909f519ea19735ccf",
+    "fixedFeatureScriptSha256": "be9dee7916b0a4295c908c1fd065604a8d8f06aa013d5b445e0f2954de6ec410"
   },
   "incrementalAssetProof": {
-    "gltfSha256": "c1bd75ac35c7fe8f92249f88fb88da6a531300e579c26164f9cf9896cff95fe8",
-    "newGeometryBytes": 650544,
-    "newGeometrySha256": "7adefce22781a8c2e87f6fa0564f6c7534cfd909791b3869862b7bebf6a90aea",
-    "changedAccessorIndices": [
-      28,
-      29,
-      127,
-      128,
-      132,
-      133
-    ],
-    "materialsImagesAndUvsExact": true,
-    "unchangedNodesExact": 435
+    "gltfSha256": "b38812cb4722180e7f7230e7196255cfba744c0441231d363289f8a4c96ed218",
+    "newGeometryAndTextureBytes": 26634784,
+    "newBufferSha256": "19c77353927035c9bf42028fa7eebcfb180ea866c78742eab4e00b59a69e3994",
+    "replacedBaseNodes": 46,
+    "overlayNodes": 68,
+    "untouchedBaseArraysAndBytesExact": true
   },
   "incrementalModel": {
-    "version": "v14-lounge-chairs",
-    "scope": "Four Lounge chair assemblies rotate 180 degrees in place, with backs by the wall and openings toward the sofa",
-    "confidence": "high for facing direction",
-    "dimensionStatus": "Existing seat centers and dimensions retained; building spacing remains under source audit",
+    "version": "v15-building",
+    "scope": "Net room surfaces, Lounge doorway and entry recess, Kitchen envelope, fireplace, gable, cabinetry, appliances and furnishings",
+    "confidence": "High for feature presence and room-facing directions; moderate for plan alignment; low for unmeasured metric clearances",
+    "dimensionStatus": "Photo and plan reconstruction, not a site survey; current upper-floor alignment and some room clearances remain unresolved",
     "sourcePhotos": [
-      "DSC00147.JPG",
-      "DSC00153.JPG"
+      "IMG_8299",
+      "IMG_8302",
+      "IMG_8309",
+      "IMG_8311",
+      "IMG_7241",
+      "C0169_7_45.139s",
+      "DSC00140",
+      "DSC00144",
+      "DSC00153"
     ],
-    "userCorrection": "Lounge chairs faced the wrong direction in V13",
-    "preservation": {
-      "changedObjects": 32,
-      "unaffectedObjectsExact": 7745,
-      "allMaterialsExact": 151,
-      "allImagesExact": 34
-    }
+    "changedObjects": 143,
+    "removedObjects": 55,
+    "addedObjects": 592,
+    "existingSourceMaterialsAndImagesExact": true
+  },
+  "authoringBytes": 194540088,
+  "publicationReview": {
+    "reviewer": "GPT-6 Astra",
+    "verdict": "SHIP",
+    "gateSha256": "c3d2eca7b5d90b6981f1a7b7756e6f4de22528e5073e6b1d3be34e8e655d86be",
+    "sourceAuditSha256": "29533f87a3af2c437d11bcd5a2197171ec20248ca9a67e7d0b988a9a6851d8fc",
+    "browserRoomsSha256": "262b83a9d9bdff1641c78049e7014f7411a1f78851dee1c4745ffc014146fabd",
+    "browserDetailsSha256": "c5d515bbf26a44467b6cea2da04dcd3778d2dc0a0b722ce9259340213447c2c4",
+    "browserPlanningSha256": "4a7fe7fcb667fcc7431ad3e2e29891632f459bb8c631dcf36dd54ed355b3a3ef",
+    "browserUiSha256": "d74542b05abb8252a0ea69c83b58b301c0cd8c5361f27c6aa88a2820cbd51edc",
+    "appSha256": "2472dda92385fd2aed1efe041a5a4693fa15896881847392d434c4bf401e2d57",
+    "geometryModuleSha256": "e9c4c50750bf1a921e36a6f26f782da0a2bc1eeee4b6d97bc4c3c33b0fabbca3"
   }
 }
