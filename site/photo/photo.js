@@ -1,11 +1,15 @@
 import * as THREE from 'three';
 import * as GS from 'gaussian-splats-3d';
+import {createSmoothMotion,isMovementField} from '/keyboard-motion.mjs';
 
 const $ = id => document.getElementById(id);
 const stage = $('splat-stage');
 const preferred = ['DSC00133.JPG', 'DSC00138.JPG', 'DSC00150.JPG'];
 const LIMITS = { yaw: THREE.MathUtils.degToRad(35), pitch: THREE.MathUtils.degToRad(25) };
 let viewer, poses = new Map(), current, yaw = 0, pitch = 0, dragging = false, start = null;
+const keys=new Set(),lookMotion=createSmoothMotion();
+let lastLookTime=0;
+function resetMovement(){keys.clear();lookMotion.reset();lastLookTime=0;}
 
 function setStatus(text) { $('state').textContent = text; }
 function setLoading(title, detail, progress) { $('load-title').textContent = title; $('load-detail').textContent = detail; $('meter-fill').style.width = `${progress}%`; }
@@ -24,6 +28,7 @@ function applyPose() {
 }
 function selectPose(image) {
   current = poses.get(image); if (!current) return;
+  resetMovement();
   yaw = 0; pitch = 0; applyPose();
   $('pose-name').textContent = image.replace('.JPG', '');
   document.querySelectorAll('[data-pose]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.pose === image)));
@@ -73,15 +78,33 @@ stage.addEventListener('pointermove', event => { if (!dragging || !start) return
 stage.addEventListener('pointerup', event => { dragging = false; start = null; try { stage.releasePointerCapture(event.pointerId); } catch {} });
 stage.addEventListener('pointercancel', () => { dragging = false; start = null; });
 document.addEventListener('keydown', event => {
-  if (!current || event.defaultPrevented || event.isComposing || event.altKey || event.metaKey || event.ctrlKey || event.target?.closest?.('input,select,textarea,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="combobox"],[role="listbox"],[role="slider"]')) return;
+  if (!current || event.defaultPrevented || event.isComposing || event.altKey || event.metaKey || event.ctrlKey || isMovementField(event.target)) return;
   const key = event.key.toLowerCase();
-  if (!['arrowup','arrowdown','arrowleft','arrowright'].includes(key)) return;
+  if (!['arrowup','arrowdown','arrowleft','arrowright','shift'].includes(key)) return;
   event.preventDefault();
-  const step = THREE.MathUtils.degToRad(event.shiftKey ? 4 : 2);
-  yaw = THREE.MathUtils.clamp(yaw + (key === 'arrowleft' ? step : key === 'arrowright' ? -step : 0), -LIMITS.yaw, LIMITS.yaw);
-  pitch = THREE.MathUtils.clamp(pitch + (key === 'arrowup' ? step : key === 'arrowdown' ? -step : 0), -LIMITS.pitch, LIMITS.pitch);
-  applyPose();
+  keys.add(key);
 });
+document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));
+window.addEventListener('blur',resetMovement);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)resetMovement();});
+document.addEventListener('focusin',event=>{if(isMovementField(event.target))resetMovement();});
+function animateLook(time){
+  const dt=lastLookTime?Math.min(.05,(time-lastLookTime)/1000):0;lastLookTime=time;
+  if(current&&!document.hidden){
+    let x=Number(keys.has('arrowleft'))-Number(keys.has('arrowright'));
+    let y=Number(keys.has('arrowup'))-Number(keys.has('arrowdown'));
+    const length=Math.hypot(x,y);if(length>1){x/=length;y/=length;}
+    const speed=keys.has('shift')?1.15:.65;
+    const step=lookMotion.step(x*speed,y*speed,dt);
+    if(step.dx||step.dy){
+      yaw=THREE.MathUtils.clamp(yaw+step.dx,-LIMITS.yaw,LIMITS.yaw);
+      pitch=THREE.MathUtils.clamp(pitch+step.dy,-LIMITS.pitch,LIMITS.pitch);
+      applyPose();
+    }
+  }
+  requestAnimationFrame(animateLook);
+}
+requestAnimationFrame(animateLook);
 $('reset').addEventListener('click', () => selectPose(current?.image || 'DSC00133.JPG'));
 $('retry').addEventListener('click', load);
 load();

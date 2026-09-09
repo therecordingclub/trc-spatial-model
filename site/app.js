@@ -3,6 +3,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
 import {loadDetailedScene} from '/detailed-scene.js';
 import {createNavigation} from '/navigation.js';
+import {createSmoothMotion,isMovementField} from '/keyboard-motion.mjs';
 import {cameraVerticalFov} from '/room-lighting.js';
 import {cloneLightMapTransport} from '/irradiance-lightmap.js';
 import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
@@ -36,6 +37,8 @@ let renderer,scene,camera,perspective,orthographic,controls,model,activeFloor,ac
 let walk=false,dirty=false,selectedItem='',scenario={version:1,items:[]},undo=[],startPointer=null,drag=null,measurePoints=[],sceneBounds,saveReady=false;
 let yaw=0,pitch=0,animation=0,oldTime=0,messageTimer,walkingPointer=null,detailed,composer,renderPass,aoPass,navigation;
 const keys=new Set(),wallMeshes=[],roomMeshes=[],labels=[],raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
+const walkMotion=createSmoothMotion(),panMotion=createSmoothMotion();
+function resetMovement(){keys.clear();walkMotion.reset();panMotion.reset();}
 const floorMaps=new Map(),historyLimit=30;
 const palette={wall:'#454b51',floor:'#ad8669',highlight:'#315cba',metal:'#272e34',white:'#d8d8d1',wood:'#694535',red:'#682c32'};
 const material=(color=palette.white,other={})=>new THREE.MeshStandardMaterial({color,roughness:.8,metalness:.05,...other});
@@ -327,6 +330,7 @@ function onPointerUp(event){
 }
 function startWalk(){
   if(!model)return;
+  resetMovement();
   if(!activeRoom){const room=floorRooms().find(r=>/live|lounge|mezzanine/.test(r.id))||floorRooms()[0];selectRoom(room.id,false);}
   mode='explore';document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));$('layout-panel').hidden=true;$('measure-panel').hidden=true;clearMeasurement();
   camera=perspective;controls.object=camera;controls.enabled=false;camera.up.set(0,1,0);const room=currentRoom(),p=room.label||room.polygon[0];
@@ -340,19 +344,23 @@ function startWalk(){
   }
   if(pose){const direction=pose.target.clone().sub(camera.position).normalize();yaw=Math.atan2(-direction.x,-direction.z);pitch=Math.asin(direction.y);}else{yaw=0;pitch=0;}
   walk=true;visibility();$('exit-walk').hidden=false;
-  $('touch-controls').hidden=!matchMedia('(pointer:coarse)').matches;$('hint').textContent='WASD or arrows to move · drag to look · Esc to leave';
+  $('touch-controls').hidden=!matchMedia('(pointer:coarse)').matches;$('hint').textContent='Hold arrows or WASD to walk · Shift faster · drag to look';
   renderer.domElement.focus();updateURL();
   if(matchMedia('(pointer:fine)').matches&&renderer.domElement.requestPointerLock){try{const request=renderer.domElement.requestPointerLock();request?.catch(()=>notify('Drag inside the model to look around.'));}catch{notify('Drag inside the model to look around.');}}
 }
-function stopWalk(){if(!walk)return;walk=false;keys.clear();document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Arrow keys to pan · drag to orbit · scroll to zoom';}
-function panView(key){
-  const vertical=key==='arrowup'||key==='arrowdown';
+function stopWalk(){resetMovement();if(!walk)return;walk=false;document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Hold arrow keys to pan · drag to orbit · scroll to zoom';}
+function panView(dt){
+  if(drag||!controls.enabled){panMotion.reset();return;}
+  let x=Number(keys.has('arrowright'))-Number(keys.has('arrowleft'));
+  let y=Number(keys.has('arrowup'))-Number(keys.has('arrowdown'));
+  const length=Math.hypot(x,y);if(length>1){x/=length;y/=length;}
+  const movement=panMotion.step(x*.48,y*.48,dt);
+  if(!movement.dx&&!movement.dy)return;
   const viewHeight=camera.isPerspectiveCamera?2*camera.position.distanceTo(controls.target)*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)):(camera.top-camera.bottom)/camera.zoom;
-  const step=viewHeight*20/Math.max(1,renderer.domElement.clientHeight);
-  const direction=key==='arrowup'||key==='arrowright'?1:-1;
   camera.updateMatrixWorld();
-  const offset=new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,vertical?1:0).multiplyScalar(step*direction);
-  camera.position.add(offset);controls.target.add(offset);controls.update();
+  const offset=new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,0).multiplyScalar(movement.dx*viewHeight)
+    .addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,1),movement.dy*viewHeight);
+  camera.position.add(offset);controls.target.add(offset);
 }
 function canWalk(x,z){
   if(!insidePolygon([x,z],currentFloor().footprint||[]))return false;
@@ -362,8 +370,11 @@ function canWalk(x,z){
 function moveWalk(dt){
   let forward=Number(keys.has('w')||keys.has('arrowup'))-Number(keys.has('s')||keys.has('arrowdown'));
   let right=Number(keys.has('d')||keys.has('arrowright'))-Number(keys.has('a')||keys.has('arrowleft'));
-  if(forward||right){const norm=Math.hypot(forward,right),speed=(keys.has('shift')?2.8:1.55)*dt;forward/=norm;right/=norm;
-    const dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*right)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*right)*speed;
+  const norm=Math.hypot(forward,right);if(norm>1){forward/=norm;right/=norm;}
+  const speed=keys.has('shift')?3.1:1.75;
+  const movement=walkMotion.step((-Math.sin(yaw)*forward+Math.cos(yaw)*right)*speed,(-Math.cos(yaw)*forward-Math.sin(yaw)*right)*speed,dt);
+  const dx=movement.dx,dz=movement.dy;
+  if(dx||dz){
     if(navigation&&detailed?.root.visible){
       for(const delta of [new THREE.Vector3(dx,0,0),new THREE.Vector3(0,0,dz)]){
         const result=navigation.tryMove(camera.position,delta,{floorId:activeFloor});
@@ -388,7 +399,7 @@ function renderCurrentView(){
 }
 function animate(time){
   const frameMs=oldTime?time-oldTime:0,started=performance.now();
-  const dt=Math.min(.12,frameMs/1000||0);oldTime=time;if(walk)moveWalk(dt);else controls.update();
+  const dt=Math.min(.05,frameMs/1000||0);oldTime=time;if(walk)moveWalk(dt);else{controls.update(dt);panView(dt);}
   const movementMs=performance.now()-started;
   const occupied=[];
   for(const label of [...labels].sort((a,b)=>Number(b.room.id===activeRoom)-Number(a.room.id===activeRoom)||polygonArea(b.room.polygon)-polygonArea(a.room.polygon))){
@@ -404,7 +415,7 @@ function animate(time){
 }
 function installEvents(){
   document.addEventListener('trc-benchmark-frame',()=>{
-    camera.rotation.order='YXZ';if(walk)camera.rotation.set(pitch,yaw,0);
+    if(walk){camera.rotation.order='YXZ';camera.rotation.set(pitch,yaw,0);}
     const context=renderer.getContext(),samples=[];
     renderCurrentView();context.finish();
     for(let index=0;index<5;index++){
@@ -416,7 +427,7 @@ function installEvents(){
   // Read-only capture of this existing browser's WebGL output. This does not
   // focus the window, advance movement, or stand in for full-window UI QA.
   document.addEventListener('trc-capture-frame',()=>{
-    camera.rotation.order='YXZ';if(walk)camera.rotation.set(pitch,yaw,0);
+    if(walk){camera.rotation.order='YXZ';camera.rotation.set(pitch,yaw,0);}
     const started=performance.now();
     renderCurrentView();
     $('viewport').dataset.captureFrame=renderer.domElement.toDataURL('image/png');
@@ -442,12 +453,14 @@ function installEvents(){
   renderer.domElement.addEventListener('pointerdown',onPointerDown);renderer.domElement.addEventListener('pointermove',onPointerMove);renderer.domElement.addEventListener('pointerup',onPointerUp);renderer.domElement.addEventListener('pointercancel',()=>{drag=null;controls.enabled=!walk;walkingPointer=null;});
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){if(walk)stopWalk();return;}
-    if(event.defaultPrevented||event.isComposing||event.altKey||event.metaKey||event.ctrlKey||event.target?.closest?.('input,select,textarea,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="combobox"],[role="listbox"],[role="slider"]'))return;
+    if(event.defaultPrevented||event.isComposing||event.altKey||event.metaKey||event.ctrlKey||isMovementField(event.target))return;
     const key=event.key.toLowerCase();
-    if(!walk){if(['arrowup','arrowdown','arrowleft','arrowright'].includes(key)){event.preventDefault();panView(key);}return;}
+    if(!walk){if(['arrowup','arrowdown','arrowleft','arrowright'].includes(key)){event.preventDefault();keys.add(key);}return;}
     if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright','shift'].includes(key)){event.preventDefault();keys.add(key);}
   });
-  document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));window.addEventListener('blur',()=>keys.clear());
+  document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));window.addEventListener('blur',resetMovement);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){resetMovement();oldTime=0;}});
+  document.addEventListener('focusin',event=>{if(isMovementField(event.target))resetMovement();});
   document.addEventListener('pointerlockchange',()=>{if(walk&&!document.pointerLockElement)$('hint').textContent='WASD to move · drag to look · Exit walk to return';});
   for(const button of document.querySelectorAll('[data-step]')){const key={forward:'w',back:'s',left:'a',right:'d'}[button.dataset.step];button.addEventListener('pointerdown',event=>{event.preventDefault();keys.add(key);button.setPointerCapture(event.pointerId);});for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,()=>keys.delete(key));}
   window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
