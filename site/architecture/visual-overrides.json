@@ -1,0 +1,407 @@
+{
+  "schemaVersion": "1.0.0",
+  "overlayId": "trc-current-visual-layout-2026-09-05",
+  "baselineDocument": {
+    "path": "architecture.json",
+    "modelId": "trc-1660-9th-plan-derived-v1",
+    "schemaVersion": "1.0.0",
+    "geometryState": "2024 plan-derived architectural baseline",
+    "preservationPolicy": "The baseline document remains immutable; this overlay is a qualified current visual-layout hypothesis."
+  },
+  "appliedOverlay": {
+    "id": "trc-current-visual-layout-2026-09-05",
+    "name": "Qualified current Lounge, Kitchen, circulation and Rehearsal access layout",
+    "status": "plan-derived and photo-qualified; not verified on site",
+    "purpose": "current-state walkthrough visualization, not construction, clearance or life-safety planning",
+    "sources": [
+      {
+        "id": "master-2025",
+        "use": "printed current Lounge and Kitchen dimensions and current room topology",
+        "limitations": "Magicplan explicitly disclaims dimensional accuracy"
+      },
+      {
+        "id": "labeled-2024",
+        "use": "registered north, east and south ground-shell faces, retained west circulation path, and vector-traced Rehearsal door jambs",
+        "limitations": "historical room partitions are not assumed current"
+      },
+      {
+        "id": "lobby-spatial-audit-2026-09-05",
+        "path": "../../captures/trc-2026-09-05/lobby-spatial-audit/README.md",
+        "use": "current two-window, door, curtain, stair, Kitchen/circulation and ceiling-topology qualification",
+        "limitations": "photographs and videos establish topology and visual character, not measurements"
+      },
+      {
+        "id": "rehearsal-route-review-2026-09-05",
+        "path": "rehearsal-route-review/source-proof.json",
+        "use": "direct PDF-vector extraction of the Rehearsal southwest primary door, horizontal iso-booth portal, and booth inner-face footprint; identification of open door-leaf vertices incorrectly used as room bounds",
+        "limitations": "door and booth geometry are graphically traced from the 2024 drawing; opening heights, sliding-leaf position and current site condition are not measured"
+      },
+      {
+        "id": "navigation-v7-recording-iso-source-proof",
+        "path": "../evidence/navigation-v7/source-proof.json",
+        "use": "direct PDF-vector distinction between the Recording ISO vertical west doorway and the open diagonal door leaf previously modeled as a wall",
+        "limitations": "room and jamb geometry are graphically traced from the 2024 drawing; opening height and current site condition are unverified"
+      }
+    ],
+    "limitations": [
+      "No site measurement, scan registration or as-built survey was supplied.",
+      "All numeric plan coordinates are plan-derived; current visual evidence is not used as perspective scale.",
+      "Lounge height 3.7 m is an existing visual-model inference, not a clearance measurement.",
+      "The current curtain opening, western wall stop, stair curve and wall thickness are not measured.",
+      "Kitchen east-west limits retain the qualified 2024 planning extents because no stronger current width source is available.",
+      "Magicplan reports two upstairs areas; only the 572.84 sq ft main Mezzanine has an identified footprint. The remaining 124.51 sq ft has no identified shape, room use or photo coverage. It is not the small southwest projection.",
+      "No continuous ground-floor stair ascent or measured upper-floor elevation is established by the retained photos and videos.",
+      "Office/Machine Room and two legacy iso-room interiors lack confirmed current photo coverage; their furnishings must not be treated as a current inventory.",
+      "The Rehearsal southwest door width and position are graphically traced from drawing vectors; no printed width or opening height was found. Its 2.13 m visualization height is inherited from the baseline door convention, not measured.",
+      "The Rehearsal iso-booth footprint, horizontal north wall and rough opening are graphically traced from the labeled-2024 inner-face vectors. The source shows paired sliding leaves, but does not establish their current position; the walkthrough visualizes the passage open.",
+      "The Recording ISO west doorway and room envelope are graphically traced from labeled-2024 vectors. The former diagonal wall was the source drawing's open door leaf; current room use and door state remain unverified."
+    ],
+    "coverageGaps": [
+      {"id":"unlocated-second-upstairs-area","floorId":"mezzanine-review","reportedAreaSquareFeet":124.51,"shape":null,"status":"Unlocated second upstairs area; no geometry invented","source":"master-2025 floor total minus labeled main Mezzanine area"},
+      {"id":"stair-registration","status":"Ground-to-mezzanine stair route and elevation unverified"},
+      {"id":"outdoor-registration","status":"Indoor connection to the photo-confirmed exterior corridor unverified"}
+    ]
+  },
+  "operations": {
+    "rooms": {
+      "update": [
+        {"id":"studio-a-control","set":{"name":"Mixing Room"}},
+        {"id":"studio-a-iso","set":{"name":"Mic Closet (provisional mapping)","appearanceStatus":"Current contents unverified; plan-based room identity is provisional"}},
+        {
+          "id": "recording-iso",
+          "set": {
+            "polygon": [
+              [27.336027, 13.265239],
+              [29.20242, 13.475472],
+              [29.20242, 12.056848],
+              [27.336027, 12.056848],
+              [27.336027, 12.161154],
+              [27.151498, 12.161154],
+              [27.151498, 12.255849],
+              [27.007059, 12.255849],
+              [27.007059, 13.202664],
+              [27.151476, 13.202642],
+              [27.151476, 13.265239]
+            ],
+            "label": [28.15, 12.72],
+            "appearanceStatus": "Current use and contents unverified; corrected 2024 source-vector envelope retained",
+            "dimensionStatus": "labeled-2024 PDF inner-face vectors graphically traced; open door leaf removed from the room envelope; not site-measured or confirmed current",
+            "source": "labeled-2024 PDF vectors, navigation-v7 source proof"
+          }
+        },
+        {"id":"office-machine","set":{"appearanceStatus":"Current appearance unverified; architectural shell only"}},
+        {"id":"electrical-room","set":{"appearanceStatus":"Current use and contents unverified; legacy room footprint retained"}},
+        {
+          "id": "bar-lounge",
+          "set": {
+            "name": "Lounge",
+            "polygon": [
+              [31.08215, 13.886],
+              [35.724, 13.886],
+              [35.724, 5.2246],
+              [31.08215, 5.2246]
+            ],
+            "label": [33.403075, 9.5553],
+            "height": 3.7,
+            "heightStatus": "photo-inferred existing visual-model height; unverified and not a clearance measurement",
+            "dimensionStatus": "qualified current visual-layout envelope: 2025 printed 4.64185 m by 8.6614 m dimensions registered to the 2024 north/east shell; not site-verified",
+            "source": "master-2025 + labeled-2024 shell registration + lobby-spatial-audit-2026-09-05"
+          }
+        },
+        {
+          "id": "kitchen",
+          "set": {
+            "polygon": [
+              [28.45, 0.212],
+              [35.62, 0.212],
+              [35.62, 4.0347],
+              [28.45, 4.0347]
+            ],
+            "label": [32.035, 2.12335],
+            "dimensionStatus": "qualified current visual-layout envelope: 2025 printed 3.8227 m depth anchored to the south shell; east-west limits retain qualified 2024 planning extents; not site-verified",
+            "source": "master-2025 depth + labeled-2024 shell and east-west planning extents + lobby-spatial-audit-2026-09-05"
+          }
+        },
+        {
+          "id": "main-circulation",
+          "set": {
+            "polygon": [
+              [17.9, 2.46],
+              [21.05, 2.46],
+              [21.05, 4.1],
+              [26.9, 4.1],
+              [26.9, 7.3],
+              [30.75, 7.3],
+              [30.75, 5.2246],
+              [35.55, 5.2246],
+              [35.55, 4.0347],
+              [28.3, 4.0347],
+              [28.3, 2.45],
+              [27.1, 2.45],
+              [27.1, 0.2],
+              [21.05, 0.2],
+              [21.05, 2.2],
+              [17.9, 2.2]
+            ],
+            "dimensionStatus": "qualified current visual-layout circulation: 2024 west route retained and east route limited to the 1.1899 m plan-derived band between current Lounge and Kitchen envelopes; not site-verified",
+            "source": "labeled-2024 west circulation path + master-2025 Lounge/Kitchen depths + lobby-spatial-audit-2026-09-05"
+          }
+        },
+        {
+          "id": "rehearsal-room",
+          "set": {
+            "polygon": [
+              [0.21, 13.702],
+              [4.023, 13.702],
+              [4.023, 13.097],
+              [3.577, 12.651],
+              [4.023, 12.387],
+              [5.155, 11.203],
+              [5.155, 9.39],
+              [4.049, 8.284],
+              [4.049, 7.969],
+              [5.155, 6.891],
+              [4.259, 6.891],
+              [0.236, 6.891],
+              [0.21, 6.891]
+            ],
+            "dimensionStatus": "plan-vector correction: open door-leaf swing vertices removed from the room envelope; retained inner-face coordinates remain registered to labeled-2024 and are not site-verified",
+            "source": "labeled-2024 PDF vector inspection, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "rehearsal-iso",
+          "set": {
+            "polygon": [
+              [2.208213, 6.89101],
+              [4.048901, 6.89101],
+              [4.048901, 6.128746],
+              [5.048679, 6.128746],
+              [5.048679, 3.620444],
+              [3.000888, 3.902997],
+              [2.752548, 3.957286],
+              [2.534244, 4.072733],
+              [2.35499, 4.239914],
+              [2.224625, 4.449651],
+              [2.152986, 4.692764],
+              [1.818246, 6.128746],
+              [2.208213, 6.128746]
+            ],
+            "label": [3.45, 4.9],
+            "dimensionStatus": "labeled-2024 PDF inner-face vectors graphically traced; southwest cubic sampled into the visual polygon; source envelope is not site-measured or confirmed current",
+            "source": "labeled-2024 PDF vectors, rehearsal-route-review"
+          }
+        }
+      ]
+    },
+    "walls": {
+      "update": [
+        {
+          "id": "bar-south",
+          "set": {
+            "start": [31.08215, 5.2246],
+            "end": [35.724, 5.2246],
+            "thickness": 0.16,
+            "height": 3.7,
+            "openings": [
+              {
+                "offset": 0.0,
+                "width": 4.64185,
+                "height": 3.7,
+                "sill": 0.0,
+                "type": "open",
+                "connects": ["bar-lounge", "main-circulation"],
+                "dimensionStatus": "full-width current visual portal hypothesis; equals the Lounge envelope width and is not a measured jamb opening",
+                "source": "master-2025 topology + March/June 2026 curtain imagery"
+              }
+            ],
+            "dimensionStatus": "current visual-layout portal boundary at the Lounge south envelope; no physical jamb or clearance claim",
+            "source": "master-2025 registered envelope + lobby-spatial-audit-2026-09-05"
+          }
+        },
+        {
+          "id": "rehearsal-south",
+          "set": {
+            "start": [0.210255, 6.89101],
+            "end": [5.154606, 6.89101],
+            "openings": [
+              {
+                "offset": 0.025661,
+                "width": 0.946837,
+                "height": 2.13,
+                "sill": 0.0,
+                "type": "door",
+                "connects": ["rehearsal-room", "locker-hallway"],
+                "dimensionStatus": "southwest primary door jambs vector-traced at PDF x=236.628 and 279.283; width and position are graphical, while height is the unmeasured baseline visualization convention",
+                "source": "labeled-2024 PDF vectors",
+                "adjacencyStatus": "topological route via the source-drawn, unlabeled west-side circulation toward Locker Hallway; Locker Hallway is not directly adjacent at this jamb"
+              },
+              {
+                "offset": 1.997958,
+                "width": 1.840688,
+                "height": 2.13,
+                "sill": 0.0,
+                "type": "open",
+                "connects": ["rehearsal-room", "rehearsal-iso"],
+                "dimensionStatus": "clear throat graphically traced between PDF inner faces x=325.480 and 408.403; height is the unmeasured baseline visualization convention",
+                "source": "labeled-2024 PDF vectors",
+                "adjacencyStatus": "paired horizontal sliding-leaf vectors identify the booth route; shown open for walkthrough because current leaf position is unknown"
+              }
+            ],
+            "dimensionStatus": "PDF-vector inner face with corrected southwest primary opening and aligned iso-booth portal; the printed 2'-10\" east closet door is on a separate vertical return and is not projected onto this wall",
+            "source": "labeled-2024 PDF vector inspection, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "rehearsal-iso-north",
+          "set": {
+            "start": [1.818246, 6.128746],
+            "end": [5.048679, 6.128746],
+            "thickness": 0.117137,
+            "openings": [
+              {
+                "offset": 0.389967,
+                "width": 1.840688,
+                "height": 2.13,
+                "sill": 0.0,
+                "type": "open",
+                "connects": ["rehearsal-iso", "rehearsal-room"],
+                "dimensionStatus": "rough opening graphically traced between PDF inner faces x=325.480 and 408.403; height is unmeasured",
+                "source": "labeled-2024 PDF vectors",
+                "adjacencyStatus": "horizontal booth portal; paired sliding-leaf vectors are source-visible, but the current leaf position is unknown"
+              }
+            ],
+            "dimensionStatus": "horizontal booth north inner face graphically traced at PDF y=503.310; replaces the unsupported diagonal approximation",
+            "source": "labeled-2024 PDF vectors, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "rehearsal-iso-west",
+          "set": {
+            "start": [1.818246, 6.128746],
+            "end": [2.152986, 4.692764],
+            "thickness": 0.117137,
+            "dimensionStatus": "PDF-vector inner face: straight northwest booth segment; replaces the segment that incorrectly began beside the southwest Rehearsal door",
+            "source": "labeled-2024 PDF drawing 708, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "rehearsal-iso-south",
+          "set": {
+            "start": [2.152986, 4.692764],
+            "end": [2.224625, 4.449651],
+            "thickness": 0.117137,
+            "dimensionStatus": "first sampled segment of the labeled-2024 booth southwest cubic; graphical, not site-measured",
+            "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "rehearsal-iso-east",
+          "set": {
+            "start": [3.000888, 3.902997],
+            "end": [5.048679, 3.620444],
+            "thickness": 0.117137,
+            "dimensionStatus": "PDF-vector inner face: southeast booth segment; graphical, not site-measured",
+            "source": "labeled-2024 PDF drawing 704, rehearsal-route-review"
+          }
+        },
+        {
+          "id": "recording-iso-west",
+          "set": {
+            "start": [27.007059, 13.254007],
+            "end": [27.007059, 12.255849],
+            "thickness": 0.117137,
+            "openings": [
+              {
+                "offset": 0.051343,
+                "width": 0.946815,
+                "height": 2.13,
+                "sill": 0.0,
+                "type": "door",
+                "connects": ["recording-room", "recording-iso"],
+                "dimensionStatus": "jambs graphically traced at PDF x=1442.668, y=184.630 and 227.284; height is the unmeasured baseline visualization convention",
+                "source": "labeled-2024 PDF vectors, navigation-v7 source proof"
+              }
+            ],
+            "dimensionStatus": "vertical west inner face graphically traced from labeled-2024; replaces the diagonal open door leaf incorrectly treated as a wall",
+            "source": "labeled-2024 PDF drawings 799, 801 and 805; navigation-v7 source proof"
+          }
+        }
+      ],
+      "add": [
+        {
+          "id": "lounge-west-current-visual",
+          "floorId": "ground",
+          "start": [31.08215, 13.886],
+          "end": [31.08215, 7.52],
+          "thickness": 0.16,
+          "height": 3.7,
+          "openings": [],
+          "dimensionStatus": "photo-qualified north Lounge wall with south stair approach left open; x follows the registered Lounge envelope and the 7.52 m stop reuses the historical stair-zone bound only as a visual-layout limit, not a measured current endpoint",
+          "heightStatus": "photo-inferred existing visual-model height; unverified and not a clearance measurement",
+          "source": "March/June 2026 left seating wall and curved-bulkhead imagery + registered current Lounge envelope"
+        },
+        {
+          "id": "rehearsal-iso-curve-02",
+          "floorId": "ground",
+          "start": [2.224625, 4.449651],
+          "end": [2.35499, 4.239914],
+          "thickness": 0.117137,
+          "height": 2.74,
+          "openings": [],
+          "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+          "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+        },
+        {
+          "id": "rehearsal-iso-curve-03",
+          "floorId": "ground",
+          "start": [2.35499, 4.239914],
+          "end": [2.534244, 4.072733],
+          "thickness": 0.117137,
+          "height": 2.74,
+          "openings": [],
+          "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+          "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+        },
+        {
+          "id": "rehearsal-iso-curve-04",
+          "floorId": "ground",
+          "start": [2.534244, 4.072733],
+          "end": [2.752548, 3.957286],
+          "thickness": 0.117137,
+          "height": 2.74,
+          "openings": [],
+          "dimensionStatus": "sampled labeled-2024 booth southwest cubic; graphical, not site-measured",
+          "source": "labeled-2024 PDF drawing 712, rehearsal-route-review"
+        },
+        {
+          "id": "rehearsal-iso-curve-05",
+          "floorId": "ground",
+          "start": [2.752548, 3.957286],
+          "end": [3.000888, 3.902997],
+          "thickness": 0.117137,
+          "height": 2.74,
+          "openings": [],
+          "dimensionStatus": "sampled labeled-2024 booth southwest cubic joined to the southeast inner face; graphical, not site-measured",
+          "source": "labeled-2024 PDF drawings 712 and 704, rehearsal-route-review"
+        },
+        {
+          "id": "rehearsal-iso-east-return",
+          "floorId": "ground",
+          "start": [5.048679, 3.620444],
+          "end": [5.048679, 6.128746],
+          "thickness": 0.117137,
+          "height": 2.74,
+          "openings": [],
+          "dimensionStatus": "PDF-vector inner face: vertical east booth return; graphical, not site-measured",
+          "source": "labeled-2024 PDF drawing 700, rehearsal-route-review"
+        }
+      ]
+    }
+  },
+  "metadataPolicy": {
+    "historicalizeScaleControlIds": ["check-lounge-19ft6", "check-27ft11"],
+    "historicalizeSourceVertexControlRoomIds": ["bar-lounge", "kitchen", "main-circulation"],
+    "reason": "These controls describe replaced 2024 room geometry. They remain provenance but are not active validation controls for the current visual-layout overlay."
+  }
+}

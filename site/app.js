@@ -460,10 +460,11 @@ async function initialize(){
       $('viewport').dataset.albedoAudit=JSON.stringify(detailed.albedoAudit);
       $('viewport').dataset.lightingAudit=JSON.stringify(detailed.lightingAudit);
       if(detailed.manifest.authoringAsset){$('blend-link').href=detailed.manifest.authoringAsset;$('blend-link').textContent='Editable reconstruction (.blend) ↓';}
-      $('glb-link').href=detailed.manifest.asset;$('glb-link').textContent='Detailed walkthrough model (.glb) ↓';
+      $('glb-link').href=detailed.manifest.downloadAsset||detailed.manifest.asset.replace(/\.gltf(?=[?#]|$)/,'.glb');
+      $('glb-link').textContent=/\.glb(?:[?#]|$)/.test($('glb-link').href)?'Detailed walkthrough model (.glb) ↓':'Detailed walkthrough model (.gltf) ↓';
       navigation=createNavigation(detailed.meshes,model.floors);
       $('viewport').dataset.navigationStats=JSON.stringify(navigation.stats);
-      $('detail-status').textContent=detailed.manifest.preview?'Private model preview · visual approval pending':'Photo-referenced interiors · dimensions inferred';
+      $('detail-status').textContent=detailed.manifest.preview?'Model preview · visual checks pending':'Photo-referenced interiors · dimensions inferred';
       scene.children.find(obj=>obj.isHemisphereLight).intensity=.5;sun.intensity=1.2;
       const viewTarget=new THREE.WebGLRenderTarget(1,1,{type:THREE.HalfFloatType,samples:Math.min(4,renderer.capabilities.maxSamples)});
       composer=new EffectComposer(renderer,viewTarget);renderPass=new RenderPass(scene,camera);composer.addPass(renderPass);

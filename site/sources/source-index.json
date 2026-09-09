@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-09-08",
+  "originalGeometryPreserved": true,
+  "records": [
+    {
+      "file": "/sources/a111-construction-2012.pdf",
+      "title": "Historical new construction and reflected ceiling plans",
+      "originalFilename": "A111 NEW CONSTRUCTION PLAN.pdf",
+      "drawingDate": "2012-04-09",
+      "issueDate": "2012-05-08",
+      "bytes": 335183,
+      "sha256": "f4c54658dd8f6fb6c54a806e3efb9638cd3395593ef0b39af9159b92b84e6ba7",
+      "basis": "Historical design intent; present-day dimensions and finishes not verified"
+    },
+    {
+      "file": "/sources/a210-2012.pdf",
+      "title": "Historical architectural sections",
+      "originalFilename": "A210 NEW SECTIONS.pdf",
+      "drawingDate": "2012-04-09",
+      "issueDate": "2012-05-08",
+      "bytes": 242056,
+      "sha256": "7206a27543c0962dbb9c38f8b2248f1a93311346756f19ca72f3d5c6dda1186b",
+      "basis": "Historical design intent; present-day dimensions and finishes not verified"
+    },
+    {
+      "file": "/sources/a240-elevations-2012.pdf",
+      "title": "Historical interior elevations",
+      "originalFilename": "A240 INTERIOR ELEVATIONS.pdf",
+      "drawingDate": "2012-04-09",
+      "issueDate": "2012-05-08",
+      "bytes": 172966,
+      "sha256": "6726eaeccf931be68e5e0feebf95246ae4ba3e90c927f16d449d2afd991f8a4b",
+      "basis": "Historical design intent; present-day dimensions and finishes not verified"
+    },
+    {
+      "file": "/sources/a500-wall-ceiling-types-2012.pdf",
+      "title": "Historical wall and ceiling construction types",
+      "originalFilename": "A500 Wall & Ceiling Types.pdf",
+      "drawingDate": "2012-04-09",
+      "issueDate": "2012-05-08",
+      "bytes": 212032,
+      "sha256": "4e76a4049d8486aac902064a22897db3aacb65f922f8a1ec7e57379fd9e4f6d1",
+      "basis": "Historical design intent; present-day dimensions and finishes not verified"
+    },
+    {
+      "file": "/sources/a510-construction-details-2012.pdf",
+      "title": "Historical construction details",
+      "originalFilename": "A510 CONSTRUCTION DETAILS.pdf",
+      "drawingDate": "2012-04-09",
+      "issueDate": "2012-05-08",
+      "bytes": 265174,
+      "sha256": "462e881e04b63cda174c31fa4c2e43486ce6c6c8ce57bc63402cbbce0974d5ce",
+      "basis": "Historical design intent; present-day dimensions and finishes not verified"
+    },
+    {
+      "file": "/sources/labeled-2024.pdf",
+      "title": "Labeled architectural room plan",
+      "year": 2024,
+      "bytes": 550325,
+      "sha256": "883cc14b0dce8666c88cc7277015af9a2842018e876438e7f2eb4d9e4f466e60",
+      "basis": "Source plan; current site registration remains qualified"
+    },
+    {
+      "file": "/sources/master-2025.pdf",
+      "title": "Magicplan cross-check",
+      "year": 2025,
+      "bytes": 135382,
+      "sha256": "b6c333f52594bd9fa41eddc81964239cba6f6c0b8d99071a672ec8c7436b9eb6",
+      "basis": "Source plan; current site registration remains qualified"
+    }
+  ],
+  "unresolved": [
+    "Unlocated second upstairs area: 124.51 square feet",
+    "Ground-to-mezzanine stair route and elevation",
+    "Indoor-to-outdoor registration"
+  ],
+  "conflicts": [
+    {
+      "sheets": [
+        "A210",
+        "A240"
+      ],
+      "detail": "Tracking ceiling cloud is 9 ft 2 in in section A210 and 9 ft 1 in in A240 elevations. Neither is a verified present-day height."
+    }
+  ]
+}
