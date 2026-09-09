@@ -6,9 +6,12 @@ import {createHash} from 'node:crypto';
 
 const project=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const root=path.resolve(process.argv[2]||path.join(project,'site'));
+const preview=process.argv[3]||'';
+if(preview)assert.match(preview,/^v\d+(?:-[a-z0-9]+)*$/,'Invalid preview version');
 const readJSON=async name=>JSON.parse(await readFile(path.join(root,name),'utf8'));
 const model=await readJSON('data/model.json');
-const manifest=await readJSON('reconstruction/web-manifest.json');
+const manifestFile=`reconstruction/web-manifest${preview?'-'+preview:''}.json`;
+const manifest=await readJSON(manifestFile);
 const downloads=await readJSON('downloads.json');
 const sources=await readJSON('sources/source-index.json');
 for(const source of sources.records){
@@ -66,6 +69,6 @@ for(const page of ['index.html','photo/index.html']){
     linkedFiles++;
   }
 }
-console.log(JSON.stringify({status:'pass',root,version:manifest.version,modelRevision:model.revision,rooms:rooms.size,
+console.log(JSON.stringify({status:'pass',root,manifestFile,version:manifest.version,modelRevision:model.revision,rooms:rooms.size,
   modelDependencies:uris.length,checkedAssetBytes,linkedFiles,sourceDocuments:sources.records.length,downloadRedirects:Object.keys(downloads).length,
   gltfSha256:createHash('sha256').update(gltfBytes).digest('hex')},null,2));
