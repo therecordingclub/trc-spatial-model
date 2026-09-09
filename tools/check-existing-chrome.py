@@ -44,8 +44,12 @@ def main():
         return result.stdout.strip()
 
     initial = json.loads(evaluate(
+        "const viewport=document.getElementById('viewport');"
+        "if(!viewport.dataset.modelState)document.dispatchEvent(new Event('trc-capture-frame'));"
+        "const state=JSON.parse(viewport.dataset.modelState||viewport.dataset.captureState);"
+        "if(state.navigationReady===undefined)state.navigationReady=!document.getElementById('walk').disabled;"
         "return JSON.stringify({url:location.href,title:document.title,"
-        "state:JSON.parse(document.getElementById('viewport').dataset.modelState)});"
+        "visibility:document.visibilityState,animationObserved:!!viewport.dataset.modelState,state});"
     ))
     if not initial["state"].get("detailed") or not initial["state"].get("navigationReady"):
         raise SystemExit("The existing tab has not finished loading the detailed model.")

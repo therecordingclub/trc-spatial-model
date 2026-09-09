@@ -361,6 +361,7 @@ function panView(dt){
   const offset=new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,0).multiplyScalar(movement.dx*viewHeight)
     .addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,1),movement.dy*viewHeight);
   camera.position.add(offset);controls.target.add(offset);
+  camera.updateMatrixWorld();
 }
 function canWalk(x,z){
   if(!insidePolygon([x,z],currentFloor().footprint||[]))return false;
