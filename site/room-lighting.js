@@ -1,6 +1,8 @@
 export const MAX_ACTIVE_ROOM_LIGHTS = 8;
 export const MAX_PRESENTATION_INTENSITY = 40;
 export const MAX_FALLBACK_ROOMS = 8;
+export const MAX_SHADOW_ROOM_LIGHTS = 2;
+export const V13_LIGHTING_SELECTION_MODE = 'evidence-v13';
 
 const EXTERIOR_ROOM = /exterior|outdoor|patio|sauna/i;
 
@@ -61,6 +63,7 @@ export function normalizeManifestLights(entries, floors) {
     if (!position || !target) continue;
     const role = entry.role === 'indirect-fill' ? 'indirect-fill' : 'practical';
     const size = bounded(finite(entry.size, 1), 0.08, 10);
+    const sizeY = bounded(finite(entry.sizeY, size), 0.08, 10);
     normalized.push({
       name: String(entry.name || `Area light ${index + 1}`),
       roomId: entry.roomId,
@@ -70,8 +73,16 @@ export function normalizeManifestLights(entries, floors) {
       target,
       color: linearColor(entry.color),
       size,
+      sizeY,
       sourceEnergy: Math.max(0, finite(entry.energy, 0)),
       intensity: presentationIntensity({ energy: entry.energy, size, role }),
+      sourceIndex: index,
+      evidencePriority: bounded(finite(entry.evidencePriority, 0), -1000, 1000),
+      fixtureFamily: typeof entry.fixtureFamily === 'string' ? entry.fixtureFamily : '',
+      renderLight: entry.rendererLight === 'shadow-spot' ? 'shadow-spot' : 'area',
+      spotAngle: bounded(finite(entry.spotAngle, 0.72), 0.25, 1.2),
+      spotPenumbra: bounded(finite(entry.spotPenumbra, 0.65), 0, 1),
+      range: bounded(finite(entry.range, 6), 1, 20),
       approximate: true,
     });
   }
@@ -82,16 +93,54 @@ function priority(light) {
   return light.role === 'practical' ? 0 : 1;
 }
 
-export function selectRoomLights(lights, { roomId, floorId, maxLights = MAX_ACTIVE_ROOM_LIGHTS } = {}) {
-  const limit = Math.max(0, Math.floor(finite(maxLights, MAX_ACTIVE_ROOM_LIGHTS)));
+function evidencePriority(light) {
+  return finite(light.evidencePriority, 0);
+}
+
+function sourceOrder(light) {
+  return Math.max(0, Math.floor(finite(light.sourceIndex, Number.MAX_SAFE_INTEGER)));
+}
+
+function applyShadowBudget(lights) {
+  let shadowCount = 0;
+  return lights.map(light => {
+    if (light.renderLight !== 'shadow-spot') return light;
+    shadowCount += 1;
+    return shadowCount <= MAX_SHADOW_ROOM_LIGHTS ? light : {...light, renderLight: 'area'};
+  });
+}
+
+export function selectRoomLights(lights, { roomId, floorId, maxLights = MAX_ACTIVE_ROOM_LIGHTS, selectionMode } = {}) {
+  const requestedLimit = Math.max(0, Math.floor(finite(maxLights, MAX_ACTIVE_ROOM_LIGHTS)));
+  const limit = selectionMode === V13_LIGHTING_SELECTION_MODE ? Math.min(MAX_ACTIVE_ROOM_LIGHTS, requestedLimit) : requestedLimit;
   const candidates = (lights ?? [])
     .filter(light => light.floorId === floorId && (!roomId || light.roomId === roomId))
-    .slice()
-    .sort((a, b) => priority(a) - priority(b) || b.intensity - a.intensity || a.name.localeCompare(b.name));
-  const selected = candidates.slice(0, limit);
+    .slice();
+  if (selectionMode === V13_LIGHTING_SELECTION_MODE) {
+    candidates.sort((a, b) => evidencePriority(b) - evidencePriority(a) || priority(a) - priority(b) || b.intensity - a.intensity || sourceOrder(a) - sourceOrder(b));
+  } else {
+    // Keep V12 and older manifests byte-for-byte compatible in selection behavior.
+    candidates.sort((a, b) => priority(a) - priority(b) || b.intensity - a.intensity || a.name.localeCompare(b.name));
+  }
+  const selected = [];
+  if (selectionMode === V13_LIGHTING_SELECTION_MODE && !roomId) {
+    const rooms = new Map();
+    for (const light of candidates) {
+      if (!rooms.has(light.roomId)) rooms.set(light.roomId, []);
+      rooms.get(light.roomId).push(light);
+    }
+    while (selected.length < limit && [...rooms.values()].some(queue => queue.length)) {
+      for (const queue of rooms.values()) {
+        if (queue.length && selected.length < limit) selected.push(queue.shift());
+      }
+    }
+  } else {
+    selected.push(...candidates.slice(0, limit));
+  }
   const bestFill = candidates.find(light => light.role === 'indirect-fill');
-  if (limit > 1 && bestFill && !selected.includes(bestFill)) selected[selected.length - 1] = bestFill;
-  return selected;
+  const reserveFill = selectionMode !== V13_LIGHTING_SELECTION_MODE || roomId || new Set(candidates.map(light => light.roomId)).size === 1;
+  if (reserveFill && limit > 1 && bestFill && !selected.includes(bestFill)) selected[selected.length - 1] = bestFill;
+  return selectionMode === V13_LIGHTING_SELECTION_MODE ? applyShadowBudget(selected) : selected;
 }
 
 export function fallbackLightForRoom(room, floor) {
@@ -111,6 +160,7 @@ export function fallbackLightForRoom(room, floor) {
     target: [finite(label[0]), elevation + 0.8, finite(label[1])],
     color: source.color,
     size: source.size,
+    sizeY: source.size,
     sourceEnergy: source.energy,
     intensity: presentationIntensity(source),
     approximate: true,
@@ -118,8 +168,8 @@ export function fallbackLightForRoom(room, floor) {
   };
 }
 
-export function lightsForView(lights, rooms, floors, { roomId, floorId, maxLights = MAX_ACTIVE_ROOM_LIGHTS } = {}) {
-  const selected = selectRoomLights(lights, { roomId, floorId, maxLights });
+export function lightsForView(lights, rooms, floors, { roomId, floorId, maxLights = MAX_ACTIVE_ROOM_LIGHTS, selectionMode } = {}) {
+  const selected = selectRoomLights(lights, { roomId, floorId, maxLights, selectionMode });
   if (selected.length) return selected;
   const floorMap = new Map((floors ?? []).map(floor => [floor.id, floor]));
   const candidates = (rooms ?? []).filter(room => room.floorId === floorId && (!roomId || room.id === roomId));

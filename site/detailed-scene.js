@@ -5,7 +5,7 @@ import {RectAreaLightUniformsLib} from 'three/addons/lights/RectAreaLightUniform
 import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 import {createMirrorReflections} from '/mirror-reflections.js';
 import {applyIrradianceLightMap} from './irradiance-lightmap.js';
-import {MAX_ACTIVE_ROOM_LIGHTS,blenderPointToViewer,floorElevation,lightsForView,normalizeManifestLights} from './room-lighting.js';
+import {MAX_ACTIVE_ROOM_LIGHTS,MAX_SHADOW_ROOM_LIGHTS,V13_LIGHTING_SELECTION_MODE,blenderPointToViewer,floorElevation,lightsForView,normalizeManifestLights} from './room-lighting.js';
 
 export async function loadDetailedScene(scene,renderer,model,onProgress){
   const preview=new URLSearchParams(location.search).get('preview');
@@ -67,13 +67,24 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
   scene.environment=environmentTarget.texture;scene.environmentIntensity=.5;
   RectAreaLightUniformsLib.init();
   const practicals=new THREE.Group();practicals.name='Local room illumination';scene.add(practicals);
+  const lightingSelectionMode=manifest.lightingSelectionMode===V13_LIGHTING_SELECTION_MODE?V13_LIGHTING_SELECTION_MODE:null;
   const sourceLights=normalizeManifestLights(manifest.lights,model.floors);
   const lightPool=[];
   for(let index=0;index<MAX_ACTIVE_ROOM_LIGHTS;index++){
     const light=new THREE.RectAreaLight(0xffffff,0,.1,.1);
-    light.name=`Inactive room light ${index+1}`;light.visible=true;light.userData={poolIndex:index};practicals.add(light);lightPool.push(light);
+    light.name=`Inactive room light ${index+1}`;light.visible=lightingSelectionMode?false:true;light.userData={poolIndex:index};practicals.add(light);lightPool.push(light);
   }
-  function syncLights(descriptors){
+  const shadowLightPool=[];
+  if(lightingSelectionMode){
+    for(let index=0;index<MAX_SHADOW_ROOM_LIGHTS;index++){
+      const light=new THREE.SpotLight(0xffffff,0,6,.72,.65,2);
+      light.name=`Inactive shadow room light ${index+1}`;light.visible=false;light.castShadow=true;
+      light.shadow.mapSize.set(512,512);light.shadow.bias=-.0005;light.shadow.normalBias=.03;
+      light.userData={poolIndex:index};light.target.name=`Inactive shadow room target ${index+1}`;
+      practicals.add(light,light.target);shadowLightPool.push(light);
+    }
+  }
+  function syncLegacyLights(descriptors){
     for(let index=0;index<lightPool.length;index++){
       const light=lightPool[index],descriptor=descriptors[index];
       if(!descriptor){light.intensity=0;light.name=`Inactive room light ${index+1}`;light.userData={poolIndex:index};continue;}
@@ -84,6 +95,34 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
       light.lookAt(target);light.userData={poolIndex:index,roomId:descriptor.roomId,floorId:descriptor.floorId,role:descriptor.role,sourceEnergy:descriptor.sourceEnergy,approximate:true,fallback:descriptor.fallback===true};
     }
   }
+  function syncV13Lights(descriptors){
+    for(const [index,light] of lightPool.entries()){
+      light.visible=false;light.intensity=0;light.name=`Inactive room light ${index+1}`;light.userData={poolIndex:index};
+    }
+    for(const [index,light] of shadowLightPool.entries()){
+      light.visible=false;light.intensity=0;light.name=`Inactive shadow room light ${index+1}`;light.userData={poolIndex:index};
+    }
+    let areaIndex=0,shadowIndex=0;
+    for(const descriptor of descriptors.slice(0,MAX_ACTIVE_ROOM_LIGHTS)){
+      if(descriptor.renderLight==='shadow-spot'&&shadowIndex<shadowLightPool.length){
+        const light=shadowLightPool[shadowIndex++];
+        light.visible=true;light.name=descriptor.name;light.color.setRGB(...descriptor.color,THREE.LinearSRGBColorSpace);
+        // Match area-light power when changing emitter type: both use pi in their power conversion.
+        light.intensity=descriptor.intensity*descriptor.size*(descriptor.sizeY??descriptor.size);
+        light.position.fromArray(descriptor.position);light.distance=descriptor.range;light.angle=descriptor.spotAngle;light.penumbra=descriptor.spotPenumbra;
+        light.target.position.fromArray(descriptor.target);light.target.updateMatrixWorld();
+        light.userData={poolIndex:shadowIndex-1,roomId:descriptor.roomId,floorId:descriptor.floorId,role:descriptor.role,fixtureFamily:descriptor.fixtureFamily,sourceEnergy:descriptor.sourceEnergy,approximate:true,shadowProfile:'spot'};
+      }else if(areaIndex<lightPool.length){
+        const light=lightPool[areaIndex++];
+        light.visible=true;light.name=descriptor.name;light.color.setRGB(...descriptor.color,THREE.LinearSRGBColorSpace);light.intensity=descriptor.intensity;
+        light.width=descriptor.size;light.height=descriptor.sizeY??descriptor.size;light.position.fromArray(descriptor.position);
+        const target=new THREE.Vector3().fromArray(descriptor.target);
+        if(target.distanceToSquared(light.position)<1e-8)target.y-=1;
+        light.lookAt(target);light.userData={poolIndex:areaIndex-1,roomId:descriptor.roomId,floorId:descriptor.floorId,role:descriptor.role,fixtureFamily:descriptor.fixtureFamily,sourceEnergy:descriptor.sourceEnergy,approximate:true};
+      }
+    }
+    renderer.shadowMap.needsUpdate=true;
+  }
   const summary={meshes:meshes.length,triangles:meshes.reduce((n,m)=>n+(m.geometry.index?.count??m.geometry.attributes.position.count)/3,0),rooms:[...new Set(meshes.map(m=>m.userData.roomId))].length,sourceLights:sourceLights.length,activeLightLimit:MAX_ACTIVE_ROOM_LIGHTS};
   const albedoAudit=[...materials.values()].filter(mat=>/oak|laminate/i.test(mat.name)&&mat.userData.role==='floor').map(mat=>{
     let texel=null;
@@ -92,7 +131,7 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
   });
   return {
     root,meshes,summary,manifest,albedoAudit,reflectionAudit:reflections.summary,updateReflections:reflections.update,
-    lightingAudit:{sourceLights:sourceLights.length,poolSize:lightPool.length,hdrLightMaps:hdrMaps.size,bakedMaterials:[...materials.values()].filter(mat=>mat.userData.lightMapApplied).length,intensityModel:'approximate source watts per emitter area; practical 0.08, indirect fill 0.025; capped at 40; calibrated HDR replaces baked structural diffuse'},
+    lightingAudit:{sourceLights:sourceLights.length,poolSize:lightPool.length,shadowPoolSize:shadowLightPool.length,activeLightLimit:MAX_ACTIVE_ROOM_LIGHTS,lightingSelectionMode:lightingSelectionMode||'legacy',hdrLightMaps:hdrMaps.size,bakedMaterials:[...materials.values()].filter(mat=>mat.userData.lightMapApplied).length,intensityModel:'approximate source watts per emitter area; practical 0.08, indirect fill 0.025; capped at 40; calibrated HDR replaces baked structural diffuse'},
     hasFloor:floorId=>meshes.some(mesh=>mesh.userData.floorId===floorId),
     setView({floorId,walk,cutaway,furniture,enabled,roomId}){
       root.visible=enabled;
@@ -108,8 +147,8 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
         const next=cutaway&&!walk&&/wall/.test(mat.userData.role)?[clip]:[];
         if((mat.clippingPlanes?.length??0)!==next.length){mat.clippingPlanes=next;mat.needsUpdate=true;}
       }
-      const activeLights=enabled?lightsForView(sourceLights,model.rooms,model.floors,{floorId,roomId,maxLights:lightPool.length}):[];
-      syncLights(activeLights);
+      const activeLights=enabled?lightsForView(sourceLights,model.rooms,model.floors,{floorId,roomId,maxLights:MAX_ACTIVE_ROOM_LIGHTS,selectionMode:lightingSelectionMode}):[];
+      if(lightingSelectionMode)syncV13Lights(activeLights);else syncLegacyLights(activeLights);
     },
     cameraFor(roomId){
       const pose=manifest.views?.find(view=>view.roomId===roomId)?.cameraBlender;
