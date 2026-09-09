@@ -242,7 +242,7 @@ function selectFloor(id){stopWalk();activeFloor=id;$('floor-select').value=id;ac
 function setMode(next){
   stopWalk();mode=next;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
   $('layout-panel').hidden=mode!=='plan';$('measure-panel').hidden=mode!=='measure';
-  $('hint').textContent=mode==='plan'?'Drag your equipment · edit precise footprints in the panel':mode==='measure'?'Click two floor or wall points · drag to pan':'Drag to orbit · scroll to zoom · choose a room';
+  $('hint').textContent=mode==='plan'?'Arrow keys to pan · drag your equipment':mode==='measure'?'Click two model points · arrow keys or drag to pan':'Arrow keys to pan · drag to orbit · scroll to zoom';
   if(mode!=='measure')clearMeasurement();visibility();frame();updateURL();
 }
 function setDirty(){dirty=true;$('save-state').textContent='Unsaved equipment changes';$('undo').disabled=!undo.length;}
@@ -344,7 +344,16 @@ function startWalk(){
   renderer.domElement.focus();updateURL();
   if(matchMedia('(pointer:fine)').matches&&renderer.domElement.requestPointerLock){try{const request=renderer.domElement.requestPointerLock();request?.catch(()=>notify('Drag inside the model to look around.'));}catch{notify('Drag inside the model to look around.');}}
 }
-function stopWalk(){if(!walk)return;walk=false;keys.clear();document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Drag to orbit · scroll to zoom · choose a room';}
+function stopWalk(){if(!walk)return;walk=false;keys.clear();document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Arrow keys to pan · drag to orbit · scroll to zoom';}
+function panView(key){
+  const vertical=key==='arrowup'||key==='arrowdown';
+  const viewHeight=camera.isPerspectiveCamera?2*camera.position.distanceTo(controls.target)*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)):(camera.top-camera.bottom)/camera.zoom;
+  const step=viewHeight*20/Math.max(1,renderer.domElement.clientHeight);
+  const direction=key==='arrowup'||key==='arrowright'?1:-1;
+  camera.updateMatrixWorld();
+  const offset=new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,vertical?1:0).multiplyScalar(step*direction);
+  camera.position.add(offset);controls.target.add(offset);controls.update();
+}
 function canWalk(x,z){
   if(!insidePolygon([x,z],currentFloor().footprint||[]))return false;
   if(navigation&&detailed?.root.visible)return navigation.testPosition(new THREE.Vector3(x,camera.position.y,z),{floorId:activeFloor}).ok;
@@ -431,7 +440,13 @@ function installEvents(){
   $('save-layout').addEventListener('click',saveLayout);$('export-glb').addEventListener('click',exportGLB);
   $('export-layout').addEventListener('click',()=>download(new Blob([JSON.stringify({...scenario,modelRevision:model.revision},null,2)],{type:'application/json'}),'trc-equipment-layout.json'));
   renderer.domElement.addEventListener('pointerdown',onPointerDown);renderer.domElement.addEventListener('pointermove',onPointerMove);renderer.domElement.addEventListener('pointerup',onPointerUp);renderer.domElement.addEventListener('pointercancel',()=>{drag=null;controls.enabled=!walk;walkingPointer=null;});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(walk)stopWalk();return;}if(!walk||event.target?.matches?.('input,select,textarea'))return;const key=event.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright','shift'].includes(key)){event.preventDefault();keys.add(key);}});
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){if(walk)stopWalk();return;}
+    if(event.defaultPrevented||event.isComposing||event.altKey||event.metaKey||event.ctrlKey||event.target?.closest?.('input,select,textarea,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="combobox"],[role="listbox"],[role="slider"]'))return;
+    const key=event.key.toLowerCase();
+    if(!walk){if(['arrowup','arrowdown','arrowleft','arrowright'].includes(key)){event.preventDefault();panView(key);}return;}
+    if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright','shift'].includes(key)){event.preventDefault();keys.add(key);}
+  });
   document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));window.addEventListener('blur',()=>keys.clear());
   document.addEventListener('pointerlockchange',()=>{if(walk&&!document.pointerLockElement)$('hint').textContent='WASD to move · drag to look · Exit walk to return';});
   for(const button of document.querySelectorAll('[data-step]')){const key={forward:'w',back:'s',left:'a',right:'d'}[button.dataset.step];button.addEventListener('pointerdown',event=>{event.preventDefault();keys.add(key);button.setPointerCapture(event.pointerId);});for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,()=>keys.delete(key));}
@@ -447,7 +462,7 @@ async function initialize(){
     scene=new THREE.Scene();scene.background=new THREE.Color('#e1e6e9');scene.add(new THREE.HemisphereLight('#f6f8fa','#a99a87',2.7));
     const sun=new THREE.DirectionalLight('#ffefdb',3.1);sun.position.set(10,32,16);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-50,right:50,top:50,bottom:-50,far:100});sun.shadow.bias=-.0003;scene.add(sun,sun.target);
     renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.info.autoReset=false;renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.shadowMap.enabled=true;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.localClippingEnabled=true;
-    renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D club model. Use the room and mode controls; in walk mode use WASD or arrow keys.');$('viewport').prepend(renderer.domElement);
+    renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D club model. Arrow keys pan the view; in walk mode use WASD or arrow keys to move.');$('viewport').prepend(renderer.domElement);
     perspective=new THREE.PerspectiveCamera(48,1,.05,600);orthographic=new THREE.OrthographicCamera(-20,20,20,-20,.05,600);camera=perspective;controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;
     buildScene();const query=new URL(location.href).searchParams;activeFloor=model.floors.some(f=>f.id===query.get('floor'))?query.get('floor'):model.floors[0].id;
     if(/^v\d+(?:-[a-z0-9]+)*$/.test(query.get('preview')||'')&&query.get('color')==='agx'){

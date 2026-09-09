@@ -20,6 +20,7 @@ function applyPose() {
   const pitchAxis = right.applyQuaternion(qYaw).normalize();
   const forward = pitchedForward.applyAxisAngle(pitchAxis, pitch).normalize();
   cam.position.set(...current.position); cam.up.copy(up); cam.lookAt(cam.position.clone().add(forward)); cam.updateProjectionMatrix();
+  stage.dataset.viewState=JSON.stringify({source:current.image,yaw,pitch,position:cam.position.toArray(),forward:forward.toArray()});
 }
 function selectPose(image) {
   current = poses.get(image); if (!current) return;
@@ -71,6 +72,16 @@ stage.addEventListener('pointerdown', event => { if (!current) return; dragging 
 stage.addEventListener('pointermove', event => { if (!dragging || !start) return; yaw = THREE.MathUtils.clamp(start.yaw - (event.clientX - start.x) * 0.004, -LIMITS.yaw, LIMITS.yaw); pitch = THREE.MathUtils.clamp(start.pitch - (event.clientY - start.y) * 0.004, -LIMITS.pitch, LIMITS.pitch); applyPose(); });
 stage.addEventListener('pointerup', event => { dragging = false; start = null; try { stage.releasePointerCapture(event.pointerId); } catch {} });
 stage.addEventListener('pointercancel', () => { dragging = false; start = null; });
+document.addEventListener('keydown', event => {
+  if (!current || event.defaultPrevented || event.isComposing || event.altKey || event.metaKey || event.ctrlKey || event.target?.closest?.('input,select,textarea,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="combobox"],[role="listbox"],[role="slider"]')) return;
+  const key = event.key.toLowerCase();
+  if (!['arrowup','arrowdown','arrowleft','arrowright'].includes(key)) return;
+  event.preventDefault();
+  const step = THREE.MathUtils.degToRad(event.shiftKey ? 4 : 2);
+  yaw = THREE.MathUtils.clamp(yaw + (key === 'arrowleft' ? step : key === 'arrowright' ? -step : 0), -LIMITS.yaw, LIMITS.yaw);
+  pitch = THREE.MathUtils.clamp(pitch + (key === 'arrowup' ? step : key === 'arrowdown' ? -step : 0), -LIMITS.pitch, LIMITS.pitch);
+  applyPose();
+});
 $('reset').addEventListener('click', () => selectPose(current?.image || 'DSC00133.JPG'));
 $('retry').addEventListener('click', load);
 load();
