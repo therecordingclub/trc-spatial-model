@@ -114,8 +114,24 @@ The canonical GLB SHA-256 is
 the editable source SHA-256 is
 `afa52298f21909256b50334bb4fa4d6ebf0788d8578e3dfe891d7f3b6d861bf1`.
 Seven new dependency files reuse the existing V11 payloads for unaffected data.
-V10, V11 and V12 assets and downloads remain available. Public promotion and
-shared-host release evidence are recorded after deployment below.
+V10, V11 and V12 assets and downloads remain available.
+
+V13 is live in shared-host release 175, source `33366e9`, using site snapshot
+`bbd3eeaa6b864579e829ca2ba8a161956f0c0610`. Eleven public files match their
+committed hashes. All eight versioned routes resolve correctly; fresh public
+downloads of both complete source artifacts match the reviewed sizes and hashes.
+All 115 unique glTF dependencies are reachable and match the local files.
+Four representative public room walkthroughs, 11 visibility controls, the room
+lighting probe and all 13 held-key behaviors passed in the existing Chrome.
+
+The existing machine, CPU/memory sizing and volume are unchanged. The standard
+deploy's neighboring-app probes passed. The expanded verifier checks the
+protected agents `/staff/mod` endpoint for 401 and the public staff login for
+200; that staff availability check does not certify its authorization policy.
+The first expanded report's incorrect root-page 401 expectations remain recorded
+in `workbench/v13-details-2026-09-09/evidence/publication-audit/public-v13-proof-v1.0.json`.
+Native full-window captures remain unavailable because ScreenCaptureKit is
+quarantined; actual main-Chrome WebGL and DOM proofs remain available.
 
 ## Accuracy boundaries
 
