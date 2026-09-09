@@ -245,7 +245,7 @@ function selectFloor(id){stopWalk();activeFloor=id;$('floor-select').value=id;ac
 function setMode(next){
   stopWalk();mode=next;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
   $('layout-panel').hidden=mode!=='plan';$('measure-panel').hidden=mode!=='measure';
-  $('hint').textContent=mode==='plan'?'Arrow keys to pan · drag your equipment':mode==='measure'?'Click two model points · arrow keys or drag to pan':'Arrow keys to pan · drag to orbit · scroll to zoom';
+  $('hint').textContent=mode==='plan'?'Hold arrow keys to pan · drag your equipment':mode==='measure'?'Click two model points · hold arrows or drag to pan':'Hold arrow keys to pan · drag to orbit · scroll to zoom';
   if(mode!=='measure')clearMeasurement();visibility();frame();updateURL();
 }
 function setDirty(){dirty=true;$('save-state').textContent='Unsaved equipment changes';$('undo').disabled=!undo.length;}
@@ -461,7 +461,7 @@ function installEvents(){
   document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));window.addEventListener('blur',resetMovement);
   document.addEventListener('visibilitychange',()=>{if(document.hidden){resetMovement();oldTime=0;}});
   document.addEventListener('focusin',event=>{if(isMovementField(event.target))resetMovement();});
-  document.addEventListener('pointerlockchange',()=>{if(walk&&!document.pointerLockElement)$('hint').textContent='WASD to move · drag to look · Exit walk to return';});
+  document.addEventListener('pointerlockchange',()=>{if(walk&&!document.pointerLockElement)$('hint').textContent='Hold arrows or WASD to walk · Shift faster · drag to look';});
   for(const button of document.querySelectorAll('[data-step]')){const key={forward:'w',back:'s',left:'a',right:'d'}[button.dataset.step];button.addEventListener('pointerdown',event=>{event.preventDefault();keys.add(key);button.setPointerCapture(event.pointerId);});for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,()=>keys.delete(key));}
   window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
   new ResizeObserver(resize).observe($('viewport'));

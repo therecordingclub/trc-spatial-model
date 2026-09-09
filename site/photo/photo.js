@@ -73,8 +73,8 @@ async function load() {
     stage.dataset.error=String(error);console.error(error); setLoading('Lobby could not load', String(error.message||error), 0); $('retry').hidden = false; setStatus('Load failed · retry available');
   }
 }
-stage.addEventListener('pointerdown', event => { if (!current) return; dragging = true; start = { x: event.clientX, y: event.clientY, yaw, pitch }; stage.setPointerCapture(event.pointerId); event.preventDefault(); });
-stage.addEventListener('pointermove', event => { if (!dragging || !start) return; yaw = THREE.MathUtils.clamp(start.yaw - (event.clientX - start.x) * 0.004, -LIMITS.yaw, LIMITS.yaw); pitch = THREE.MathUtils.clamp(start.pitch - (event.clientY - start.y) * 0.004, -LIMITS.pitch, LIMITS.pitch); applyPose(); });
+stage.addEventListener('pointerdown', event => { if (!current) return; dragging = true; start = { x: event.clientX, y: event.clientY }; stage.setPointerCapture(event.pointerId); event.preventDefault(); });
+stage.addEventListener('pointermove', event => { if (!dragging || !start) return; yaw = THREE.MathUtils.clamp(yaw - (event.clientX - start.x) * 0.004, -LIMITS.yaw, LIMITS.yaw); pitch = THREE.MathUtils.clamp(pitch - (event.clientY - start.y) * 0.004, -LIMITS.pitch, LIMITS.pitch); start = { x: event.clientX, y: event.clientY }; applyPose(); });
 stage.addEventListener('pointerup', event => { dragging = false; start = null; try { stage.releasePointerCapture(event.pointerId); } catch {} });
 stage.addEventListener('pointercancel', () => { dragging = false; start = null; });
 document.addEventListener('keydown', event => {
