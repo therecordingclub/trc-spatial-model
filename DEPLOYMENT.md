@@ -195,6 +195,20 @@ and the existing GitHub Pages buffer directory. The deployment target remains
 the existing shared static route on `trc-beta-apps`; its other applications,
 machine count, sizing and volume are preserved.
 
+V15 is live from shared-host commit `ab1715a200762a3f97dad7064d7a1a69901b2561`,
+with site snapshot `948d8780843a896c9efd06934dc21b5f09e08f61`. Twelve public
+files match the committed bundle, including both runtime modules. All 12
+versioned download redirects are correct; complete public GLB and Blender
+downloads match the reviewed sizes and SHA-256 values. All 117 unique dependency
+URLs are reachable and the additional buffer matches its complete hash.
+Seven neighboring host checks pass. The same machine, two shared CPUs,
+2 GB memory and existing volume remain in place.
+
+The live model passes all 18 fixed-feature, 15 planning and 12 UI checks in
+Greg's main Chrome. Five public detail captures and the actual planning render
+are preserved with the production proof at
+`workbench/v15-building-2026-09-09/evidence/public-v15-proof-v1.0.json`.
+
 Several dimensions and clearances remain estimated. Fireplace-side storage
 bays, softer paper-lantern materials and irregular record groupings remain
 documented detail work. Upstairs, stair and outdoor registration require
