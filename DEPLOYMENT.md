@@ -4,7 +4,7 @@ Canonical source: this repository. The editable reconstruction and its source
 photographs remain in `/Users/gregspero/image-blaster/trc-model` and
 `/Users/gregspero/image-blaster/captures/trc-2026-09-05`.
 
-The recovery target is the existing `trc-beta-apps` Fly machine. The model uses
+The live target is the existing `trc-beta-apps` Fly machine. The model uses
 host-specific static middleware in `/Users/gregspero/trc-beta-apps-deploy`.
 It adds no child process, port, machine, volume, or separate application.
 Model buffers and textures use this repository's existing
@@ -29,6 +29,10 @@ Versioned manifests and original assets remain available for rollback.
    Push `backup main` only as a backup; it does not deploy anything.
 5. Deploy the shared host only with its `bin/deploy`, which owns the deployment
    lock and checks the pinned applications. Never change machine sizing or count.
+   Use `GRID_PANE=codex-0` for this Codex pane. The local smoke check must use the
+   installed Node ABI (`~/.gregbot-runtime/node-dist/bin/node`); Docker independently
+   installs production dependencies on Node 24. Preserve the existing authenticated
+   environment when invoking the deploy from its repository.
 6. Check the model on the Fly origin with the intended host and valid TLS before
    moving the single public DNS record. Recheck the public asset hashes and all
    existing host probes after the change.
@@ -45,9 +49,17 @@ Four download paths were missing. The old deployment remains on Vercel as a
 rollback target, with DNS CNAME `cname.vercel-dns.com`. Keep it intact during
 cutover. Shared-host baseline: release 169, source commit `5500fc7`.
 
+Recovery release 170 is live on the same machine `d8d2e50f0d9168`, with the same
+2 shared CPUs and 2 GB memory. The public DNS record is now an unproxied A record
+to `66.241.124.140`. Source commit `d6b507c` in the shared-host repository includes
+the site snapshot `866a1c8`. Sixteen origin checks matched the committed files;
+all required shared-host probes passed. The public release manifest and room
+walkthroughs were verified after cutover. DNS rollback restores the original
+unproxied CNAME `cname.vercel-dns.com` (automatic TTL); preserve the Vercel project.
+
 Restored historical architecture files remain unchanged. Their historical
-source paths can refer to temporary extraction files; a source archive index
-will map those records to retained plans without changing the geometry baseline.
+source paths can refer to temporary extraction files; `site/sources/source-index.json`
+maps seven retained plans by filename, size, and SHA-256 without changing that baseline.
 
 ## Accuracy boundaries
 

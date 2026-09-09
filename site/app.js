@@ -232,6 +232,7 @@ function updateFacts(){
   $('basis').textContent=exterior?'Photo-confirmed outdoor sequence · dimensions inferred':separate?'Upstairs alignment unverified':'Plan + photo-qualified layout · 1 grid square = 1 m';
   $('accuracy').textContent=exterior?'⚠ Indoor connection unverified':separate?'⚠ Upstairs shown separately · alignment unverified':'⚠ Current visual reconstruction · site checks pending';
   $('photo-toggle').disabled=!photoMap[activeRoom];
+  $('photo-toggle').textContent=photoMap[activeRoom]?'Open room photo':activeRoom?'No reference photo for this room':'Choose a room to see its photo';
   $('add-item').disabled=!activeRoom;
   if(!$('photo-panel').hidden)showPhoto();
 }
@@ -459,9 +460,15 @@ async function initialize(){
       detailed=await loadDetailedScene(scene,renderer,model,percent=>{$('loading').querySelector('span').textContent=percent===null?'Loading detailed interiors…':`Loading detailed interiors · ${percent}%`;});
       $('viewport').dataset.albedoAudit=JSON.stringify(detailed.albedoAudit);
       $('viewport').dataset.lightingAudit=JSON.stringify(detailed.lightingAudit);
-      if(detailed.manifest.authoringAsset){$('blend-link').href=detailed.manifest.authoringAsset;$('blend-link').textContent='Editable reconstruction (.blend) ↓';}
+      if(detailed.manifest.authoringAsset){
+        $('blend-link').href=detailed.manifest.authoringAsset;
+        const size=detailed.manifest.authoringBytes?` · ${Math.ceil(detailed.manifest.authoringBytes/1e6)} MB`:'';
+        $('blend-link').textContent=`Editable reconstruction (.blend)${size} ↓`;
+      }
       $('glb-link').href=detailed.manifest.downloadAsset||detailed.manifest.asset.replace(/\.gltf(?=[?#]|$)/,'.glb');
-      $('glb-link').textContent=/\.glb(?:[?#]|$)/.test($('glb-link').href)?'Detailed walkthrough model (.glb) ↓':'Detailed walkthrough model (.gltf) ↓';
+      const downloadFormat=/\.glb(?:[?#]|$)/.test($('glb-link').href)?'glb':'gltf';
+      const downloadSize=downloadFormat==='glb'&&detailed.manifest.bytes?` · ${Math.ceil(detailed.manifest.bytes/1e6)} MB`:'';
+      $('glb-link').textContent=`Detailed walkthrough model (.${downloadFormat})${downloadSize} ↓`;
       navigation=createNavigation(detailed.meshes,model.floors);
       $('viewport').dataset.navigationStats=JSON.stringify(navigation.stats);
       $('detail-status').textContent=detailed.manifest.preview?'Model preview · visual checks pending':'Photo-referenced interiors · dimensions inferred';
