@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFile} from 'node:fs/promises';
-import {sourceToViewer,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom} from '../site/geometry.mjs';
+import {sourceToViewer,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom,cleanSurfaceRing} from '../site/geometry.mjs';
+import {Shape,Path,ShapeGeometry} from '../site/vendor/build/three.core.js';
 
 const ring=(x,y,w,h)=>[[x,y],[x+w,y],[x+w,y+h],[x,y+h]];
 
@@ -51,11 +52,28 @@ test('a footprint cannot bridge a concave notch or disconnected floor pieces',()
   assert(!footprintInsideRoom(ring(.25,.25,4.5,1),{polygon:ring(0,0,5,2),physicalSurfacePolygons:[{exterior:ring(0,0,1,2)},{exterior:ring(4,0,1,2)}]}));
 });
 
+test('zero-area backtracking spikes do not become rendered floor triangles',()=>{
+  const ring=[[0,0],[4,0],[4,4],[2,4],[2,6],[2,4],[0,4],[0,0]];
+  const cleaned=cleanSurfaceRing(ring);
+  assert.equal(cleaned.length,4);assert(!cleaned.some(point=>point[1]>4));
+});
+
 test('published physical room areas agree with the reviewed floor records',async()=>{
   const source=JSON.parse(await readFile(process.env.TRC_ROOM_MODEL||new URL('../site/data/model.json',import.meta.url),'utf8'));
   const model=sourceToViewer(source),qualified=model.rooms.filter(room=>room.physicalSurfacePolygons?.length);
   if(source.metadata?.buildingCorrection?.version==='v15-building')assert.equal(qualified.length,4);
-  for(const room of qualified)assert(Math.abs(roomArea(room)-room.physicalSurfaceAreaMeters2)<.000001,room.id);
+  for(const room of qualified){
+    assert(Math.abs(roomArea(room)-room.physicalSurfaceAreaMeters2)<.000001,room.id);
+    const trace=(path,ring)=>{ring.forEach(([x,z],i)=>i?path.lineTo(x,-z):path.moveTo(x,-z));path.closePath();return path;};
+    const shapes=roomSurfaces(room).map(surface=>{const shape=trace(new Shape(),surface.exterior);shape.holes=(surface.holes||[]).map(hole=>trace(new Path(),hole));return shape;});
+    const geometry=new ShapeGeometry(shapes),p=geometry.getAttribute('position'),indices=geometry.getIndex();
+    let area=0;
+    for(let i=0;i<indices.count;i+=3){
+      const [a,b,c]=[0,1,2].map(offset=>indices.getX(i+offset));
+      area+=Math.abs((p.getX(b)-p.getX(a))*(p.getY(c)-p.getY(a))-(p.getY(b)-p.getY(a))*(p.getX(c)-p.getX(a)))/2;
+    }
+    assert(Math.abs(area-room.physicalSurfaceAreaMeters2)<.0001,`${room.id}: renderer floor area ${area}`);geometry.dispose();
+  }
   const find=id=>model.rooms.find(room=>room.id===id);
   if(qualified.length){
     for(const id of ['electrical-room','studio-a-iso']){

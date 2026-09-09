@@ -8,7 +8,7 @@ export function sourceToViewer(input) {
   for(const room of model.rooms){
     room.polygon=room.polygon.map(flip);if(room.label)room.label=flip(room.label);
     if(room.physicalSurfacePolygons)room.physicalSurfacePolygons=room.physicalSurfacePolygons.map(surface=>({
-      ...surface,exterior:surface.exterior.map(flip),holes:(surface.holes||[]).map(hole=>hole.map(flip)),
+      ...surface,exterior:cleanSurfaceRing(surface.exterior).map(flip),holes:(surface.holes||[]).map(hole=>cleanSurfaceRing(hole).map(flip)),
     }));
   }
   for(const wall of model.walls){wall.start=flip(wall.start);wall.end=flip(wall.end);}
@@ -36,6 +36,20 @@ export function insidePolygon(point, polygon) {
 
 export function roomSurfaces(room) {
   return room.physicalSurfacePolygons?.length ? room.physicalSurfacePolygons : [{exterior:room.polygon,holes:[]}];
+}
+
+export function cleanSurfaceRing(input) {
+  const ring=input.map(point=>[...point]);
+  let changed=true;
+  while(changed&&ring.length>3){
+    changed=false;
+    for(let index=0;index<ring.length;index++){
+      const a=ring[(index+ring.length-1)%ring.length],b=ring[index],c=ring[(index+1)%ring.length];
+      const cross=(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+      if(Math.hypot(b[0]-a[0],b[1]-a[1])<1e-9||Math.abs(cross)<1e-8){ring.splice(index,1);changed=true;break;}
+    }
+  }
+  return ring;
 }
 
 export function roomArea(room) {
