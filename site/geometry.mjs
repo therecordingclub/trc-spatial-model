@@ -5,7 +5,12 @@ export function finite(value, fallback = 0) {
 export function sourceToViewer(input) {
   const model=structuredClone(input);
   const flip=p=>[p[0],-p[1]];
-  for(const room of model.rooms){room.polygon=room.polygon.map(flip);if(room.label)room.label=flip(room.label);}
+  for(const room of model.rooms){
+    room.polygon=room.polygon.map(flip);if(room.label)room.label=flip(room.label);
+    if(room.physicalSurfacePolygons)room.physicalSurfacePolygons=room.physicalSurfacePolygons.map(surface=>({
+      ...surface,exterior:surface.exterior.map(flip),holes:(surface.holes||[]).map(hole=>hole.map(flip)),
+    }));
+  }
   for(const wall of model.walls){wall.start=flip(wall.start);wall.end=flip(wall.end);}
   for(const floor of model.floors){if(floor.footprint)floor.footprint=floor.footprint.map(flip);}
   model.coordinateSystem={...model.coordinateSystem,zDirection:'south',sourceToViewer:'x=x, y=elevation, z=-source_z; matches Blender glTF Y-up export'};
@@ -27,6 +32,18 @@ export function insidePolygon(point, polygon) {
       point[0] < (b[0] - a[0]) * (point[1] - a[1]) / (b[1] - a[1]) + a[0]) inside = !inside;
   }
   return inside;
+}
+
+export function roomSurfaces(room) {
+  return room.physicalSurfacePolygons?.length ? room.physicalSurfacePolygons : [{exterior:room.polygon,holes:[]}];
+}
+
+export function roomArea(room) {
+  return roomSurfaces(room).reduce((sum,surface)=>sum+polygonArea(surface.exterior)-(surface.holes||[]).reduce((total,hole)=>total+polygonArea(hole),0),0);
+}
+
+export function insideRoom(point,room) {
+  return roomSurfaces(room).some(surface=>insidePolygon(point,surface.exterior)&&!(surface.holes||[]).some(hole=>insidePolygon(point,hole)));
 }
 
 export function distanceToSegment(point, start, end) {

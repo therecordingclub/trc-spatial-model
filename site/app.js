@@ -10,7 +10,7 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
-import {finite,polygonArea,insidePolygon,wallBlocks,formatLength,validateScenario,sourceToViewer} from '/geometry.mjs';
+import {finite,roomSurfaces,roomArea,insideRoom,wallBlocks,formatLength,validateScenario,sourceToViewer} from '/geometry.mjs';
 
 const $ = id => document.getElementById(id);
 const photoMap = {
@@ -60,8 +60,12 @@ function clearGroup(group){
 }
 function makeRoom(room){
   if(!Array.isArray(room.polygon)||room.polygon.length<3)return;
-  const shape=new THREE.Shape();room.polygon.forEach(([x,z],i)=>i?shape.lineTo(x,-z):shape.moveTo(x,-z));shape.closePath();
-  const mesh=new THREE.Mesh(new THREE.ShapeGeometry(shape),material(floorMaps.get(room.floorId)?.elevation===null?'#c39b60':palette.floor,{side:THREE.DoubleSide}));
+  const trace=(path,ring)=>{ring.forEach(([x,z],i)=>i?path.lineTo(x,-z):path.moveTo(x,-z));path.closePath();return path;};
+  const shapes=roomSurfaces(room).map(surface=>{
+    const shape=trace(new THREE.Shape(),surface.exterior);
+    shape.holes=(surface.holes||[]).map(hole=>trace(new THREE.Path(),hole));return shape;
+  });
+  const mesh=new THREE.Mesh(new THREE.ShapeGeometry(shapes),material(floorMaps.get(room.floorId)?.elevation===null?'#c39b60':palette.floor,{side:THREE.DoubleSide}));
   mesh.rotation.x=-Math.PI/2;mesh.position.y=elevation(room.floorId)+.008;mesh.name=`Floor: ${room.name}`;
   mesh.userData={roomId:room.id,floorId:room.floorId,dimensionStatus:room.dimensionStatus||'plan-derived'};mesh.receiveShadow=true;
   modelGroup.add(mesh);roomMeshes.push(mesh);
@@ -137,7 +141,7 @@ function seedDressing(){
   let index=0;
   const add=(room,type,dx,dz,rotation=0)=>{
     const p=room.label||room.polygon[0],x=p[0]+dx,z=p[1]+dz,[name,width,depth,height]=presets[type];
-    if(![[x-width/2,z-depth/2],[x+width/2,z-depth/2],[x+width/2,z+depth/2],[x-width/2,z+depth/2]].every(p=>insidePolygon(p,room.polygon)))return;
+    if(![[x-width/2,z-depth/2],[x+width/2,z-depth/2],[x+width/2,z+depth/2],[x-width/2,z+depth/2]].every(p=>insideRoom(p,room)))return;
     dressingGroup.add(makeEquipment({id:`reference-${index++}`,name:`Illustrative ${name}`,type,x,z,width,depth,height,rotation,floorId:room.floorId,roomId:room.id},true));
   };
   for(const room of model.rooms){
@@ -225,9 +229,10 @@ function updateFacts(){
   const room=currentRoom(),floor=currentFloor();$('scene-floor').textContent=room?room.name:floor.name;
   $('room-facts').replaceChildren();
   if(room){
-    const area=polygonArea(room.polygon);const strong=document.createElement('strong');strong.textContent=units==='metric'?`${area.toFixed(1)} m²`:`${Math.round(area*10.76391)} sq ft`;
+    const area=roomArea(room);const strong=document.createElement('strong');strong.textContent=units==='metric'?`${area.toFixed(1)} m²`:`${Math.round(area*10.76391)} sq ft`;
     const inferred=room.dimensionStatus?.includes('photo-estimated'),current=room.dimensionStatus?.includes('qualified current visual-layout');
-    $('room-facts').append(strong,document.createTextNode(inferred?' · visual estimate':current?' · qualified current envelope':' · drawing-derived area'),document.createElement('br'),document.createTextNode(inferred?'Dimensions and placement inferred from photos':current?'2025 plan + current photographs · not site measured':'Dimensions: drawing-derived · heights: see source record'));
+    const surface=room.physicalSurfacePolygons?.length;
+    $('room-facts').append(strong,document.createTextNode(surface?' · modeled floor estimate':inferred?' · visual estimate':current?' · qualified current envelope':' · drawing-derived area'),document.createElement('br'),document.createTextNode(surface?'Plan and photo reconstruction · site measurements pending':inferred?'Dimensions and placement inferred from photos':current?'2025 plan + current photographs · not site measured':'Dimensions: drawing-derived · heights: see source record'));
     if(room.appearanceStatus)$('room-facts').append(document.createElement('br'),document.createTextNode(room.appearanceStatus));
   }else $('room-facts').textContent=activeFloor==='mezzanine-review'?'Main room modeled · second upstairs area unlocated':`${floorRooms().length} mapped spaces · editable current-state model`;
   const separate=String(floor.alignmentStatus||floor.registrationStatus||floor.name).match(/unverified|review|separate/i)||activeFloor.includes('mezz');
@@ -261,7 +266,7 @@ function selectItem(id){selectedItem=id;redrawLayout();const item=scenario.items
 function placeAllowed(item){
   const c=Math.cos(item.rotation*Math.PI/180),s=Math.sin(item.rotation*Math.PI/180);
   const corners=[[-1,-1],[1,-1],[1,1],[-1,1]].map(([x,z])=>[item.x+x*item.width/2*c+z*item.depth/2*s,item.z-x*item.width/2*s+z*item.depth/2*c]);
-  return model.rooms.filter(r=>r.floorId===item.floorId).some(room=>corners.every(c=>insidePolygon(c,room.polygon)));
+  return model.rooms.filter(r=>r.floorId===item.floorId).some(room=>corners.every(c=>insideRoom(c,room)));
 }
 function warnFootprint(item){const outside=!placeAllowed(item);$('layout-warning').hidden=!outside;$('layout-warning').textContent=outside?'⚠ This footprint crosses a room boundary. Check walls and door clearance.':'';}
 function addItem(){
@@ -385,7 +390,7 @@ function moveWalk(dt){
       if(canWalk(camera.position.x+dx,camera.position.z))camera.position.x+=dx;
       if(canWalk(camera.position.x,camera.position.z+dz))camera.position.z+=dz;
     }
-    const entered=floorRooms().find(room=>insidePolygon([camera.position.x,camera.position.z],room.polygon));
+    const entered=floorRooms().find(room=>insideRoom([camera.position.x,camera.position.z],room));
     if(entered&&entered.id!==activeRoom)selectRoom(entered.id,false);
   }
   camera.rotation.order='YXZ';camera.rotation.set(pitch,yaw,0);
@@ -403,7 +408,7 @@ function animate(time){
   const dt=Math.min(.05,frameMs/1000||0);oldTime=time;if(walk)moveWalk(dt);else{controls.update(dt);panView(dt);}
   const movementMs=performance.now()-started;
   const occupied=[];
-  for(const label of [...labels].sort((a,b)=>Number(b.room.id===activeRoom)-Number(a.room.id===activeRoom)||polygonArea(b.room.polygon)-polygonArea(a.room.polygon))){
+  for(const label of [...labels].sort((a,b)=>Number(b.room.id===activeRoom)-Number(a.room.id===activeRoom)||roomArea(b.room)-roomArea(a.room))){
     const show=$('labels').checked&&!walk&&label.room.floorId===activeFloor;label.element.hidden=!show;if(!show)continue;
     const v=label.point.clone().project(camera),x=(v.x*.5+.5)*$('viewport').clientWidth,y=(-v.y*.5+.5)*$('viewport').clientHeight,w=label.room.name.length*6.5+20;
     const box={left:x-w/2,right:x+w/2,top:y-16,bottom:y+16};
