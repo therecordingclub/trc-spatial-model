@@ -7,11 +7,13 @@ import {createHash} from 'node:crypto';
 const project=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const root=path.resolve(process.argv[2]||path.join(project,'site'));
 const preview=process.argv[3]||'';
+const assetRoot=path.resolve(process.argv[4]||path.join(project,'docs/model'));
 if(preview)assert.match(preview,/^v\d+(?:-[a-z0-9]+)*$/,'Invalid preview version');
 const readJSON=async name=>JSON.parse(await readFile(path.join(root,name),'utf8'));
-const model=await readJSON('data/model.json');
+let model=await readJSON('data/model.json');
 const manifestFile=`reconstruction/web-manifest${preview?'-'+preview:''}.json`;
 const manifest=await readJSON(manifestFile);
+if(preview)model=await readJSON(manifest.modelAsset);
 const downloads=await readJSON('downloads.json');
 const sources=await readJSON('sources/source-index.json');
 for(const source of sources.records){
@@ -40,7 +42,12 @@ for(const key of ['downloadAsset','authoringAsset']){
 }
 
 let checkedAssetBytes=0;
-const uris=[...gltf.buffers,...gltf.images].map(asset=>asset.uri);
+const embeddedImages=gltf.images.filter(image=>!image.uri);
+for(const image of embeddedImages){
+  assert(Number.isInteger(image.bufferView)&&gltf.bufferViews[image.bufferView],'Embedded image needs a valid buffer view');
+  assert(['image/png','image/jpeg','image/webp'].includes(image.mimeType),'Unsupported embedded image type');
+}
+const uris=[...gltf.buffers,...gltf.images.filter(image=>image.uri)].map(asset=>asset.uri);
 for(const uri of uris){
   const url=new URL(uri,'https://model.therecording.club');
   assert.equal(url.origin,'https://therecordingclub.github.io');
@@ -48,7 +55,11 @@ for(const uri of uris){
   assert(url.pathname.startsWith(prefix),`Unexpected model asset store: ${uri}`);
   const relative=decodeURIComponent(url.pathname.slice(prefix.length));
   assert(!relative.split('/').includes('..'));
-  const info=await stat(path.join(project,'docs/model',relative));
+  let assetFile=path.join(assetRoot,relative);
+  if(assetRoot!==path.join(project,'docs/model')){
+    try{await stat(assetFile);}catch(error){if(error.code!=='ENOENT')throw error;assetFile=path.join(project,'docs/model',relative);}
+  }
+  const info=await stat(assetFile);
   assert(info.isFile()&&info.size>0,`Empty model asset: ${relative}`);
   const buffer=gltf.buffers.find(item=>item.uri===uri);
   if(buffer)assert.equal(info.size,buffer.byteLength,`Model buffer size mismatch: ${relative}`);
@@ -70,5 +81,5 @@ for(const page of ['index.html','photo/index.html']){
   }
 }
 console.log(JSON.stringify({status:'pass',root,manifestFile,version:manifest.version,modelRevision:model.revision,rooms:rooms.size,
-  modelDependencies:uris.length,checkedAssetBytes,linkedFiles,sourceDocuments:sources.records.length,downloadRedirects:Object.keys(downloads).length,
+  modelDependencies:uris.length,embeddedImages:embeddedImages.length,checkedAssetBytes,linkedFiles,sourceDocuments:sources.records.length,downloadRedirects:Object.keys(downloads).length,
   gltfSha256:createHash('sha256').update(gltfBytes).digest('hex')},null,2));

@@ -470,7 +470,17 @@ function installEvents(){
 async function initialize(){
   try{
     window.__trcBoot='Loading source geometry';
-    const response=await fetch('/api/model');model=await response.json();if(!response.ok)throw new Error(model.error);
+    const previewVersion=new URLSearchParams(location.search).get('preview');
+    let modelUrl='/api/model';
+    if(previewVersion){
+      if(!/^v\d+(?:-[a-z0-9]+)*$/.test(previewVersion))throw new Error('Invalid model version.');
+      const manifestResponse=await fetch(`/reconstruction/web-manifest-${previewVersion}.json`);
+      if(!manifestResponse.ok)throw new Error('This model version could not be loaded.');
+      const versionManifest=await manifestResponse.json();
+      if(!/^\/reconstruction\/[a-z0-9.-]+\.json$/.test(versionManifest.modelAsset||''))throw new Error('This model version has no valid geometry snapshot.');
+      modelUrl=versionManifest.modelAsset;
+    }
+    const response=await fetch(modelUrl);model=await response.json();if(!response.ok)throw new Error(model.error);
     if(!Array.isArray(model.rooms)||!model.rooms.length||!Array.isArray(model.walls)||!model.floors?.length)throw new Error('The architectural geometry is not ready yet.');
     model=sourceToViewer(model);
     scene=new THREE.Scene();scene.background=new THREE.Color('#e1e6e9');scene.add(new THREE.HemisphereLight('#f6f8fa','#a99a87',2.7));
