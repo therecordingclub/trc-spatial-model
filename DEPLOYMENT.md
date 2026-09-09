@@ -133,6 +133,31 @@ in `workbench/v13-details-2026-09-09/evidence/publication-audit/public-v13-proof
 Native full-window captures remain unavailable because ScreenCaptureKit is
 quarantined; actual main-Chrome WebGL and DOM proofs remain available.
 
+## V14 chair correction
+
+V14 rotates the four complete Lounge chair assemblies 180 degrees around their
+unchanged seat centers. Their backs now sit beside the west wall and their
+openings face the sofa. Source preservation passes 75 checks; independent browser
+preservation passes 28 checks. All 9,702 scoped vertices rotate correctly, with
+every other node, material, image and UV preserved. Independent Astra rates the
+bounded correction 4/4 SHIP. Two existing-Chrome room captures and all 11
+visibility controls pass. The earlier source and released assets remain intact.
+
+The canonical GLB SHA-256 is
+`afb901e0f895fdc089a3fde84d507f3412061c2117cbee97419d0a0cddcefac1`;
+the editable source SHA-256 is
+`be314d0f7a8500640558354b8b87e8713d37abab34efd241a219ee4551aba768`.
+Only 650,544 bytes of additional browser geometry are required. The earlier
+V13 review is superseded for chair direction by its retained production addendum
+v1.1 and the fresh V14 gate in `workbench/v14-lounge-chairs-2026-09-09/evidence`.
+
+The runtime is unchanged. The candidate's repeated held-key timing probe was
+inconclusive in a background tab; the foreground policy refused window
+activation. The probe was stopped by reloading the owned tab. Existing V13
+behavior evidence and passing focused movement tests remain available; this
+release does not claim a fresh timing pass or a sustained frame-rate guarantee.
+The larger building, door and fireplace correction is still in progress.
+
 ## Accuracy boundaries
 
 The 19 modeled rooms combine plans and photographs. Equipment placement,
