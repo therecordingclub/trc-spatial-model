@@ -8,9 +8,9 @@ The live target is the existing `trc-beta-apps` Fly machine. The model uses
 host-specific static middleware in `/Users/gregspero/trc-beta-apps-deploy`.
 It adds no child process, port, machine, volume, or separate application.
 Model buffers and textures use this repository's existing
-[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/v11-webp/trc-web-v11-webp.gltf).
+[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/v12-r2-lounge-cmu-grilles/trc-web-v12-r2-lounge-cmu-grilles.gltf).
 Large downloadable files use the existing
-[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v11-webp).
+[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v12-r2-lounge-cmu-grilles).
 
 `site/reconstruction/web-manifest.json` selects the current model.
 Versioned manifests and original assets remain available for rollback.
@@ -61,7 +61,7 @@ Restored historical architecture files remain unchanged. Their historical
 source paths can refer to temporary extraction files; `site/sources/source-index.json`
 maps seven retained plans by filename, size, and SHA-256 without changing that baseline.
 
-## Verified September 9 release
+## Verified September 9 releases
 
 V11 and smooth held-key controls are live in shared-host release 173, source
 `245664b`, with the static site from `899ed89`. Eight public files match their
@@ -74,8 +74,30 @@ approved V11 as a finish update, with the spatial limitations retained.
 
 The same single machine remains at two shared CPUs and 2 GB RAM. Every required
 shared-host post-deploy probe passed. V10 versioned manifests, buffers and both
-downloadable source artifacts remain available for rollback. V12 is isolated
-work in progress and is not the default release.
+downloadable source artifacts remain available for rollback.
+
+V12-r2 is now the default in shared-host release 174, source `85198dd`, with the
+static site snapshot `b2b9b269c68fc99cb1fb54fc9b5a559b77d5403a`. It adds Lounge
+painted masonry and window grilles, reusing all 119 V11 images and adding
+267,744 bytes of geometry. Existing geometry, materials and all 801 UV accessors
+are preserved. Source/export validation passed 42 checks; independent Astra
+review approved the bounded finish update after all 19 existing-Chrome room
+captures and eight wall-control checks passed.
+
+Nine public files match the committed bundle. All six versioned download routes
+resolve correctly, and fresh unauthenticated V12 GLB and Blender downloads match
+their published sizes and SHA-256 values. Four representative public room
+walkthroughs and all eight wall-control checks passed after deployment. The
+same single machine, CPU/memory sizing and volume remain in place; every required
+shared-host probe passed. Public proof is retained locally at
+`workbench/deployment-2026-09-08/public-v12-r2-proof-v1.0.json`.
+
+The later V11/V12 movement comparison was inconclusive during heavy Mac load.
+Both raw reports passed 11 of 13 checks; two settling checks used a fixed frame
+window that included early braking at low frame rates. Time-based review found
+no continuing movement after settling, but the mixed timings do not establish
+sustained performance or isolate an asset regression. Do not claim a frame-rate
+guarantee. Lounge masonry cadence, grille counts and ornament remain approximate.
 
 ## Accuracy boundaries
 
