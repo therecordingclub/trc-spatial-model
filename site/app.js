@@ -486,7 +486,7 @@ async function initialize(){
     }
     $('viewport').dataset.renderPresentation=JSON.stringify({toneMapping:renderer.toneMapping===THREE.AgXToneMapping?'AgX':'ACES Filmic',exposure:renderer.toneMappingExposure,scope:'Display transform only; source irradiance and geometry unchanged'});
     try{
-      detailed=await loadDetailedScene(scene,renderer,model,percent=>{$('loading').querySelector('span').textContent=percent===null?'Loading detailed interiors…':`Loading detailed interiors · ${percent}%`;});
+      detailed=await loadDetailedScene(scene,renderer,model,()=>{$('loading').querySelector('span').textContent='Loading room geometry and textures…';});
       $('viewport').dataset.albedoAudit=JSON.stringify(detailed.albedoAudit);
       $('viewport').dataset.lightingAudit=JSON.stringify(detailed.lightingAudit);
       if(detailed.manifest.authoringAsset){
