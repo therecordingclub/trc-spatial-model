@@ -8,9 +8,9 @@ The live target is the existing `trc-beta-apps` Fly machine. The model uses
 host-specific static middleware in `/Users/gregspero/trc-beta-apps-deploy`.
 It adds no child process, port, machine, volume, or separate application.
 Model buffers and textures use this repository's existing
-[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/v12-r2-lounge-cmu-grilles/trc-web-v12-r2-lounge-cmu-grilles.gltf).
+[GitHub Pages asset directory](https://therecordingclub.github.io/trc-spatial-model/model/v13-details/trc-web-v13-details.gltf).
 Large downloadable files use the existing
-[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v12-r2-lounge-cmu-grilles).
+[versioned release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v13-details).
 
 `site/reconstruction/web-manifest.json` selects the current model.
 Versioned manifests and original assets remain available for rollback.
@@ -98,6 +98,24 @@ window that included early braking at low frame rates. Time-based review found
 no continuing movement after settling, but the mixed timings do not establish
 sustained performance or isolate an asset regression. Do not claim a frame-rate
 guarantee. Lounge masonry cadence, grille counts and ornament remain approximate.
+
+## V13 promotion
+
+V13 adds photo-supported seating, fabrics, console controls, keyboard keys,
+instrument forms and ceiling fixtures. The runtime selects at most eight local
+lights and two local shadow lights. The source passes 261 preservation checks;
+the independent publication audit passes all 25 checks. All 19 room walkthroughs,
+11 visibility controls, 13 held-key behaviors and the actual room-lighting probe
+passed in Greg's existing Chrome. Independent Astra approved the final R3 export
+as an incremental appearance improvement, with existing accuracy gaps retained.
+
+The canonical GLB SHA-256 is
+`c9682adf85ee4bff81f8f5b80f249cd9f9234f0eace9993c4be54f2c48faefe5`;
+the editable source SHA-256 is
+`afa52298f21909256b50334bb4fa4d6ebf0788d8578e3dfe891d7f3b6d861bf1`.
+Seven new dependency files reuse the existing V11 payloads for unaffected data.
+V10, V11 and V12 assets and downloads remain available. Public promotion and
+shared-host release evidence are recorded after deployment below.
 
 ## Accuracy boundaries
 

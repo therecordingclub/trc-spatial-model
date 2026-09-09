@@ -4,5 +4,7 @@
   "/reconstruction/trc-web-v11-webp.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v11-webp/trc-web-v11-webp.glb",
   "/reconstruction/trc-editable-v11-webp.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v11-webp/trc-editable-v11-webp.blend",
   "/reconstruction/trc-web-v12-r2-lounge-cmu-grilles.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v12-r2-lounge-cmu-grilles/trc-web-v12-r2-lounge-cmu-grilles.glb",
-  "/reconstruction/trc-editable-v12-r2-lounge-cmu-grilles.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v12-r2-lounge-cmu-grilles/trc-editable-v12-r2-lounge-cmu-grilles.blend"
+  "/reconstruction/trc-editable-v12-r2-lounge-cmu-grilles.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v12-r2-lounge-cmu-grilles/trc-editable-v12-r2-lounge-cmu-grilles.blend",
+  "/reconstruction/trc-web-v13-details.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v13-details/trc-web-v13-details.glb",
+  "/reconstruction/trc-editable-v13-details.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v13-details/trc-editable-v13-details.blend"
 }
