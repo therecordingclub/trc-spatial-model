@@ -329,6 +329,60 @@ remain refinement work. Window dimensions and the offset are estimates. The
 missing lower stair is a separate active reconstruction; its local form has
 photo support, while its dimensions and upper-floor registration are unresolved.
 
+## V24 preview
+
+V24 studio details is published as a PUBLIC PREVIEW only. Production remains
+V17 instruments: `site/reconstruction/web-manifest.json` and `site/data/model.json`
+are unchanged, and the preview loads at
+[the preview URL](https://model.therecording.club/?preview=v24-studio-details).
+Its manifest carries `"preview": true`, so the runtime shows
+"Model preview, visual checks pending" instead of the production accuracy line.
+The independent Astra release review is still pending and gates any promotion.
+
+Published assets. Two new buffer directories were added under `docs/model` and
+serve from GitHub Pages: `v24-studio-details/geometry-overlay-v24-studio-details.bin`
+(3,309,804 bytes) and `v21-infrastructure/geometry-overlay-v21-infrastructure.bin`
+(18,009,496 bytes). No prior versioned asset file was replaced. The public glTF
+`reconstruction/trc-web-v24-studio-details.gltf` has SHA-256
+`74a4288d2f5064da2981a566a6b5ab30ff69cb2a4ded5515860162e2b11ca31e` and resolves
+all nine geometry buffers with HTTP 200.
+
+The [V24 release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v24-studio-details)
+holds both downloadable artifacts. The GLB is 255,860,228 bytes with SHA-256
+`58214983efb6013ef0bba11ec7738fc06eecb0e79429a01c20ab2803a1164714`; the editable
+Blender source is 196,818,895 bytes with SHA-256
+`85b25dc2496c1e44b0f39f2adfdabc9f6e6d89baab9cea8405e2ca41585cbbe4`. Local hashes
+were verified before upload. `site/downloads.json` now declares 18 routes; both
+new routes return 302 to the release and the final downloads report the expected
+Content-Length.
+
+Runtime change. `site/app.js` gained wall `solidProfiles` extrusion, which the V24
+visual model uses in 23 places. The branch is guarded, so V17 and every earlier
+version render unchanged.
+
+2D floor plan link. The main viewer header and the photographic lobby masthead now
+carry a "2D floor plan (simple version)" link to `/sources/labeled-2024.pdf`,
+opening in a new tab. The existing sources-panel link is retained. Both pages were
+checked at 320, 375 and 768 CSS pixels with no horizontal overflow and no header
+collision; the mobile hit target is 44 pixels. Fixed viewport-height calculations
+in both stylesheets were replaced with flex layout so the header can wrap safely.
+
+Verification. `node --test tools/*.test.mjs` passes 14 of 14.
+`node tools/verify-static-release.mjs` reports pass for v17-instruments with 19
+rooms, 138 model dependencies and 18 download redirects. The live preview loads
+in about 6 seconds with a WebGL canvas, all 125 model resources return 200, and
+the only console error is a pre-existing `/favicon.ico` 404 that also occurs on
+production.
+
+Deployment. Source commit `17486b27d87a74775438d86ff90a83dc9e586ae1` on `main`
+publishes the Pages assets. The shared host was deployed from commit
+`03e56d2` in `/Users/gregspero/trc-beta-apps-deploy` as release 190 with image
+`deployment-01M26R75E12VTDPMEBAN7MB71P`, on the same machine `d8d2e50f0d9168`
+with unchanged CPU, memory and volume. All six `bin/deploy` probes passed: five
+neighboring hosts at 200 and `agents.therecording.club/staff/mod` at 401. The
+browser pass ran in bundled Playwright because the Chrome extension bridge was
+not connected; a main-Chrome pass is still owed.
+
 ## Accuracy boundaries
 
 The 19 modeled rooms combine plans and photographs. Equipment placement,
