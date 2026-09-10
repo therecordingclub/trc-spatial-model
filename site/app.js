@@ -247,7 +247,7 @@ function updateFacts(){
   $('add-item').disabled=!activeRoom;
   if(!$('photo-panel').hidden)showPhoto();
 }
-function updateURL(){const url=new URL(location.href);url.searchParams.set('mode',mode);url.searchParams.set('floor',activeFloor);if(activeRoom)url.searchParams.set('room',activeRoom);else url.searchParams.delete('room');if(isStructureView())url.searchParams.set('view','structure');else url.searchParams.delete('view');history.replaceState({},'',url);}
+function updateURL(){const structure=isStructureView();$('structure-view').setAttribute('aria-pressed',String(structure));$('structure-view').classList.toggle('primary',structure);const url=new URL(location.href);url.searchParams.set('mode',mode);url.searchParams.set('floor',activeFloor);if(activeRoom)url.searchParams.set('room',activeRoom);else url.searchParams.delete('room');if(isStructureView())url.searchParams.set('view','structure');else url.searchParams.delete('view');history.replaceState({},'',url);}
 function selectRoom(id,doFrame=true){if(walk&&doFrame)stopWalk();activeRoom=id;$('room-select').value=id;updateFacts();visibility();if(doFrame)frame();updateURL();}
 function selectFloor(id){stopWalk();activeFloor=id;$('floor-select').value=id;activeRoom='';fillRooms();clearMeasurement();updateFacts();visibility();frame();updateURL();}
 function setMode(next){
