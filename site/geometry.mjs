@@ -1,3 +1,8 @@
+// Walking is never blocked horizontally by walls or other solids (Greg 2026-09-10).
+// Floor support is unaffected: the walker still stands on floors, steps and stairs.
+// Set to false to restore obstacle blocking in both the detailed and plan-based paths.
+export const WALK_THROUGH_WALLS = true;
+
 export function finite(value, fallback = 0) {
   return value !== null && value !== undefined && Number.isFinite(Number(value)) ? Number(value) : fallback;
 }

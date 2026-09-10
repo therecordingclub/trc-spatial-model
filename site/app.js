@@ -10,7 +10,7 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
-import {finite,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom,wallBlocks,formatLength,validateScenario,sourceToViewer} from '/geometry.mjs';
+import {finite,roomSurfaces,roomArea,insideRoom,insidePolygon,footprintInsideRoom,wallBlocks,formatLength,validateScenario,sourceToViewer,WALK_THROUGH_WALLS} from '/geometry.mjs';
 
 const $ = id => document.getElementById(id);
 const photoMap = {
@@ -389,7 +389,7 @@ function panView(dt){
 function canWalk(x,z){
   if(!insidePolygon([x,z],currentFloor().footprint||[]))return false;
   if(navigation&&detailed?.root.visible)return navigation.testPosition(new THREE.Vector3(x,camera.position.y,z),{floorId:activeFloor}).ok;
-  return !model.walls.filter(w=>w.floorId===activeFloor).some(w=>wallBlocks([x,z],w));
+  return WALK_THROUGH_WALLS||!model.walls.filter(w=>w.floorId===activeFloor).some(w=>wallBlocks([x,z],w));
 }
 function moveWalk(dt){
   let forward=Number(keys.has('w')||keys.has('arrowup'))-Number(keys.has('s')||keys.has('arrowdown'));

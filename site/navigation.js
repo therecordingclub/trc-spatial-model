@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { MeshBVH } from 'three-mesh-bvh';
+import { WALK_THROUGH_WALLS } from './geometry.mjs';
 
 // Public contract: every accepted and returned position is an EYE position.
 // Scene meshes are snapshotted into immutable world-space geometry once. The
@@ -264,7 +265,7 @@ export function createNavigation(meshes, floors, supplied = {}) {
     const support = available.supports[0];
     if (support.y > referenceFootY + stepHeight + EPSILON) return { ok: false, reason: 'step-too-high', floor: support.floor, supportY: support.y, floorId };
     if (support.y < referenceFootY - dropHeight - EPSILON) return { ok: false, reason: 'drop-too-far', floor: support.floor, supportY: support.y, floorId };
-    const obstacle = collisionWithCapsule(colliders, x, support.y, z, floorId, {
+    const obstacle = WALK_THROUGH_WALLS ? null : collisionWithCapsule(colliders, x, support.y, z, floorId, {
       defaults,
       referenceFootY,
       stepHeight,
