@@ -1,0 +1,4166 @@
+{
+  "asset": "/reconstruction/trc-web-v24-studio-details.gltf",
+  "downloadAsset": "/reconstruction/trc-web-v24-studio-details.glb",
+  "authoringAsset": "/reconstruction/trc-editable-v24-studio-details.blend",
+  "modelAsset": "/reconstruction/trc-visual-v24-studio-details.json",
+  "modelRevision": "cb0d0f053e202ab9",
+  "builderSources": [
+    {
+      "path": "reconstruction/build_interior.py",
+      "sha256": "f2039e7d326789bdefd2f29114baf5024c9cb657986b587f24673306e8c53b0f"
+    },
+    {
+      "path": "reconstruction/scene_utils.py",
+      "sha256": "13c915737b9f52c50b28fe45a87a4ba982f9f3aa14fb2ec9e6b5cb903baec6e7"
+    },
+    {
+      "path": "architecture/visual_model.py",
+      "sha256": "0291441a2498f15b5a9bf0d1fd5c9d08217a4d25ef545467e07bb57064bf19be"
+    },
+    {
+      "path": "reconstruction/rooms_studios.py",
+      "sha256": "96e51df323b5a1f2e3696407aebdb35fb36981d0a591891cbd745e71f4a50e3e"
+    },
+    {
+      "path": "reconstruction/rooms_common.py",
+      "sha256": "4e1f3621a5e2ed1b9b848cbbcd75326f9f3353941b7c502dd6ca26981f53e957"
+    },
+    {
+      "path": "reconstruction/rooms_exterior.py",
+      "sha256": "5dca469cc39d4f2801eabf89eea56bd3296f6a600589e7d7d70966ecfe477c4b"
+    }
+  ],
+  "version": "v24-studio-details",
+  "preview": true,
+  "status": "Private photo-referenced infrastructure and studio detail candidate; browser release review pending",
+  "cameraCoordinates": "blender-floor-local",
+  "views": [
+    {
+      "roomId": "rehearsal-room",
+      "cameraBlender": {
+        "position": [
+          3.35,
+          7.55,
+          1.589
+        ],
+        "target": [
+          2.25,
+          11.25,
+          1.17
+        ],
+        "lens": 24.0,
+        "requestedPosition": [
+          3.35,
+          7.55,
+          1.589
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "rehearsal-iso",
+      "cameraBlender": {
+        "position": [
+          2.80532275,
+          4.4380855,
+          1.6
+        ],
+        "target": [
+          3.45,
+          4.9,
+          1.25
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          2.39972394,
+          4.2091458799999995,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "electrical-room",
+      "cameraBlender": {
+        "position": [
+          5.955555555555556,
+          4.1075,
+          1.6
+        ],
+        "target": [
+          5.98,
+          5.35,
+          1.25
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          5.7672,
+          3.8618,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-live",
+      "cameraBlender": {
+        "position": [
+          9.05,
+          4.49178,
+          1.6
+        ],
+        "target": [
+          9.05,
+          12.57,
+          1.55
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          9.05,
+          4.49178,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-control",
+      "cameraBlender": {
+        "position": [
+          19.121119999999998,
+          12.30146,
+          1.6
+        ],
+        "target": [
+          14.604000000000001,
+          10.62,
+          1.3
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          19.121119999999998,
+          12.30146,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "studio-a-iso",
+      "cameraBlender": {
+        "position": [
+          14.19,
+          3.235,
+          1.6
+        ],
+        "target": [
+          15.25,
+          4.55,
+          1.25
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          13.8624,
+          3.17,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "recording-room",
+      "cameraBlender": {
+        "position": [
+          26.190611111111114,
+          9.038666666666668,
+          1.6
+        ],
+        "target": [
+          22.829,
+          12.706,
+          1.15
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          26.557000000000002,
+          9.018,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "recording-iso",
+      "cameraBlender": {
+        "position": [
+          28.75242,
+          12.72,
+          1.6
+        ],
+        "target": [
+          27.007059,
+          12.76616,
+          1.45
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          28.75242,
+          12.72,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "podcast-room",
+      "cameraBlender": {
+        "position": [
+          28.52,
+          8.12,
+          1.6
+        ],
+        "target": [
+          28.96,
+          9.959999999999999,
+          1.02
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          28.52,
+          8.12,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "office-machine",
+      "cameraBlender": {
+        "position": [
+          21.846120000000003,
+          4.897819999999999,
+          1.6
+        ],
+        "target": [
+          23.2,
+          6.15,
+          1.25
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          21.846120000000003,
+          4.897819999999999,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "bar-lounge",
+      "cameraBlender": {
+        "position": [
+          33.403075,
+          5.7246,
+          1.55
+        ],
+        "target": [
+          33.403075,
+          13.386,
+          1.5
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          33.403075,
+          5.7246,
+          1.55
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "kitchen",
+      "cameraBlender": {
+        "position": [
+          29.9,
+          3.25,
+          1.6
+        ],
+        "target": [
+          35.3,
+          2.05,
+          1.5
+        ],
+        "lens": 23,
+        "requestedPosition": [
+          29.9,
+          3.25,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "bathrooms",
+      "cameraBlender": {
+        "position": [
+          22.5625,
+          1.9940000000000002,
+          1.6
+        ],
+        "target": [
+          22.5625,
+          0.88,
+          0.8
+        ],
+        "lens": 18.0,
+        "requestedPosition": [
+          22.5625,
+          1.9940000000000002,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "locker-hallway",
+      "cameraBlender": {
+        "position": [
+          2.22,
+          1.24,
+          1.6
+        ],
+        "target": [
+          14.22,
+          1.27,
+          1.6
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          2.22,
+          1.24,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "main-circulation",
+      "cameraBlender": {
+        "position": [
+          20.351388888888888,
+          2.3694444444444445,
+          1.6
+        ],
+        "target": [
+          28.2,
+          5.8,
+          1.25
+        ],
+        "lens": 23.0,
+        "requestedPosition": [
+          21.076999999999998,
+          1.4779999999999998,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "mezzanine-review",
+      "cameraBlender": {
+        "position": [
+          43.1,
+          1.85,
+          1.739
+        ],
+        "target": [
+          46.2,
+          3.75,
+          1.08
+        ],
+        "lens": 24.0,
+        "requestedPosition": [
+          43.1,
+          1.85,
+          1.739
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "outdoor-gym-review",
+      "cameraBlender": {
+        "position": [
+          62.05,
+          11.55,
+          1.62
+        ],
+        "target": [
+          62.45,
+          22.5,
+          1.3
+        ],
+        "lens": 22.0,
+        "requestedPosition": [
+          62.05,
+          11.55,
+          1.62
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "patio-review",
+      "cameraBlender": {
+        "position": [
+          63.5,
+          0.35,
+          1.6
+        ],
+        "target": [
+          63.1,
+          5.1,
+          1.12
+        ],
+        "lens": 18.0,
+        "requestedPosition": [
+          63.5,
+          0.35,
+          1.6
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    },
+    {
+      "roomId": "sauna-review",
+      "cameraBlender": {
+        "position": [
+          60.38,
+          24.88,
+          1.62
+        ],
+        "target": [
+          63,
+          27.75,
+          1.12
+        ],
+        "lens": 25.0,
+        "requestedPosition": [
+          60.38,
+          24.88,
+          1.62
+        ],
+        "clearRadiusMeters": 0.3
+      }
+    }
+  ],
+  "lights": [
+    {
+      "name": "Bulkhead wall wash",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        5.974599838256836,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        5.974599361419678,
+        1.321058750152588
+      ],
+      "energy": 16.0,
+      "size": 0.11999999731779099,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical",
+      "sizeY": 0.11999999731779099,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "wall-wash"
+    },
+    {
+      "name": "Bulkhead wall wash.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        7.274600028991699,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        7.274599552154541,
+        1.321058750152588
+      ],
+      "energy": 16.0,
+      "size": 0.11999999731779099,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical",
+      "sizeY": 0.11999999731779099,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "wall-wash"
+    },
+    {
+      "name": "Bulkhead wall wash.002",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        8.574600219726562,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        8.574599266052246,
+        1.321058750152588
+      ],
+      "energy": 16.0,
+      "size": 0.11999999731779099,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical",
+      "sizeY": 0.11999999731779099,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "wall-wash"
+    },
+    {
+      "name": "Bulkhead wall wash.003",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        9.874600410461426,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        9.87459945678711,
+        1.321058750152588
+      ],
+      "energy": 16.0,
+      "size": 0.11999999731779099,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical",
+      "sizeY": 0.11999999731779099,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "wall-wash"
+    },
+    {
+      "name": "Bulkhead wall wash.004",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.352149963378906,
+        10.974599838256836,
+        2.319999933242798
+      ],
+      "target": [
+        31.3061466217041,
+        10.97459888458252,
+        1.321058750152588
+      ],
+      "energy": 16.0,
+      "size": 0.11999999731779099,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6200000047683716
+      ],
+      "role": "practical",
+      "sizeY": 0.11999999731779099,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "wall-wash"
+    },
+    {
+      "name": "Exterior broad sky fill outdoor-gym-review",
+      "roomId": "outdoor-gym-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.29999923706055,
+        17.5,
+        5.800000190734863
+      ],
+      "target": [
+        62.29999923706055,
+        17.5,
+        4.800000190734863
+      ],
+      "energy": 160.0,
+      "size": 5.0,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1.0
+      ],
+      "role": "indirect-fill",
+      "sizeY": 5.0,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Exterior broad sky fill patio-review",
+      "roomId": "patio-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.25,
+        5.25,
+        5.800000190734863
+      ],
+      "target": [
+        62.25,
+        5.25,
+        4.800000190734863
+      ],
+      "energy": 160.0,
+      "size": 5.0,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1.0
+      ],
+      "role": "indirect-fill",
+      "sizeY": 5.0,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Exterior broad sky fill sauna-review",
+      "roomId": "sauna-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        62.75,
+        27.5,
+        5.800000190734863
+      ],
+      "target": [
+        62.75,
+        27.5,
+        4.800000190734863
+      ],
+      "energy": 160.0,
+      "size": 5.5,
+      "color": [
+        0.7799999713897705,
+        0.8799999952316284,
+        1.0
+      ],
+      "role": "indirect-fill",
+      "sizeY": 5.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "energy": 2.0,
+      "name": "Exterior daylight sun",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": 0.0,
+      "sizeY": 0.0,
+      "sourceUseShadow": true,
+      "target": [
+        0.548551857,
+        0.233106136,
+        -0.802964807
+      ],
+      "type": "SUN",
+      "evidencePriority": 65,
+      "fixtureFamily": "paper-lantern",
+      "role": "practical"
+    },
+    {
+      "name": "Exterior wall bounce fill outdoor-gym-review",
+      "roomId": "outdoor-gym-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        17.5,
+        2.9000000953674316
+      ],
+      "target": [
+        61.31582260131836,
+        17.5,
+        2.4555954933166504
+      ],
+      "energy": 480.0,
+      "size": 3.4000000953674316,
+      "color": [
+        1.0,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill",
+      "sizeY": 3.4000000953674316,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Exterior wall bounce fill patio-review",
+      "roomId": "patio-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        5.25,
+        2.9000000953674316
+      ],
+      "target": [
+        61.31105422973633,
+        5.25,
+        2.446110486984253
+      ],
+      "energy": 480.0,
+      "size": 3.4000000953674316,
+      "color": [
+        1.0,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill",
+      "sizeY": 3.4000000953674316,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Exterior wall bounce fill sauna-review",
+      "roomId": "sauna-review",
+      "floorId": "exterior-corridor-review",
+      "type": "AREA",
+      "position": [
+        60.41999816894531,
+        27.5,
+        2.9000000953674316
+      ],
+      "target": [
+        61.347930908203125,
+        27.5,
+        2.527257204055786
+      ],
+      "energy": 480.0,
+      "size": 3.4000000953674316,
+      "color": [
+        1.0,
+        0.8199999928474426,
+        0.6399999856948853
+      ],
+      "role": "indirect-fill",
+      "sizeY": 3.4000000953674316,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Live_stage_wash_0",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.127099990844727,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        7.127099990844727,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140.0,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.32,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 80,
+      "fixtureFamily": "stage-wash"
+    },
+    {
+      "name": "Live_stage_wash_1",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        8.51830005645752,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        8.51830005645752,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140.0,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.32,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 80,
+      "fixtureFamily": "stage-wash"
+    },
+    {
+      "name": "Live_stage_wash_2",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        9.909500122070312,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        9.909500122070312,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140.0,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.32,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 80,
+      "fixtureFamily": "stage-wash"
+    },
+    {
+      "name": "Live_stage_wash_3",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.300700187683105,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        11.300700187683105,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140.0,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.32,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 80,
+      "fixtureFamily": "stage-wash"
+    },
+    {
+      "name": "Live_stage_wash_4",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        12.691900253295898,
+        10.248700141906738,
+        2.940000057220459
+      ],
+      "target": [
+        12.691900253295898,
+        10.75499153137207,
+        2.0776376724243164
+      ],
+      "energy": 140.0,
+      "size": 0.14000000059604645,
+      "color": [
+        0.4000000059604645,
+        0.3400000035762787,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.32,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 80,
+      "fixtureFamily": "stage-wash"
+    },
+    {
+      "name": "Lobby blue floor accent",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.242149353027344,
+        5.924600124359131,
+        0.18000000715255737
+      ],
+      "target": [
+        31.242149353027344,
+        5.924600124359131,
+        1.1800000667572021
+      ],
+      "energy": 12.0,
+      "size": 0.11999999731779099,
+      "color": [
+        0.1599999964237213,
+        0.11999999731779099,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.45,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 70,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Lobby blue floor accent.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        35.56399917602539,
+        5.924600124359131,
+        0.18000000715255737
+      ],
+      "target": [
+        35.56399917602539,
+        5.924600124359131,
+        1.1800000667572021
+      ],
+      "energy": 12.0,
+      "size": 0.11999999731779099,
+      "color": [
+        0.1599999964237213,
+        0.11999999731779099,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.45,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 70,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall blue wash",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.7200000286102295,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        1.7200000286102295,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5.0,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall blue wash.001",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.21999979019165,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        6.21999979019165,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5.0,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall blue wash.002",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        10.720000267028809,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        10.720000267028809,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5.0,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall blue wash.003",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.220000267028809,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        15.220000267028809,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5.0,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall blue wash.004",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        19.219999313354492,
+        1.5199999809265137,
+        0.15000000596046448
+      ],
+      "target": [
+        19.219999313354492,
+        0.8473272323608398,
+        0.8899401426315308
+      ],
+      "energy": 5.0,
+      "size": 0.15000000596046448,
+      "color": [
+        0.12999999523162842,
+        0.1599999964237213,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.5,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 60,
+      "fixtureFamily": "baseboard-accent"
+    },
+    {
+      "name": "Locker hall warm practical",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.7200000286102295,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        1.7200000286102295,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical",
+      "sizeY": 0.18,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "wall-sconce"
+    },
+    {
+      "name": "Locker hall warm practical.001",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.21999979019165,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        6.21999979019165,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical",
+      "sizeY": 0.18,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "wall-sconce"
+    },
+    {
+      "name": "Locker hall warm practical.002",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        10.720000267028809,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        10.720000267028809,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical",
+      "sizeY": 0.18,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "wall-sconce"
+    },
+    {
+      "name": "Locker hall warm practical.003",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.220000267028809,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        15.220000267028809,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical",
+      "sizeY": 0.18,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "wall-sconce"
+    },
+    {
+      "name": "Locker hall warm practical.004",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        19.219999313354492,
+        1.3200000524520874,
+        2.6500000953674316
+      ],
+      "target": [
+        19.219999313354492,
+        0.9661080837249756,
+        1.7147138118743896
+      ],
+      "energy": 38.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.8100000023841858,
+        0.6299999952316284
+      ],
+      "role": "practical",
+      "sizeY": 0.18,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "wall-sconce"
+    },
+    {
+      "name": "Lounge window daylight",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        36.124000549316406,
+        6.674600124359131,
+        2.049999952316284
+      ],
+      "target": [
+        35.15802764892578,
+        6.674600124359131,
+        1.7913525104522705
+      ],
+      "energy": 650.0,
+      "size": 1.649999976158142,
+      "color": [
+        0.7900000214576721,
+        0.8799999952316284,
+        1.0
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.4,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 50,
+      "fixtureFamily": "window-fill"
+    },
+    {
+      "name": "Lounge window daylight.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        36.124000549316406,
+        12.53600025177002,
+        2.049999952316284
+      ],
+      "target": [
+        35.15802764892578,
+        12.53600025177002,
+        1.7913525104522705
+      ],
+      "energy": 650.0,
+      "size": 1.649999976158142,
+      "color": [
+        0.7900000214576721,
+        0.8799999952316284,
+        1.0
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.4,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 50,
+      "fixtureFamily": "window-fill"
+    },
+    {
+      "name": "Mix_ceiling_light_0",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        8.197360038757324,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        8.197360038757324,
+        1.831176996231079
+      ],
+      "energy": 115.0,
+      "size": 0.550000011920929,
+      "color": [
+        1.0,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical",
+      "sizeY": 0.550000011920929,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Mix_ceiling_light_1",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        9.988240242004395,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        9.988240242004395,
+        1.831176996231079
+      ],
+      "energy": 115.0,
+      "size": 0.550000011920929,
+      "color": [
+        1.0,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical",
+      "sizeY": 0.550000011920929,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Mix_ceiling_light_2",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.671199798583984,
+        11.779120445251465,
+        2.809999942779541
+      ],
+      "target": [
+        17.46649169921875,
+        11.779120445251465,
+        1.831176996231079
+      ],
+      "energy": 115.0,
+      "size": 0.550000011920929,
+      "color": [
+        1.0,
+        0.8999999761581421,
+        0.7200000286102295
+      ],
+      "role": "practical",
+      "sizeY": 0.550000011920929,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Paper lantern glow",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.58307647705078,
+        12.435999870300293,
+        2.9100000858306885
+      ],
+      "target": [
+        33.58307647705078,
+        12.435999870300293,
+        1.9100000858306885
+      ],
+      "energy": 48.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.7799999713897705,
+        0.4699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.6000000238418579,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "pendant"
+    },
+    {
+      "name": "Paper lantern glow.001",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.30307388305664,
+        11.166000366210938,
+        2.5
+      ],
+      "target": [
+        33.30307388305664,
+        11.166000366210938,
+        1.5
+      ],
+      "energy": 48.0,
+      "size": 0.6000000238418579,
+      "color": [
+        1.0,
+        0.7799999713897705,
+        0.4699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.6000000238418579,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "pendant"
+    },
+    {
+      "name": "Podcast softbox",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.733999252319336,
+        8.4399995803833,
+        2.0999999046325684
+      ],
+      "target": [
+        28.32423210144043,
+        9.06379222869873,
+        1.5876450538635254
+      ],
+      "energy": 36.0,
+      "size": 0.550000011920929,
+      "color": [
+        1.0,
+        0.949999988079071,
+        0.8999999761581421
+      ],
+      "role": "practical",
+      "sizeY": 0.550000011920929,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Podcast softbox.001",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.733999252319336,
+        10.824999809265137,
+        2.0999999046325684
+      ],
+      "target": [
+        28.333694458007812,
+        10.217236518859863,
+        1.5794322490692139
+      ],
+      "energy": 36.0,
+      "size": 0.550000011920929,
+      "color": [
+        1.0,
+        0.949999988079071,
+        0.8999999761581421
+      ],
+      "role": "practical",
+      "sizeY": 0.550000011920929,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.7227673530578613,
+        4.601613998413086,
+        2.694999933242798
+      ],
+      "target": [
+        2.7227673530578613,
+        4.601613998413086,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.001",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.7227673530578613,
+        5.909840106964111,
+        2.694999933242798
+      ],
+      "target": [
+        2.7227673530578613,
+        5.909840106964111,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.002",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.144157886505127,
+        4.601613998413086,
+        2.694999933242798
+      ],
+      "target": [
+        4.144157886505127,
+        4.601613998413086,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.003",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.144157886505127,
+        5.909840106964111,
+        2.694999933242798
+      ],
+      "target": [
+        4.144157886505127,
+        5.909840106964111,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.004",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.871200084686279,
+        4.2829999923706055,
+        2.694999933242798
+      ],
+      "target": [
+        5.871200084686279,
+        4.2829999923706055,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.005",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.871200084686279,
+        5.686999797821045,
+        2.694999933242798
+      ],
+      "target": [
+        5.871200084686279,
+        5.686999797821045,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.006",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.328800201416016,
+        4.2829999923706055,
+        2.694999933242798
+      ],
+      "target": [
+        6.328800201416016,
+        4.2829999923706055,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.007",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        6.328800201416016,
+        5.686999797821045,
+        2.694999933242798
+      ],
+      "target": [
+        6.328800201416016,
+        5.686999797821045,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.008",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.996600151062012,
+        5.820300102233887,
+        3.6050000190734863
+      ],
+      "target": [
+        7.996600151062012,
+        5.820300102233887,
+        2.6050000190734863
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight",
+      "rendererLight": "shadow-spot",
+      "spotAngle": 0.62,
+      "spotPenumbra": 0.72,
+      "range": 7
+    },
+    {
+      "name": "Practical downlight.009",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        7.996600151062012,
+        10.248700141906738,
+        3.6050000190734863
+      ],
+      "target": [
+        7.996600151062012,
+        10.248700141906738,
+        2.6050000190734863
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Practical downlight.010",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.822400093078613,
+        5.820300102233887,
+        3.6050000190734863
+      ],
+      "target": [
+        11.822400093078613,
+        5.820300102233887,
+        2.6050000190734863
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight",
+      "rendererLight": "shadow-spot",
+      "spotAngle": 0.62,
+      "spotPenumbra": 0.72,
+      "range": 7
+    },
+    {
+      "name": "Practical downlight.011",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        11.822400093078613,
+        10.248700141906738,
+        3.6050000190734863
+      ],
+      "target": [
+        11.822400093078613,
+        10.248700141906738,
+        2.6050000190734863
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Practical downlight.012",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.969120025634766,
+        8.346599578857422,
+        2.8949999809265137
+      ],
+      "target": [
+        15.969120025634766,
+        8.346599578857422,
+        1.8949999809265137
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.013",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.969120025634766,
+        11.331399917602539,
+        2.8949999809265137
+      ],
+      "target": [
+        15.969120025634766,
+        11.331399917602539,
+        1.8949999809265137
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.014",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        18.74287986755371,
+        8.346599578857422,
+        2.8949999809265137
+      ],
+      "target": [
+        18.74287986755371,
+        8.346599578857422,
+        1.8949999809265137
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.015",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        18.74287986755371,
+        11.331399917602539,
+        2.8949999809265137
+      ],
+      "target": [
+        18.74287986755371,
+        11.331399917602539,
+        1.8949999809265137
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.016",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        14.330400466918945,
+        3.7100000381469727,
+        2.2950000762939453
+      ],
+      "target": [
+        14.330400466918945,
+        3.7100000381469727,
+        1.2950000762939453
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.017",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        14.330400466918945,
+        5.510000228881836,
+        2.2950000762939453
+      ],
+      "target": [
+        14.330400466918945,
+        5.510000228881836,
+        1.2950000762939453
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.018",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        16.38960075378418,
+        3.7100000381469727,
+        2.2950000762939453
+      ],
+      "target": [
+        16.38960075378418,
+        3.7100000381469727,
+        1.2950000762939453
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.019",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        16.38960075378418,
+        5.510000228881836,
+        2.2950000762939453
+      ],
+      "target": [
+        16.38960075378418,
+        5.510000228881836,
+        1.2950000762939453
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.020",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.774839401245117,
+        10.184399604797363,
+        2.694999933242798
+      ],
+      "target": [
+        22.774839401245117,
+        10.184399604797363,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.021",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.774839401245117,
+        12.299599647521973,
+        2.694999933242798
+      ],
+      "target": [
+        22.774839401245117,
+        12.299599647521973,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.022",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.361160278320312,
+        10.184399604797363,
+        2.694999933242798
+      ],
+      "target": [
+        25.361160278320312,
+        10.184399604797363,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.023",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.361160278320312,
+        12.299599647521973,
+        2.694999933242798
+      ],
+      "target": [
+        25.361160278320312,
+        12.299599647521973,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.024",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.62175941467285,
+        12.48243522644043,
+        2.694999933242798
+      ],
+      "target": [
+        27.62175941467285,
+        12.48243522644043,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.025",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        27.62175941467285,
+        13.049884796142578,
+        2.694999933242798
+      ],
+      "target": [
+        27.62175941467285,
+        13.049884796142578,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.026",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.587718963623047,
+        12.48243522644043,
+        2.694999933242798
+      ],
+      "target": [
+        28.587718963623047,
+        12.48243522644043,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.027",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.587718963623047,
+        13.049884796142578,
+        2.694999933242798
+      ],
+      "target": [
+        28.587718963623047,
+        13.049884796142578,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.028",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.110719680786133,
+        8.850500106811523,
+        2.694999933242798
+      ],
+      "target": [
+        28.110719680786133,
+        8.850500106811523,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.029",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.110719680786133,
+        10.464500427246094,
+        2.694999933242798
+      ],
+      "target": [
+        28.110719680786133,
+        10.464500427246094,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.030",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        29.661279678344727,
+        8.850500106811523,
+        2.694999933242798
+      ],
+      "target": [
+        29.661279678344727,
+        8.850500106811523,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.031",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        29.661279678344727,
+        10.464500427246094,
+        2.694999933242798
+      ],
+      "target": [
+        29.661279678344727,
+        10.464500427246094,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.032",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.24452018737793,
+        5.383699893951416,
+        2.694999933242798
+      ],
+      "target": [
+        22.24452018737793,
+        5.383699893951416,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.033",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.24452018737793,
+        7.003300189971924,
+        2.694999933242798
+      ],
+      "target": [
+        22.24452018737793,
+        7.003300189971924,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.034",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.997480392456055,
+        5.383699893951416,
+        2.694999933242798
+      ],
+      "target": [
+        23.997480392456055,
+        5.383699893951416,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.035",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.997480392456055,
+        7.003300189971924,
+        2.694999933242798
+      ],
+      "target": [
+        23.997480392456055,
+        7.003300189971924,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.036",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        32.381866455078125,
+        7.823019981384277,
+        3.6549999713897705
+      ],
+      "target": [
+        32.381866455078125,
+        7.823019981384277,
+        2.6549999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight",
+      "rendererLight": "shadow-spot",
+      "spotAngle": 0.72,
+      "spotPenumbra": 0.65,
+      "range": 6
+    },
+    {
+      "name": "Practical downlight.037",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        32.381866455078125,
+        11.287579536437988,
+        3.6549999713897705
+      ],
+      "target": [
+        32.381866455078125,
+        11.287579536437988,
+        2.6549999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Practical downlight.038",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        34.42428207397461,
+        7.823019981384277,
+        3.6549999713897705
+      ],
+      "target": [
+        34.42428207397461,
+        7.823019981384277,
+        2.6549999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Practical downlight.039",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        34.42428207397461,
+        11.287579536437988,
+        3.6549999713897705
+      ],
+      "target": [
+        34.42428207397461,
+        11.287579536437988,
+        2.6549999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 90,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Practical downlight.044",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.716999053955078,
+        0.866599977016449,
+        2.694999933242798
+      ],
+      "target": [
+        22.716999053955078,
+        0.866599977016449,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.045",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.716999053955078,
+        1.739400029182434,
+        2.694999933242798
+      ],
+      "target": [
+        22.716999053955078,
+        1.739400029182434,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.046",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.170000076293945,
+        0.866599977016449,
+        2.694999933242798
+      ],
+      "target": [
+        25.170000076293945,
+        0.866599977016449,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.047",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.170000076293945,
+        1.739400029182434,
+        2.694999933242798
+      ],
+      "target": [
+        25.170000076293945,
+        1.739400029182434,
+        1.6949999332427979
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.048",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        42.28535842895508,
+        2.1278998851776123,
+        2.4049999713897705
+      ],
+      "target": [
+        42.28535842895508,
+        2.1278998851776123,
+        1.4049999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.049",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        42.28535842895508,
+        4.965099811553955,
+        2.4049999713897705
+      ],
+      "target": [
+        42.28535842895508,
+        4.965099811553955,
+        1.4049999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.050",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        46.3166389465332,
+        2.1278998851776123,
+        2.4049999713897705
+      ],
+      "target": [
+        46.3166389465332,
+        2.1278998851776123,
+        1.4049999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Practical downlight.051",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        46.3166389465332,
+        4.965099811553955,
+        2.4049999713897705
+      ],
+      "target": [
+        46.3166389465332,
+        4.965099811553955,
+        1.4049999713897705
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.5699999928474426
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Recording_warm_light_0",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        22.598499298095703,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        22.598499298095703,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95.0,
+      "size": 0.41999998688697815,
+      "color": [
+        1.0,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical",
+      "sizeY": 0.41999998688697815,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Recording_warm_light_1",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24.06800079345703,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        24.06800079345703,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95.0,
+      "size": 0.41999998688697815,
+      "color": [
+        1.0,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical",
+      "sizeY": 0.41999998688697815,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Recording_warm_light_2",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        25.537500381469727,
+        11.665040016174316,
+        2.5999999046325684
+      ],
+      "target": [
+        25.537500381469727,
+        11.440972328186035,
+        1.6254262924194336
+      ],
+      "energy": 95.0,
+      "size": 0.41999998688697815,
+      "color": [
+        1.0,
+        0.8600000143051147,
+        0.6800000071525574
+      ],
+      "role": "practical",
+      "sizeY": 0.41999998688697815,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Red lounge sconce",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        2.0,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        2.0,
+        1.3952999114990234
+      ],
+      "energy": 26.0,
+      "size": 0.20000000298023224,
+      "color": [
+        1.0,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical",
+      "sizeY": 0.20000000298023224,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Red lounge sconce.001",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        3.549999952316284,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        3.549999952316284,
+        1.3952999114990234
+      ],
+      "energy": 26.0,
+      "size": 0.20000000298023224,
+      "color": [
+        1.0,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical",
+      "sizeY": 0.20000000298023224,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Red lounge sconce.002",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        48.63199996948242,
+        5.099999904632568,
+        1.9500000476837158
+      ],
+      "target": [
+        47.799949645996094,
+        5.099999904632568,
+        1.3952999114990234
+      ],
+      "energy": 26.0,
+      "size": 0.20000000298023224,
+      "color": [
+        1.0,
+        0.6200000047683716,
+        0.2800000011920929
+      ],
+      "role": "practical",
+      "sizeY": 0.20000000298023224,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Rehearsal_iso_booth_light",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.433462381362915,
+        5.2557268142700195,
+        2.619999885559082
+      ],
+      "target": [
+        3.433462381362915,
+        5.2557268142700195,
+        1.619999885559082
+      ],
+      "energy": 95.0,
+      "size": 0.47999998927116394,
+      "color": [
+        1.0,
+        0.8999999761581421,
+        0.7599999904632568
+      ],
+      "role": "practical",
+      "sizeY": 0.47999998927116394,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Rehearsal_luminous_coffer_0_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.781399965286255,
+        9.547289848327637,
+        2.555000066757202
+      ],
+      "target": [
+        2.781399965286255,
+        9.547289848327637,
+        1.5550000667572021
+      ],
+      "energy": 0.0,
+      "size": 1.5498000383377075,
+      "color": [
+        1.0,
+        0.8199999928474426,
+        0.5600000023841858
+      ],
+      "role": "practical",
+      "sizeY": 0.8363999724388123,
+      "sourceShape": "RECTANGLE",
+      "sourceUseShadow": true,
+      "evidencePriority": -100,
+      "fixtureFamily": "inactive-coffer"
+    },
+    {
+      "name": "Rehearsal_luminous_coffer_1_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.781399965286255,
+        11.250040054321289,
+        2.555000066757202
+      ],
+      "target": [
+        2.781399965286255,
+        11.250040054321289,
+        1.5550000667572021
+      ],
+      "energy": 0.0,
+      "size": 1.5498000383377075,
+      "color": [
+        1.0,
+        0.8199999928474426,
+        0.5600000023841858
+      ],
+      "role": "practical",
+      "sizeY": 0.8363999724388123,
+      "sourceShape": "RECTANGLE",
+      "sourceUseShadow": true,
+      "evidencePriority": -100,
+      "fixtureFamily": "inactive-coffer"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_01_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.3799999952316284,
+        8.050000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        1.3799999952316284,
+        8.050000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight",
+      "rendererLight": "shadow-spot",
+      "spotAngle": 0.72,
+      "spotPenumbra": 0.68,
+      "range": 5
+    },
+    {
+      "name": "Rehearsal_observed_downlight_02_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.3799999952316284,
+        9.550000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        1.3799999952316284,
+        9.550000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_03_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.3799999952316284,
+        11.050000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        1.3799999952316284,
+        11.050000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_04_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.3799999952316284,
+        12.550000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        1.3799999952316284,
+        12.550000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_05_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.179999828338623,
+        8.050000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        4.179999828338623,
+        8.050000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight",
+      "rendererLight": "shadow-spot",
+      "spotAngle": 0.72,
+      "spotPenumbra": 0.68,
+      "range": 5
+    },
+    {
+      "name": "Rehearsal_observed_downlight_06_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.179999828338623,
+        9.550000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        4.179999828338623,
+        9.550000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_07_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.179999828338623,
+        11.050000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        4.179999828338623,
+        11.050000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_observed_downlight_08_light",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        4.179999828338623,
+        12.550000190734863,
+        2.6500000953674316
+      ],
+      "target": [
+        4.179999828338623,
+        12.550000190734863,
+        1.6500000953674316
+      ],
+      "energy": 32.0,
+      "size": 0.14000000059604645,
+      "color": [
+        1.0,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "role": "practical",
+      "sizeY": 0.14000000059604645,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 100,
+      "fixtureFamily": "downlight"
+    },
+    {
+      "name": "Rehearsal_wash_0",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        1.4462499618530273,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        1.4462499618530273,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 0.0,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.3199999928474426,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": -100,
+      "fixtureFamily": "inactive-accent"
+    },
+    {
+      "name": "Rehearsal_wash_1",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.682499885559082,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        2.682499885559082,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 0.0,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.3199999928474426,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": -100,
+      "fixtureFamily": "inactive-accent"
+    },
+    {
+      "name": "Rehearsal_wash_2",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.918750047683716,
+        12.612239837646484,
+        2.559999942779541
+      ],
+      "target": [
+        3.918750047683716,
+        11.92680549621582,
+        1.8318657875061035
+      ],
+      "energy": 0.0,
+      "size": 0.3199999928474426,
+      "color": [
+        0.550000011920929,
+        0.3799999952316284,
+        1.0
+      ],
+      "role": "practical",
+      "sizeY": 0.3199999928474426,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": -100,
+      "fixtureFamily": "inactive-accent"
+    },
+    {
+      "name": "Soft reflected room illumination",
+      "roomId": "rehearsal-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        2.549999952316284,
+        10.449999809265137,
+        2.559999942779541
+      ],
+      "target": [
+        2.549999952316284,
+        10.449999809265137,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 20,
+      "fixtureFamily": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination.001",
+      "roomId": "rehearsal-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        3.450000047683716,
+        4.900000095367432,
+        2.559999942779541
+      ],
+      "target": [
+        3.450000047683716,
+        4.900000095367432,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.002",
+      "roomId": "electrical-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        5.980000019073486,
+        5.349999904632568,
+        2.559999942779541
+      ],
+      "target": [
+        5.980000019073486,
+        5.349999904632568,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.003",
+      "roomId": "studio-a-live",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        9.050000190734863,
+        10.550000190734863,
+        3.4700000286102295
+      ],
+      "target": [
+        9.050000190734863,
+        10.550000190734863,
+        2.4700000286102295
+      ],
+      "energy": 180.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 20,
+      "fixtureFamily": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination.004",
+      "roomId": "studio-a-control",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        17.5,
+        10.619999885559082,
+        2.759999990463257
+      ],
+      "target": [
+        17.5,
+        10.619999885559082,
+        1.7599999904632568
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.005",
+      "roomId": "studio-a-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        15.25,
+        4.550000190734863,
+        2.1600000858306885
+      ],
+      "target": [
+        15.25,
+        4.550000190734863,
+        1.1600000858306885
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.006",
+      "roomId": "recording-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24.0,
+        10.649999618530273,
+        2.559999942779541
+      ],
+      "target": [
+        24.0,
+        10.649999618530273,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.007",
+      "roomId": "recording-iso",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.149999618530273,
+        12.720000267028809,
+        2.559999942779541
+      ],
+      "target": [
+        28.149999618530273,
+        12.720000267028809,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.008",
+      "roomId": "podcast-room",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.84000015258789,
+        9.949999809265137,
+        2.559999942779541
+      ],
+      "target": [
+        28.84000015258789,
+        9.949999809265137,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.009",
+      "roomId": "office-machine",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        23.200000762939453,
+        6.150000095367432,
+        2.559999942779541
+      ],
+      "target": [
+        23.200000762939453,
+        6.150000095367432,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.010",
+      "roomId": "bar-lounge",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        33.403076171875,
+        9.555299758911133,
+        3.5199999809265137
+      ],
+      "target": [
+        33.403076171875,
+        9.555299758911133,
+        2.5199999809265137
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 20,
+      "fixtureFamily": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination.011",
+      "roomId": "kitchen",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        31.399999619,
+        2.049999952,
+        3.900000095
+      ],
+      "target": [
+        31.399999619,
+        2.049999952,
+        2.900000095
+      ],
+      "energy": 95.0,
+      "size": 2.200000048,
+      "color": [
+        1.0,
+        0.829999983,
+        0.680000007
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000048,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.012",
+      "roomId": "bathrooms",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        24.100000381469727,
+        1.350000023841858,
+        2.559999942779541
+      ],
+      "target": [
+        24.100000381469727,
+        1.350000023841858,
+        1.559999942779541
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.013",
+      "roomId": "locker-hallway",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        8.0,
+        0.75,
+        3.069999933242798
+      ],
+      "target": [
+        8.0,
+        0.75,
+        2.069999933242798
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "evidencePriority": 20,
+      "fixtureFamily": "indirect-fill"
+    },
+    {
+      "name": "Soft reflected room illumination.014",
+      "roomId": "main-circulation",
+      "floorId": "ground",
+      "type": "AREA",
+      "position": [
+        28.200000762939453,
+        5.800000190734863,
+        2.819999933242798
+      ],
+      "target": [
+        28.200000762939453,
+        5.800000190734863,
+        1.8199999332427979
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "name": "Soft reflected room illumination.015",
+      "roomId": "mezzanine-review",
+      "floorId": "mezzanine-review",
+      "type": "AREA",
+      "position": [
+        45.20000076293945,
+        4.5,
+        2.2699999809265137
+      ],
+      "target": [
+        45.20000076293945,
+        4.5,
+        1.2699999809265137
+      ],
+      "energy": 95.0,
+      "size": 2.200000047683716,
+      "color": [
+        1.0,
+        0.8299999833106995,
+        0.6800000071525574
+      ],
+      "role": "indirect-fill",
+      "sizeY": 2.200000047683716,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true
+    },
+    {
+      "color": [
+        1.0,
+        0.790000021,
+        0.550000012
+      ],
+      "energy": 65.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen lantern practical",
+      "position": [
+        32.650001526,
+        2.049999952,
+        2.650000095
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 0.649999976,
+      "sizeY": 0.649999976,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        32.650001526,
+        2.049999952,
+        1.650000095
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "paper-lantern"
+    },
+    {
+      "color": [
+        0.819999993,
+        0.910000026,
+        1.0
+      ],
+      "energy": 95.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen window 0 daylight",
+      "position": [
+        29.451957703,
+        0.189999998,
+        1.549999952
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 1.182729959,
+      "sizeY": 1.182729959,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        29.451957703,
+        1.172603607,
+        1.364284515
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "window-daylight"
+    },
+    {
+      "color": [
+        0.819999993,
+        0.910000026,
+        1.0
+      ],
+      "energy": 95.0,
+      "floorId": "ground",
+      "name": "V15 Kitchen window 2 daylight",
+      "position": [
+        33.869949341,
+        0.189999998,
+        1.549999952
+      ],
+      "role": "practical",
+      "roomId": "kitchen",
+      "size": 1.182729959,
+      "sizeY": 1.182729959,
+      "sourceShape": "DISK",
+      "sourceUseShadow": true,
+      "target": [
+        33.869949341,
+        1.172603607,
+        1.364284515
+      ],
+      "type": "AREA",
+      "evidencePriority": 65,
+      "fixtureFamily": "window-daylight"
+    }
+  ],
+  "lightingSelectionMode": "evidence-v13",
+  "lightMaps": {},
+  "lightMapProof": {},
+  "coverageGaps": [
+    {
+      "id": "unlocated-second-upstairs-area",
+      "floorId": "mezzanine-review",
+      "reportedAreaSquareFeet": 124.51,
+      "shape": null,
+      "status": "Unlocated second upstairs area; no geometry invented",
+      "source": "master-2025 floor total minus labeled main Mezzanine area"
+    },
+    {
+      "id": "stair-registration",
+      "status": "Ground-to-mezzanine stair route and elevation unverified"
+    },
+    {
+      "id": "outdoor-registration",
+      "status": "Indoor connection to the photo-confirmed exterior corridor unverified"
+    }
+  ],
+  "bytes": 255860228,
+  "assetSha256": "58214983efb6013ef0bba11ec7738fc06eecb0e79429a01c20ab2803a1164714",
+  "sourceProof": {
+    "mode": "reviewed-source-details-with-preserving-static-overlay",
+    "sourceBlendSha256": "85b25dc2496c1e44b0f39f2adfdabc9f6e6d89baab9cea8405e2ca41585cbbe4",
+    "sourceBlendBytes": 196818895,
+    "assetSha256": "58214983efb6013ef0bba11ec7738fc06eecb0e79429a01c20ab2803a1164714",
+    "baseSourceBlendSha256": "8b90a2c613dbc369af039237e0869fdd5bf8f3389788d8c5d92df8eba06e645f",
+    "baseAssetSha256": "232f369f6859377350cd126fb86b861de6cec8ae815338390098f6109f5c1245",
+    "publishedBaseManifestSha256": "b1c5dd0dc62c6f73fe157e68a46bd78d6d41a73baa61c911a97e368b8b9172a2",
+    "inheritedPrivateInfrastructureManifestSha256": "b09a3a043713b8e15743591e2dc7af995daed13abab69a33c17e0fa4e4470662",
+    "inheritedInfrastructureProof": {
+      "mode": "photo-infrastructure-and-detail-correction-with-preserving-static-overlay",
+      "sourceBlendSha256": "8b90a2c613dbc369af039237e0869fdd5bf8f3389788d8c5d92df8eba06e645f",
+      "sourceBlendBytes": 196775446,
+      "assetSha256": "232f369f6859377350cd126fb86b861de6cec8ae815338390098f6109f5c1245",
+      "baseSourceBlendSha256": "1f1245a9b99437284df825278ebb6a5bbf0061a4edc41c36da7b389e7b448c06",
+      "baseAssetSha256": "0252ef32dba9b83460fbe68819ab3c1167ebaa75a7410f6e38663f511681eb97",
+      "baseManifestSha256": "b1c5dd0dc62c6f73fe157e68a46bd78d6d41a73baa61c911a97e368b8b9172a2",
+      "preservationReportSha256": "3a04656b40da13ebbcf908a38bfc6d89b73a9336660f0a63109b93ff3e071908",
+      "assemblyReportSha256": "ee3354ef4e7bc438127dfa2410ea982016a7fb7d300e8152a3335e775f83750f",
+      "sourceCorrectionScriptSha256": "fa467f0595e26a1623820f3c9e9d18d508b24dcb61395125ff0eeb8d59462a70",
+      "patches": [
+        {
+          "name": "kitchen",
+          "scriptSha256": "1c7ac73076c8bb5ccbec2e2390b4607854474ef0169e35608d2b0095921a8b16"
+        },
+        {
+          "name": "recording",
+          "scriptSha256": "2a9171bfff4893406bcbc329abef1fe480ba81717809e0fa25e3f808f58c1913"
+        },
+        {
+          "name": "lower_stair",
+          "scriptSha256": "f6b8ad2204999596164007766d03c1a542074c6b3689434314e061db5b72a98f"
+        },
+        {
+          "name": "curtain_portal",
+          "scriptSha256": "82ae5f7f91d9ea51c2e2167290fff8beaefecccd5a02ce3a358552df703d7679"
+        }
+      ],
+      "existingMaterialsImagesAndLightsExact": true
+    },
+    "preservationReportSha256": "eef63494fa66bc62123c2e71bbe30abddcf03f0f852404451560072f8eb501c1",
+    "integratedContactIdentityReportSha256": "658de475c298378c5d8865bfd5c8045e408d0aa04674260dffecd6b46482b31e",
+    "assemblyReportSha256": "2e42a2989c14ac542f1c3c18977fbe10449d857dccaae6442382ca1ba45a731b",
+    "sourceCorrectionScriptSha256": "0071b7bade40138871c9d002493782526db6287a060496c112fa33099b125e3a",
+    "patches": [
+      {
+        "name": "mixing_desk",
+        "scriptSha256": "381320810cedcca0d907263f728a08a7bd2d3f66ee6b9716b0c12cda7ce20fec"
+      },
+      {
+        "name": "stair_grout_collision",
+        "scriptSha256": "3c942227936a030e4b31c4d528f490e26b8f584f6974d87e23677314489abf0f"
+      }
+    ],
+    "existingMaterialsImagesAndLightsExact": true
+  },
+  "incrementalAssetProof": {
+    "gltfSha256": "74a4288d2f5064da2981a566a6b5ab30ff69cb2a4ded5515860162e2b11ca31e",
+    "newGeometryAndTextureBytes": 3309804,
+    "newBufferSha256": "da8034ca7741f67b90c11949945bf8fb4deb2e9da05742894e8fb53edadd994c",
+    "replacedBaseNodes": 3,
+    "overlayNodes": 10,
+    "untouchedBaseArraysAndBytesExact": true,
+    "inheritedUnreleasedBuffer": {
+      "file": "geometry-overlay-v21-infrastructure.bin",
+      "sha256": "0acf4b3312a286b6a4442015af26e9c5d1fcd83a370054eb752d90a674a144b1",
+      "scope": "A retained geometry dependency; no separate V21 release or download is asserted."
+    }
+  },
+  "incrementalModel": {
+    "version": "v24-studio-details",
+    "scope": "Solid Lounge arch and curtains, connector ceiling, lower stair and parapet, Kitchen and Recording detail, Mixing desk, and nonblocking thin stair grout seams",
+    "confidence": "High for visible item presence; moderate for appearance; low for unmeasured dimensions",
+    "dimensionStatus": "Photo estimates. Upper stair registration, lower keyboard placement, unseen connections, appliance identities and exact cable routes remain unresolved.",
+    "sourcePhotos": [
+      "DSC00140",
+      "IMG_7241-t15s",
+      "IMG_8302",
+      "IMG_8303",
+      "IMG_8304",
+      "IMG_8305",
+      "IMG_8309",
+      "IMG_8310",
+      "IMG_8311",
+      "IMG_8404",
+      "IMG_8407",
+      "IMG_8408",
+      "IMG_8409",
+      "IMG_8433",
+      "IMG_8434",
+      "IMG_8435",
+      "mixing-curated-second.jpg",
+      "mixing-curated-wide.jpg",
+      "mixing-detail-photo_10.jpg",
+      "mixing-wide-photo_1.jpg",
+      "recording-curated-second.jpeg",
+      "recording-curated-wide.jpg",
+      "recording-wide-IMG_1059.jpg"
+    ],
+    "changedObjectsSincePrivateInfrastructure": 13,
+    "removedObjectsSincePrivateInfrastructure": 0,
+    "addedObjectsSincePrivateInfrastructure": 20,
+    "inheritedInfrastructure": {
+      "version": "v21-infrastructure",
+      "scope": "Solid Lounge plaster arch and gathered curtains; raised connector ceiling; tiled lower stair and continuous parapet; Kitchen seating, appliances and hearth accessories; Recording rack hierarchy and upholstered chair",
+      "confidence": "High for visible item presence; moderate for appearance; low for unmeasured dimensions",
+      "dimensionStatus": "Photo-derived positions and dimensions are estimates. Upper stair registration, appliance identities, hidden connections and the function of the four black posts remain unresolved.",
+      "sourcePhotos": [
+        "IMG_8302",
+        "IMG_8303",
+        "IMG_8304",
+        "IMG_8305",
+        "IMG_8309",
+        "IMG_8310",
+        "IMG_8311",
+        "IMG_8404",
+        "IMG_8407",
+        "IMG_8408",
+        "IMG_8409",
+        "IMG_8433",
+        "IMG_8434",
+        "IMG_8435",
+        "IMG_7241-t15s",
+        "DSC00140",
+        "recording-curated-second.jpeg",
+        "recording-wide-IMG_1059.jpg",
+        "recording-curated-wide.jpg"
+      ],
+      "changedObjects": 116,
+      "removedObjects": 6,
+      "addedObjects": 100,
+      "existingSourceMaterialsAndImagesExact": true
+    },
+    "existingSourceMaterialsAndImagesExact": true
+  },
+  "authoringBytes": 196818895,
+  "structureView": {
+    "fullHeightWallsByDefault": true,
+    "overviewCeilingsOptional": true,
+    "fixedFeaturesRemainWithoutFurniture": true,
+    "groundPlanSolidWallRuns": 84,
+    "coverageScope": "85 current ground planning-wall records and 84 solid runs; preserved bounded stair, arch and ceiling geometry. This is not a new complete-building survey; dimensions and floor registration remain unverified.",
+    "groundPlanWallRecords": 85,
+    "fullyOpenGroundBoundaryIds": [
+      "circulation-portal"
+    ],
+    "modelRevision": "cb0d0f053e202ab9",
+    "planningModelSha256": "8c258c54a71029ae5c2a5e65105de80bea26c9bd97657f2c4866d42c4b231f80",
+    "inheritedWallAudit": {
+      "sha256": "e02c9f42f562fd97c98fa42516a6eb7cdb3a617b7ef11bb557a4f9f0e5827088",
+      "auditedAssetVersion": "v15-building",
+      "auditedModelRevision": "7b088d6ddfe5975c",
+      "solidWallRuns": 63,
+      "scope": "Historical V15 active-wall coverage audit recorded during V16. It does not audit the V21 stair or pointed arch."
+    },
+    "inheritedInfrastructureProofs": {
+      "sourceBlendSha256": "8b90a2c613dbc369af039237e0869fdd5bf8f3389788d8c5d92df8eba06e645f",
+      "proofs": {
+        "planningWallCountSha256": "936564527d42473dda370d8fb15719e9f3b2dd3889e4da175a95391aa7b6781d",
+        "sourcePreservationSha256": "3a04656b40da13ebbcf908a38bfc6d89b73a9336660f0a63109b93ff3e071908",
+        "wallProfilesSha256": "e199d28980878df8a900baa62a46db163098c8fee5f4d64943934e0374a7be87",
+        "ceilingSetsSha256": "d104c49312f204fb70d1da399cd8e51080fce5873cff35698f0d537d1fe32058"
+      },
+      "scope": "The private V21 wall count, solid profiles and ceiling geometry are inherited. V24 preserves their geometry and changes only nine thin grout collision flags in circulation."
+    },
+    "currentProofs": {
+      "sourcePreservationSha256": "eef63494fa66bc62123c2e71bbe30abddcf03f0f852404451560072f8eb501c1",
+      "integratedRoomPhysicalIdentitySha256": "658de475c298378c5d8865bfd5c8045e408d0aa04674260dffecd6b46482b31e",
+      "portableInfrastructureSha256": "768d8587de8d59379e1e4b0fab70d72a3d3516cd8fb73da5aa38d63fe2ecc684",
+      "portableStudioDetailsSha256": "b145f0571fc40282d20d0200cb7c316456cd7c4d3ed6faccf3ee094138c2fd7c",
+      "planningModelSha256": "8c258c54a71029ae5c2a5e65105de80bea26c9bd97657f2c4866d42c4b231f80",
+      "runtimeAppSha256": "fd0105fd2b27a6ad2c22a64cbe4032c904bba4b1246f79329482368151fe1251"
+    }
+  },
+  "paperLanternRendering": {
+    "scope": "Three paper lanterns only; smaller square rendering proxies stay inside the curved shades",
+    "renderEmitterWidthMeters": 0.4,
+    "renderEmitterHeightMeters": 0.4,
+    "totalEmittedPowerPreserved": true,
+    "sourceLightDescriptorsUnchanged": true,
+    "lightPoolLimitsUnchanged": true
+  }
+}

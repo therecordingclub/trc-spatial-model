@@ -78,6 +78,16 @@ function makeWall(wall){
   const height=finite(wall.height,finite(floorMaps.get(wall.floorId)?.height,2.8)),thickness=finite(wall.thickness,.15),y0=elevation(wall.floorId);
   const group=new THREE.Group();group.name=wall.id;group.userData={floorId:wall.floorId,dimensionStatus:wall.dimensionStatus||'plan-derived',source:wall.source||model.metadata?.sources};
   group.position.set(wall.start[0],y0,wall.start[1]);group.rotation.y=-Math.atan2(dz,dx);
+  if(Array.isArray(wall.solidProfiles)&&wall.solidProfiles.length){
+    for(const [index,profile] of wall.solidProfiles.entries()){
+      if(!Array.isArray(profile)||profile.length<3||profile.some(point=>!Array.isArray(point)||point.length!==2||point.some(value=>!Number.isFinite(value))))throw new Error(`Invalid wall profile: ${wall.id}`);
+      const shape=new THREE.Shape();profile.forEach(([along,up],i)=>i?shape.lineTo(along,up):shape.moveTo(along,up));shape.closePath();
+      const geometry=new THREE.ExtrudeGeometry(shape,{depth:thickness,bevelEnabled:false,steps:1,curveSegments:1});geometry.translate(0,0,-thickness/2);
+      const mesh=new THREE.Mesh(geometry,material(palette.wall));mesh.name=`${wall.id} profile ${index+1}`;mesh.castShadow=true;mesh.receiveShadow=true;
+      mesh.userData={floorId:wall.floorId,wallId:wall.id,base:0,fullHeight:Math.max(...profile.map(point=>point[1]))};group.add(mesh);wallMeshes.push(mesh);
+    }
+    modelGroup.add(group);return;
+  }
   const openings=(wall.openings||[]).filter(o=>o.width>0).map(o=>({...o,offset:Math.max(0,Math.min(length,o.offset)),width:Math.min(o.width,length-o.offset)})).sort((a,b)=>a.offset-b.offset);
   let cursor=0;
   function part(a,b,bottom,top,label){

@@ -14,5 +14,7 @@
   "/reconstruction/trc-web-v16-detail.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v16-detail/trc-web-v16-detail.glb",
   "/reconstruction/trc-editable-v16-detail.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v16-detail/trc-editable-v16-detail.blend",
   "/reconstruction/trc-web-v17-instruments.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v17-instruments/trc-web-v17-instruments.glb",
-  "/reconstruction/trc-editable-v17-instruments.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v17-instruments/trc-editable-v17-instruments.blend"
+  "/reconstruction/trc-editable-v17-instruments.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v17-instruments/trc-editable-v17-instruments.blend",
+  "/reconstruction/trc-web-v24-studio-details.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v24-studio-details/trc-web-v24-studio-details.glb",
+  "/reconstruction/trc-editable-v24-studio-details.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v24-studio-details/trc-editable-v24-studio-details.blend"
 }
