@@ -381,7 +381,40 @@ publishes the Pages assets. The shared host was deployed from commit
 with unchanged CPU, memory and volume. All six `bin/deploy` probes passed: five
 neighboring hosts at 200 and `agents.therecording.club/staff/mod` at 401. The
 browser pass ran in bundled Playwright because the Chrome extension bridge was
-not connected; a main-Chrome pass is still owed.
+not connected; a main-Chrome pass is still owed. Release 190 was superseded the
+same day by release 191 below.
+
+## Walking passes through walls
+
+Greg asked on September 10 that walls stop blocking movement. Walking is now
+never rejected horizontally, in either code path, while floor support is
+unchanged: the walker still stands on floors, steps and stairs, and the
+step-too-high and drop-too-far limits still apply, so it cannot fall through.
+
+One switch controls it. `site/geometry.mjs` exports `WALK_THROUGH_WALLS = true`.
+`site/navigation.js` gates its obstacle rejection on that constant, leaving the
+capsule collider, support-from-geometry and the collider diagnostics untouched.
+`site/app.js` gates the plan-based `wallBlocks` branch of `canWalk` on the same
+constant. Setting it to false restores blocking in both paths. No collider was
+removed and no model data changed; the room-boundary rules that reject furniture
+placements are unaffected.
+
+`tools/walk-through-walls.test.mjs` asserts that a step into a wall run succeeds
+while `wallBlocks` still reports the wall as solid, that the floor footprint
+still bounds movement, and that only the obstacle rejection is gated. No existing
+test asserted a collision block, so none needed changing. The suite is 16 of 16.
+
+Verified on the public preview after release 191. In walk mode, 46 of 48 ground
+wall midpoints are walkable; the two exceptions sit outside the building
+footprint and are correctly refused. Holding Shift and the up arrow walked the
+camera from (9.05, -4.49) across the wall run (8.1, -3.3) to (11.9, -2.5) and out
+the far side at (10.67, -2.10), with eye height steady at 1.59 and no console
+errors. Evidence: `workbench/v24-studio-details-2026-09-10/qa-walk-through-wall-live.png`.
+
+Shared-host commit `dc24ab2` carries site snapshot
+`fb6919843a477d4aadc4078010989342654961ae` in release 191, image
+`deployment-01M26SZY3ZX8XJCZD187DZWEK5`, same machine `d8d2e50f0d9168` and
+sizing. All six deploy probes passed.
 
 ## Accuracy boundaries
 
