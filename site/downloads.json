@@ -10,5 +10,7 @@
   "/reconstruction/trc-web-v14-lounge-chairs.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v14-lounge-chairs/trc-web-v14-lounge-chairs.glb",
   "/reconstruction/trc-editable-v14-lounge-chairs.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v14-lounge-chairs/trc-editable-v14-lounge-chairs.blend",
   "/reconstruction/trc-web-v15-building.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v15-building/trc-web-v15-building.glb",
-  "/reconstruction/trc-editable-v15-building.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v15-building/trc-editable-v15-building.blend"
+  "/reconstruction/trc-editable-v15-building.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v15-building/trc-editable-v15-building.blend",
+  "/reconstruction/trc-web-v16-detail.glb": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v16-detail/trc-web-v16-detail.glb",
+  "/reconstruction/trc-editable-v16-detail.blend": "https://github.com/therecordingclub/trc-spatial-model/releases/download/v16-detail/trc-editable-v16-detail.blend"
 }

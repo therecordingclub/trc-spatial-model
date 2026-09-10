@@ -177,6 +177,9 @@ function boundsForRoom(){
   for(const r of rooms.filter(Boolean))for(const [x,z] of r.polygon)box.expandByPoint(new THREE.Vector3(x,elevation(r.floorId),z));
   return box.isEmpty()?sceneBounds:box;
 }
+function isStructureView(){
+  return mode==='explore'&&!walk&&!activeRoom&&$('details-enabled').checked&&!$('furniture').checked&&!$('cutaway').checked&&!$('ceilings-overview').checked&&$('labels').checked;
+}
 function frame(){
   if(!model)return;
   const box=boundsForRoom(),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),extent=Math.max(size.x,size.z,3);
@@ -186,7 +189,7 @@ function frame(){
     camera.position.set(center.x,center.y+70,center.z+.001);camera.up.set(0,0,-1);camera.lookAt(center);camera.updateProjectionMatrix();
   }else{
     camera=perspective;camera.up.set(0,1,0);
-    const direction=new THREE.Vector3(.32,.8,1.05).normalize(),right=new THREE.Vector3().crossVectors(camera.up,direction).normalize(),up=new THREE.Vector3().crossVectors(direction,right).normalize();
+    const direction=(isStructureView()?new THREE.Vector3(.32,2.7,1.05):new THREE.Vector3(.32,.8,1.05)).normalize(),right=new THREE.Vector3().crossVectors(camera.up,direction).normalize(),up=new THREE.Vector3().crossVectors(direction,right).normalize();
     const tanV=Math.tan(THREE.MathUtils.degToRad(camera.fov/2)),tanH=tanV*ratio;
     center.y+=.5;controls.target.copy(center);let distance=5;
     for(const x of [box.min.x,box.max.x])for(const z of [box.min.z,box.max.z])for(const y of [center.y-.5,center.y+2.5]){
@@ -206,7 +209,7 @@ function visibility(){
   for(const mesh of wallMeshes){const {base,fullHeight}=mesh.userData;const visibleHeight=Math.max(0,Math.min(fullHeight,cap-base));mesh.visible=visibleHeight>.005;mesh.scale.y=visibleHeight/fullHeight;mesh.position.y=base+visibleHeight/2;}
   for(const group of [dressingGroup,layoutGroup])for(const child of group.children)child.visible=child.userData.floorId===activeFloor;
   dressingGroup.visible=$('furniture').checked&&!detailEnabled;
-  detailed?.setView({floorId:activeFloor,roomId:activeRoom,walk,cutaway:$('cutaway').checked,furniture:$('furniture').checked,enabled:detailEnabled});
+  detailed?.setView({floorId:activeFloor,roomId:activeRoom,walk,cutaway:$('cutaway').checked,ceilingsOverview:$('ceilings-overview').checked,furniture:$('furniture').checked,enabled:detailEnabled});
   for(const floor of roomMeshes){floor.material.color.set(floorMaps.get(floor.userData.floorId)?.elevation===null?'#c39b60':floor.userData.roomId===activeRoom?'#c6a587':palette.floor);}
   for(const label of labels)label.element.classList.toggle('selected',label.room.id===activeRoom);
   const exterior=activeFloor==='exterior-corridor-review';
@@ -244,7 +247,7 @@ function updateFacts(){
   $('add-item').disabled=!activeRoom;
   if(!$('photo-panel').hidden)showPhoto();
 }
-function updateURL(){const url=new URL(location.href);url.searchParams.set('mode',mode);url.searchParams.set('floor',activeFloor);if(activeRoom)url.searchParams.set('room',activeRoom);else url.searchParams.delete('room');history.replaceState({},'',url);}
+function updateURL(){const url=new URL(location.href);url.searchParams.set('mode',mode);url.searchParams.set('floor',activeFloor);if(activeRoom)url.searchParams.set('room',activeRoom);else url.searchParams.delete('room');if(isStructureView())url.searchParams.set('view','structure');else url.searchParams.delete('view');history.replaceState({},'',url);}
 function selectRoom(id,doFrame=true){if(walk&&doFrame)stopWalk();activeRoom=id;$('room-select').value=id;updateFacts();visibility();if(doFrame)frame();updateURL();}
 function selectFloor(id){stopWalk();activeFloor=id;$('floor-select').value=id;activeRoom='';fillRooms();clearMeasurement();updateFacts();visibility();frame();updateURL();}
 function setMode(next){
@@ -252,6 +255,11 @@ function setMode(next){
   $('layout-panel').hidden=mode!=='plan';$('measure-panel').hidden=mode!=='measure';
   $('hint').textContent=mode==='plan'?'Hold arrow keys to pan · drag your equipment':mode==='measure'?'Click two model points · hold arrows or drag to pan':'Hold arrow keys to pan · drag to orbit · scroll to zoom';
   if(mode!=='measure')clearMeasurement();visibility();frame();updateURL();
+}
+function showBuildingStructure(){
+  activeRoom='';$('room-select').value='';
+  $('details-enabled').checked=true;$('furniture').checked=false;$('cutaway').checked=false;$('ceilings-overview').checked=false;$('labels').checked=true;
+  updateFacts();setMode('explore');notify('Building structure: full walls, doors and fixed features.');
 }
 function setDirty(){dirty=true;$('save-state').textContent='Unsaved equipment changes';$('undo').disabled=!undo.length;}
 function checkpoint(){undo.push(JSON.stringify(scenario.items));if(undo.length>historyLimit)undo.shift();$('undo').disabled=false;}
@@ -353,7 +361,7 @@ function startWalk(){
   renderer.domElement.focus();updateURL();
   if(matchMedia('(pointer:fine)').matches&&renderer.domElement.requestPointerLock){try{const request=renderer.domElement.requestPointerLock();request?.catch(()=>notify('Drag inside the model to look around.'));}catch{notify('Drag inside the model to look around.');}}
 }
-function stopWalk(){resetMovement();if(!walk)return;walk=false;document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Hold arrow keys to pan · drag to orbit · scroll to zoom';}
+function stopWalk(){resetMovement();if(!walk)return;walk=false;document.exitPointerLock?.();controls.enabled=true;$('exit-walk').hidden=true;$('touch-controls').hidden=true;visibility();frame();$('hint').textContent='Hold arrow keys to pan · drag to orbit · scroll to zoom';updateURL();}
 function panView(dt){
   if(drag||!controls.enabled){panMotion.reset();return;}
   let x=Number(keys.has('arrowright'))-Number(keys.has('arrowleft'));
@@ -441,9 +449,9 @@ function installEvents(){
   });
   document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
   $('floor-select').addEventListener('change',e=>selectFloor(e.target.value));$('room-select').addEventListener('change',e=>selectRoom(e.target.value));
-  for(const id of ['cutaway','furniture','labels','details-enabled'])$(id).addEventListener('change',visibility);
+  for(const id of ['cutaway','ceilings-overview','furniture','labels','details-enabled'])$(id).addEventListener('change',()=>{visibility();updateURL();});
   $('units').addEventListener('change',e=>{units=e.target.value;updateFacts();if(measurePoints.length===2)$('distance').textContent=formatLength(measurePoints[0].distanceTo(measurePoints[1]),units);});
-  $('walk').addEventListener('click',startWalk);$('exit-walk').addEventListener('click',stopWalk);$('frame-room').addEventListener('click',()=>{stopWalk();frame();});$('reset-view').addEventListener('click',()=>{stopWalk();selectRoom('');});
+  $('walk').addEventListener('click',startWalk);$('exit-walk').addEventListener('click',stopWalk);$('frame-room').addEventListener('click',()=>{stopWalk();frame();});$('reset-view').addEventListener('click',()=>{stopWalk();selectRoom('');});$('structure-view').addEventListener('click',showBuildingStructure);
   $('photo-toggle').addEventListener('click',showPhoto);$('photo-close').addEventListener('click',()=>{$('photo-panel').hidden=true;resize();});
   $('panel-toggle').addEventListener('click',()=>{const hidden=document.body.classList.toggle('controls-hidden');$('panel-toggle').setAttribute('aria-expanded',String(!hidden));resize();});
   $('clear-measure').addEventListener('click',clearMeasurement);$('add-item').addEventListener('click',addItem);$('item-select').addEventListener('change',e=>selectItem(e.target.value));
@@ -493,7 +501,7 @@ async function initialize(){
     renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.info.autoReset=false;renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.shadowMap.enabled=true;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.localClippingEnabled=true;
     renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D club model. Arrow keys pan the view; in walk mode use WASD or arrow keys to move.');$('viewport').prepend(renderer.domElement);
     perspective=new THREE.PerspectiveCamera(48,1,.05,600);orthographic=new THREE.OrthographicCamera(-20,20,20,-20,.05,600);camera=perspective;controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;
-    buildScene();const query=new URL(location.href).searchParams;activeFloor=model.floors.some(f=>f.id===query.get('floor'))?query.get('floor'):model.floors[0].id;
+    buildScene();const query=new URL(location.href).searchParams,requestedStructureView=query.get('view')==='structure';activeFloor=model.floors.some(f=>f.id===query.get('floor'))?query.get('floor'):model.floors[0].id;
     if(/^v\d+(?:-[a-z0-9]+)*$/.test(query.get('preview')||'')&&query.get('color')==='agx'){
       renderer.toneMapping=THREE.AgXToneMapping;
       const exposure=Number(query.get('exposure')||2);
@@ -532,6 +540,7 @@ async function initialize(){
     window.__trcBoot='Drawing saved layout';redrawLayout();
     window.__trcBoot='Updating room facts';updateFacts();
     window.__trcBoot='Setting camera mode';setMode(['explore','plan','measure'].includes(query.get('mode'))?query.get('mode'):'explore');
+    if(requestedStructureView)showBuildingStructure();
     if(matchMedia('(max-width:650px)').matches){document.body.classList.add('controls-hidden');$('panel-toggle').setAttribute('aria-expanded','false');}
     window.__trcBoot='Sizing viewport';resize();$('loading').hidden=true;animation=requestAnimationFrame(animate);
     window.trcModel={get model(){return model;},get scenario(){return scenario;},get state(){return {mode,activeFloor,activeRoom,walk,dirty,selectedItem,roomCount:roomMeshes.length,wallCount:wallMeshes.length};},get camera(){return camera;},get renderer(){return renderer;},selectRoom,setMode,selectFloor,frame,canWalk};

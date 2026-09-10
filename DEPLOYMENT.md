@@ -214,6 +214,43 @@ bays, softer paper-lantern materials and irregular record groupings remain
 documented detail work. Upstairs, stair and outdoor registration require
 additional measured or connected reference data.
 
+## V16 structure and photo details
+
+V16 shows full-height walls by default. The Building structure preset frames
+the current floor from above and keeps walls, doors, beams, steps and fixed
+fixtures visible while hiding movable furniture. Ceiling surfaces have a
+separate overview control; walking retains full walls and ceilings. The
+existing ground model contains 63 solid wall runs and two intentionally open
+boundaries. Coverage checks establish their active endpoints, not a measured
+survey of every physical wall or height.
+
+The source adds fireplace-side cabinets, shelves and hanging rails, matte paper
+shades, a lower opening and rim on the Kitchen shade, and irregular Lounge
+record groups. The 28 existing Lounge pendant parts are classified as ceiling
+fixtures and exported separately from furniture. The three lantern rendering
+emitters fit within their shades while preserving total emitted power. The
+125 source lights, light-pool limits, V15 building geometry and V14 chair
+direction remain unchanged.
+
+The R3 source passes 553 preservation checks; preparation passes 14 and asset
+assembly passes 12. Independent Astra approves the bounded release at 3/4 with
+78 independent asset/served-file checks and 39 source-comparison checks. Final
+main-Chrome evidence passes 23 structure, 30 detail and 12 interface checks,
+plus both affected room walkthroughs. Unchanged rooms retain the 19-room smoke
+evidence. Evidence is under `workbench/v16-detail-2026-09-09/evidence`.
+
+Canonical GLB SHA-256:
+`4899867dad8d82fd505cd37a5ebb01a16f10d0df23766a770783452c68d52439`.
+Editable source SHA-256:
+`2dee6b9153089595ddc5e517064d78da591cded4e7a81e94bf493fa07998ed9d`.
+The release uses the existing GitHub Pages asset directory and the existing
+shared static route; it adds no application, machine, child process or volume.
+All 265 previous versioned asset files remain unchanged.
+
+This release is an incremental improvement. Missing instruments, framed art,
+furniture and other photo details remain active reconstruction work. Record
+groupings still repeat, and several dimensions remain inferred.
+
 ## Accuracy boundaries
 
 The 19 modeled rooms combine plans and photographs. Equipment placement,

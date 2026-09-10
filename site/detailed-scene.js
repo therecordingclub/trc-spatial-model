@@ -116,9 +116,14 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
         const light=lightPool[areaIndex++];
         light.visible=true;light.name=descriptor.name;light.color.setRGB(...descriptor.color,THREE.LinearSRGBColorSpace);light.intensity=descriptor.intensity;
         light.width=descriptor.size;light.height=descriptor.sizeY??descriptor.size;light.position.fromArray(descriptor.position);
+        if(/^Paper lantern glow(?:\.001)?$|^V15 Kitchen lantern practical$/.test(descriptor.name)){
+          // Keep the square proxy for each source disk inside its curved shade.
+          const power=light.power;
+          light.width=light.height=.4;light.power=power;
+        }
         const target=new THREE.Vector3().fromArray(descriptor.target);
         if(target.distanceToSquared(light.position)<1e-8)target.y-=1;
-        light.lookAt(target);light.userData={poolIndex:areaIndex-1,roomId:descriptor.roomId,floorId:descriptor.floorId,role:descriptor.role,fixtureFamily:descriptor.fixtureFamily,sourceEnergy:descriptor.sourceEnergy,approximate:true};
+        light.lookAt(target);light.userData={poolIndex:areaIndex-1,roomId:descriptor.roomId,floorId:descriptor.floorId,role:descriptor.role,fixtureFamily:descriptor.fixtureFamily,sourceEnergy:descriptor.sourceEnergy,approximate:true,sourceEmitterSize:[descriptor.size,descriptor.sizeY??descriptor.size],renderEmitterSize:[light.width,light.height]};
       }
     }
     renderer.shadowMap.needsUpdate=true;
@@ -133,15 +138,15 @@ export async function loadDetailedScene(scene,renderer,model,onProgress){
     root,meshes,summary,manifest,albedoAudit,reflectionAudit:reflections.summary,updateReflections:reflections.update,
     lightingAudit:{sourceLights:sourceLights.length,poolSize:lightPool.length,shadowPoolSize:shadowLightPool.length,activeLightLimit:MAX_ACTIVE_ROOM_LIGHTS,lightingSelectionMode:lightingSelectionMode||'legacy',hdrLightMaps:hdrMaps.size,bakedMaterials:[...materials.values()].filter(mat=>mat.userData.lightMapApplied).length,intensityModel:'approximate source watts per emitter area; practical 0.08, indirect fill 0.025; capped at 40; calibrated HDR replaces baked structural diffuse'},
     hasFloor:floorId=>meshes.some(mesh=>mesh.userData.floorId===floorId),
-    setView({floorId,walk,cutaway,furniture,enabled,roomId}){
+    setView({floorId,walk,cutaway,ceilingsOverview,furniture,enabled,roomId}){
       root.visible=enabled;
       reflections.setView({enabled,floorId,walk});
       clip.constant=Number(model.floors.find(f=>f.id===floorId)?.elevation??model.floors.find(f=>f.id===floorId)?.modelElevation??0)+.85;
       for(const mesh of meshes){
         const role=mesh.userData.kind;
-        const ceiling=/ceiling/.test(role);
-        const structural=/floor|wall|ceiling/.test(role);
-        mesh.visible=mesh.userData.floorId===floorId&&(!ceiling||walk)&& (structural||furniture);
+        const ceilingSurface=role==='ceiling';
+        const structural=/floor|wall|ceiling/.test(role)||role==='step'||role==='light-fixture'||mesh.userData.fixedFeature===true||mesh.userData.permanentArchitecture===true;
+        mesh.visible=mesh.userData.floorId===floorId&&(!ceilingSurface||walk||ceilingsOverview)&&(structural||furniture);
       }
       for(const mat of materials.values()){
         const next=cutaway&&!walk&&/wall/.test(mat.userData.role)?[clip]:[];
