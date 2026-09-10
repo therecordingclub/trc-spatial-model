@@ -275,6 +275,60 @@ This release is an incremental improvement. Missing instruments, framed art,
 furniture and other photo details remain active reconstruction work. Record
 groupings still repeat, and several dimensions remain inferred.
 
+## V17 Lounge instruments and window
+
+V17 adds five distinct wall instruments, five source-photo artworks, the Lounge
+workstation and photographed furnishings. Its south east-wall window and the
+actual opening move together to match photo order. The old opening is filled;
+the north opening, adjacent wall solids and previous chair directions remain
+intact. The structure control reflects its selected visual and accessible state.
+
+The corrected r2 source passes 755 preservation checks. Exactly 11 existing
+objects change and 231 are added; 26 materials and five images are added while
+all previous materials, images, world settings and 125 lights are preserved.
+An independent Astra gate rates the bounded r2 release 3/4 SHIP after 17 fresh
+saved-source checks and 14 export checks. The r1 candidate was rejected for
+unsupported matching laptop shapes; its gate and artifacts remain preserved.
+The correction represents one dark folio device and a separate pale upright
+object whose exact identity remains unresolved.
+
+Editable source SHA-256:
+`1f1245a9b99437284df825278ebb6a5bbf0061a4edc41c36da7b389e7b448c06`.
+Canonical GLB SHA-256:
+`0252ef32dba9b83460fbe68819ab3c1167ebaa75a7410f6e38663f511681eb97`.
+Public glTF SHA-256:
+`40972d327aee50218c8b65d2a8f2145c2627aae1eecfc1f0bc1b89826f726f10`.
+Planning revision: `6efb748e21047f53`. The new buffer adds 3,230,696 bytes and
+269 existing versioned asset files remain unchanged.
+
+The live static snapshot is source commit
+`d430d2e7c3d772520af43bf2bce4e31f7d58179e`, deployed from shared-host commit
+`123875c8ac14750597770cfa66b290f7696bd891` with image
+`deployment-01M25A9FW6HZSSJBVECMMA71M7`. Seven route tests and the standard
+`bin/deploy` passed. The same machine, CPU/memory allocation, mount and 20 GB
+volume remain in place. No child service or new infrastructure was added.
+
+Twelve public files match the committed site. All 16 versioned download
+redirects are correct, and complete public downloads of the 234,364,188-byte GLB
+and 195,762,843-byte Blender source match their hashes. All 119 unique dependency
+URLs are reachable; the new buffer matches its complete hash. Seven neighboring
+endpoints retain their expected HTTP status. Both artifacts are available in the
+[V17 release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v17-instruments).
+
+The public release passes 24 Lounge, 12 interface and 12 structure-control checks
+in Greg's existing main Chrome. The pane's Astra controller inspected all seven
+actual public WebGL captures and left the newly opened
+[structure view](https://model.therecording.club/?floor=ground&mode=explore&view=structure)
+available. Proof is under `workbench/v17-instruments-2026-09-09/evidence`, including
+`public-v17-proof-v1.0.json` and the three `browser-public-*` reports. Native
+desktop capture stalled again; that broader screen-control boundary remains
+unverified. Walking code is unchanged and no new frame-rate claim is made.
+
+Garment folds, workstation-chair upholstery and several instrument headstocks
+remain refinement work. Window dimensions and the offset are estimates. The
+missing lower stair is a separate active reconstruction; its local form has
+photo support, while its dimensions and upper-floor registration are unresolved.
+
 ## Accuracy boundaries
 
 The 19 modeled rooms combine plans and photographs. Equipment placement,
