@@ -247,6 +247,30 @@ The release uses the existing GitHub Pages asset directory and the existing
 shared static route; it adds no application, machine, child process or volume.
 All 265 previous versioned asset files remain unchanged.
 
+V16 is live from shared-host commit
+`2e17a255da583a3b984107095fd3108235e749cd`, with site snapshot
+`84bbc04d44456dd0a6231b2868411a35e3237148`. The existing machine runs image
+`deployment-01M251MMZRXYMP2XJR6Q6EK7TD`; its machine identity, two shared CPUs,
+2 GB memory, mount and 20 GB volume are unchanged. The standard `bin/deploy`
+completed successfully and released its deployment lock.
+
+Twelve public files match the committed bundle. All 14 versioned redirects are
+correct; complete public GLB and Blender downloads match the reviewed sizes and
+SHA-256 values. All 118 dependency URLs are reachable and the new buffer matches
+its full hash. Seven neighboring endpoints retain their expected HTTP status.
+The [V16 release](https://github.com/therecordingclub/trc-spatial-model/releases/tag/v16-detail)
+contains both correctly named downloadable artifacts.
+
+The public model passes 23 structure, 30 detail and 12 interface checks, plus
+both affected room walkthroughs in Greg's existing main Chrome. Independent
+GPT-6 Astra inspected all 15 public WebGL captures and approved production at
+3/4 SHIP after 24 independent checks. The new public tab was opened at the
+[structure view](https://model.therecording.club/?floor=ground&mode=explore&view=structure).
+Proof is under `workbench/v16-detail-2026-09-09/evidence`, including
+`public-v16-proof-v1.0.json` and `astra-v16-production-gate/gate-v1.0.json`.
+Exact-window native capture remains unavailable because ScreenCaptureKit is
+quarantined; a successful unrelated desktop capture does not close that UI gap.
+
 This release is an incremental improvement. Missing instruments, framed art,
 furniture and other photo details remain active reconstruction work. Record
 groupings still repeat, and several dimensions remain inferred.
